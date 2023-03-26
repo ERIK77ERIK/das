@@ -1,0 +1,67 @@
+
+.das{
+    height:500px;
+    width:100%;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpdrvVSwhQWX2qq5S3VJecrYC0mXwlLj464w&usqp=CAU');
+    background-size:contain;/*auto,cover(ծածկոց),contain(պարունակում է(ամբողջ նկարը)),100%*/
+    /*cover -ը ուղահայաց նկարների դեպքում կենտրոնը ընտրվում է ըստ բարձրության,հորիզոնական նկարների դեպքում կենտրոնը ընտրում է ըստ լայնության*/
+    /*height<width(contain=100%),height>width(cover=100%)*/
+    background-repeat:no-repeat;/*repeat(կրկնել),no-repeat(չկրկնել),repeat-x(հորիզոնական դիրքով է կրկնում),repeat-y(ուղղահայաց դիրքով է կրկնում)*/
+    background-position: 50% 50%;/*X, Y | 0% 0% | position(դիրք)*/
+    border: 2px solid rgb(255,0,0);
+}
+
+
+
+
+.mydiv{
+    width:100%;
+    height:200px;
+    background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpdrvVSwhQWX2qq5S3VJecrYC0mXwlLj464w&usqp=CAU');
+    border: 2px solid rgb(255,0,0);
+    background-repeat: no-repeat;
+    background-attachment:fixed;/*scroll,local,  fixed(ամրագրված, անշարժ), inherit(ժառանգել)*/
+    background-position: 0% 0%;
+    background-size:contain;
+    
+   
+}
+/*նկարը fixed-ի հետ օգտագործելիս contain-ը ամբողջ էկրանի չափովա բերում | | ուղղահայաց նկարների դեպքում width:x% -ի դեպքում եթե էջը փոքրացնելուց div-ի եզրագիծը հասնում է նկարի x%-ին նկարը համատեղ փոքրանում է էջի հետ , | հորիզոնական նկարների դեպքում width:x% -ի դեպքում  div-ի մեջ նկարը ընդունում է լայնության x%-ը և էջը փոքրացնելիս  էջի հետ համատեղ փոքրանում է քանի որ contain-ի նպատակը ամբողջ նկարը ցույց տալն է
+  նկարը fixed-ի հետ օգտագործելիս cover-ը ամբողջ էկրանի չափովա բերում | | ուղղահայաց նկարների դեպքում   էջը փոքրացնելիս  նկարը փոքրանում է էջի հետ համատեղ, քանի որ cover-ը ծածկում է ամբողջ  div-ը կենտրոնը ընտրելով ըստ բարձրության, | հորիզոնական նկարների դեպքում էջը փոքրացնելիս նկարը չի փոքրանում քանի որ cover-ի նպատակը ազատ տեղ չթողնելն է և նկարը ամբողջ էկրանի չափով տեղաորվելուց կենտրոնը ընտրել է ըստ լաընության */
+
+
+
+
+.super{
+    height:300px;
+    width:300px;
+    border-top:2px solid rgb(255,0,0);
+    border-right:2px dashed rgb(34, 14, 150);
+    border-bottom:2px dotted rgb(225, 115, 24);
+    border-left:20px groove rgb(0, 208, 255);    
+    border-radius:100px 100px 50px 10px;
+    background:url('https://www.emilyluxton.co.uk/wp-content/uploads/2018/01/alex-iby-371384-unsplash-800x534.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:50% 50%;
+}
+
+
+.super1{
+    height:200px;
+    width:200px;
+/*border: 8px dashed rgb(225, 115, 24);
+border-bottom:20px groove;
+border-right:50px ridge rgb(34, 14, 150);
+border-top:4px inset;
+border-left:20px outset;*/
+
+background:url('../image/images.jpg');
+background-size:cover;
+background-repeat:no-repeat;
+background-position:50% 50%;
+border:10px inset rgb(34, 14, 150);
+border-top-right-radius: 10px 100px;
+border-bottom-left-radius: 100px 10px;
+
+}

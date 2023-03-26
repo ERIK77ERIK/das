@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 4</title>
+    <link rel="stylesheet" href="index4css/style4.css">
+
+</head>
+
+<body>
+
+    <hr>
+    <h1>ԿԵՂԾ ՍԵԼԵՔԹՈՐՆԵՐ</h1>
+    <hr>
+    <br><br>
+
+    <a href="index3.html" target="_blank">CSS 3</a>
+    <br> <br>
+
+    <h2>1.selector:hover{color:yellow;}<br>
+        selector:focus{color:green;}<br>
+        selector:active{color:red;}</h2>
+
+    <a href="#" class="google">google</a>
+
+    <br> <br>
+
+
+    <h2>
+        2.nth-child(n-րդ երեխա), first-child(առաջին երեխա), last-child(վերջին երեխա)<br><br>
+        selector:nth-child(4){
+        color:blue;
+        }(n-րդ երեխա)<br>
+
+        selector:first-child{
+        color:green;
+        }(առաջին երեխա)<br>
+
+        selector:last-child{
+        color:blueviolet;
+        }last-child(վերջին երեխա)
+    </h2>
+
+    <div class="parent">
+        <div class="sometext">text</div>
+        <div class="sometext">text</div>
+        <div class="sometext">text</div>
+        <div class="sometext">text</div>
+        <div class="sometext">text</div>
+    </div>
+
+
+    <h2>3.first-letter(առաջին տառ), first-line(առաջին տողը)</h2>
+    <h2>
+        selector:first-letter{
+        color:brown;
+        font-size:30px;
+        }
+        <br>
+        selector:first-line{
+        color:green;
+        background:gray ;
+        }
+    </h2>
+    <p class="patmutyun">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet temporibus alias ipsum! Odio
+        maxime dolor et! Totam molestiae vero quaerat tempora vitae architecto, delectus ipsa aut, ut maiores libero
+        laborum reiciendis sint esse magnam. Recusandae neque laudantium eum dignissimos debitis!</p>
+
+
+    <h2>4.before(նախքան), after(հետո), content: ' ';(բովանդակություն,պարունակություն)</h2>
+    <h2>
+        selector:before{
+        content:'HELLO';
+        color:red;
+        }
+        <br>
+        selector:after{
+        content:'ARMENIA';
+        color:orange;
+        }
+    </h2>
+    <p class="ba">Lorem ipsum dolor sit amet.</p>
+
+
+    <h2> 5.[ type=".." , name=".." data-..=".." ]</h2>
+    <h2>
+        input[data-anun="name"]{
+        background:rgb(236, 7, 201);
+        }
+        <br>
+        input[data-anun="lastname"]{
+        background:rgb(227, 194, 151);
+        }
+    </h2>
+    <form>
+        <input type="text" name="name" data-anun="name">
+        <input type="text" name="lastname" data-anun="lastname">
+    </form>
+</body>
+
+</html>

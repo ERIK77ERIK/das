@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, rgb(0, 0, 0, 0.5), rgba(255, 0, 0, 0.476)), url("../image/images.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.header {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#545454ce;
+
+}
+
+.container {
+   
+
+    width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.logo {
+    
+    width: 250px;
+    font-size: 50px;
+   
+}
+
+.ffaa {
+    color:orangered;
+    font-family: cursive;
+}
+
+
+nav {}
+
+.main_menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.main_menu li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+
+}
+
+.main_menu li {
+    position: relative;
+    
+}
+
+.main_menu li .sub_menu {
+    position: absolute;
+
+    max-width: 180px;
+    background: #545454;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: .4s;
+    transform: translateY(20px);
+
+
+}
+
+.main_menu li .sub_menu li a {
+    color: #fff;
+    
+    font-size: 16px;
+    padding: 10px 20px;
+
+}
+
+.main_menu li:hover> a {
+    color: orange;
+
+}
+
+
+.main_menu li:hover .sub_menu{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sub_menu li:hover a{
+    background: orange;
+    color:#fff;
+}
+
+.comon_btn a{
+    padding: 10px 30px;
+    font-size: 22px;
+    color:#fff;
+    border: 1px solid orange;
+    border-radius:40px ;
+    text-decoration: none;
+    
+    
+}
+.comon_btn{
+margin: 0 auto;
+}
+
+.sub_menu li{
+    position: relative;
+}
+
+.sub_menu2{
+position:absolute;
+
+max-width: 180px;
+background: #545454;
+
+visibility: hidden;
+opacity: 0;
+transform: translateX(120px) translateY(-38px);
+transition: 0.5s ease;
+}
+
+.sub_menu li:hover .sub_menu2{
+visibility: visible;
+opacity: 1;
+transform: translateX(114px) translateY(-38px);
+}
+
+
+.navbar .sub_menu2 li a{
+    background: #545454;
+
+}
+
+.sub_menu2 li:hover a{
+    background: orange;
+}
+
+
+
+@media screen and (max-width:590px){
+    .header .container .navbar nav .main_menu .sub_menu li .sub_menu2{
+        transform: translateX(-140px) translateY(-38px);
+        transition: 0.5s;
+    }
+
+    .header .container .navbar nav .main_menu .sub_menu li:hover .sub_menu2{
+        transform: translateX(-114px) translateY(-38px);
+    }
+}
+@media screen and (max-width:300px){
+     .sub_menu {
+        display: none;
+    }
+}
+/* 1.երբ body-ին եթե տալիսենք 100vh linear gradient-ը ու հետևի ֆոնի նկարի բարձրությունը սարքումա ցանկացած էկրանի չափով
+   2. ամենամեծ բլոկին(դիվին)
+       1.եթե բարձրություն ու լայնություն չենք տալիս  բարձրությունը ընդունում է իր մեջի էլեմենտի չափով իսկ լայնությունը էկրանի չափով
+       2.եթե լայնությունը տալիս ենք width:100%; այդ դիվի մեջի տարածքի լայնությունը հավասար է լինում բրաուզերի էկրանի լայնությանը իսկ եզրագծի(border-ի) լայնությունը դուրս է թողնում և ներքևից scroll է քցում
+       որպեսզի scroll չքցի պետք է տանք 
+       կամ  max-width:100%;(այսինքն դիվը ամբողջովին եզրագիծն էլ հետը տեղավորվի բրաուզերի էկրանի մեջ,այսինքն դիվի ամբողջ լայնությունը (եզրագիծն էլ հետը) հավասար է բրաուզերի էկրանի լայնությանը)
+       այսինքն 100% ից ավել չի մեծանում բայց փոքրանումա դառնումա բրաուզերի էկրանի չափ
+       կամ  max-width:10000px;  որ փոքրանա ու դառնա բրաուզերի էկրանի չափ
+       կամ  min-width:1px;  որ մեծանա ու դառնա բրաուզերի էկրանի չափ
+
+    3.ամենամեծ բլոկի(դիվի) մեջի բլոկին(դիվին) 
+       1.եթե բարձրություն ու լայնություն չենք տալիս  բարձրությունն ու լայնությունն ընդունում է ծնող էլեմենտի(դիվի) չափով
+       2.եթե լայնությունը տալիս ենք width:100%; այդ դիվի մեջի տարածքի լայնությունը հավասար է լինում ծնող դիվի  լայնությանը իսկ աջ կողմից մեկ եզրագծի(border-ի) լայնության չափով դուրս է թողնում 
+       որպեսզի scroll չքցի պետք է տանք 
+       կամ max-width որպեսզի բրաուզերի էկրանը փոքրացնելուց հետը փոքրանա   
+       կամ  width բայց միառժամանակ ծնող դիվին display flex
+    */

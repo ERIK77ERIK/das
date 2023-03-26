@@ -1,0 +1,37 @@
+.parent {
+    margin: 80px auto;
+    max-width: 900px;
+    height: 700px;
+    background: blueviolet;
+    display:flex;
+    
+    }
+
+    .child {
+        width: 200px;
+        height: 200px;
+        color: #fff;
+        text-align: center;
+        line-height: 200px;
+        background: rgb(12, 107, 64);
+        border: 2px solid red;  
+    }
+
+
+    .child:nth-child(1) {
+        order:1;
+    }
+    .child:nth-child(2) {
+    order:1;
+    background:blue;
+    }
+    .child:nth-child(3) {
+    order:-1;
+    }
+    .child:nth-child(4) {
+    
+    background: red;
+    }
+
+
+    /*order-ը թույլ է տալիս child էլեմենտները տեղափոխել, և փոխել հերթականությունը*/

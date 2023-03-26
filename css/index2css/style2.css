@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Pacifico&display=swap');
+
+p{
+    font-family:'Pacifico', cursive, 'Dancing Script', cursive;
+}
+
+.sometext{
+color: rgb(202, 74, 5);
+font-size:20px;
+text-align:justify;/* տեքստի դիրքաորումը  center կենտրոնով,justify ամբողջ էկրանով,start(left)ձախ կողմը,end(right)աջ կողմը */
+font-weight:500;/*տեքստի ճարպոտությունը 100-900, normal, regular, bold, bolder|| normal, bold */
+font-family: 'EB Garamond', serif;
+letter-spacing:3px;/*տառերի հեռավորությունը*/
+word-spacing:10px;/*բառերի հեռավորությունը*/
+line-height:22px;/*տողերի բարձրությունը*/
+text-transform:capitalize;/*uppercase-ը բոլոր տառերը դարձնումա մեծատառ, lowercase-ը բոլոր տառերը դարձնումա փոքրատառ, capitalize-ը բոլոր բառերի միայն առաջի տառերը դարձնումա մեծատառ */
+text-shadow:3px 3px 2px rgb(6, 202, 13);
+font-style:italic;
+text-indent:30px;/*առաջին բառը մի մատ խորքից(indent-ազատ տեղ)*/
+}
+
+
+    
+/*
+0-255
+color:red;
+color:#f00;
+color:rgb(255,0,0,);
+color:rgba(255,0,0,0.1);
+*/

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 5</title>
+    <link rel="stylesheet" href="index5js/index5js.css">
+</head>
+
+<body>
+
+    <hr>
+    <h1>
+        JAVASCRIPT - Պայմանի օպերատորներ (if(եթե), else(հակառակ դեպքում))
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="js4html.html" target="_blank">JS 4</a>
+
+    <br><br>
+
+    <h2>
+        1.կոդի մեջ մենք շատ հաճախ ուզում  ենք արտահայտել եթե կոնցեպտը օրինակ երբ որ դուք փորձում եք ինչ որ կայք մուտք գործել և գրում եք լոգինն ու գախտնաբառը, կայքի հետևում գրված լոգիկան համեմատում է ձեր գրած լոգինն ու գախտնաբառը և ԵԹԵ համնկնում է նա ներս է թողնում, այսինքն եթե մենք ուզում ենք լոգիկա ստեղծել ասելով եթե համընկավ աշխատացրու մեր բլոկի մեջի կոդը , որը ինչ-որ գործողություն է կատարում(օրինակ այս օրինակում մուտք է թողնում կայք) դա անում ենք if(եթե անգլերեն նշանակում է if) հրամանով <br>
+        2.if(){}, else if(){}, else{} <br>
+        3.եթե if(եթե) պայմանի համեմատությունը ճիշտ է(true է) ապա իր բլոկի մեջի կոդը կաշխատի իսկ եթե սխալ է(false է) ապա
+        կանցնի հաջորդ կոդին<br>
+        4.երկու if(եթե) պայման տալուց, առաջի if պայմանը եթե ճիշտ է ապա երկրորդ if պայմանի տակից գրված else(հակառակ
+        դեպքում) պայմանը նույնպես կաշխատի, քանի որ քանի հատ if պայման տանք այդքան պատուհան է բացվելու<br>
+
+        <br>
+        let x=prompt("Ինչ է ձեր անունը"); <br>
+        let z = x==="Օֆելյա"; <br>
+        if (z) { <br>
+        alert("Դուք շատ գեղեցիկ անուն ունեք " + x ); <br>
+        } <br>
+        if (x==="Վահե") { <br>
+        alert("Ձեր մուտքն արգելված է" + x); <br>
+        } <br>
+        else{ <br>
+        alert("Բարի գալուստ ծրագրաորման աշխարհ "+x); <br>
+        } <br>
+        <br><br>
+        եթե մեր նպատակը մեկ պատուհան բացելն է ապա պետք է մեկ հատ if պայման ստեղծենք և if պայմանի մյուս տարբերակները
+        միացնենք else if(){} (հակառակ դեպքում եթե) պայմանով<br>
+        <br>
+
+        let name=prompt("What is your name?"); <br>
+        let lastname=prompt("what is your lastname?"); <br>
+        <br>
+        if(name==="hakob"){ <br>
+            if(lastname==="hakobyan"){ <br>
+            alert("vay inch hetaqrqira hakob hakobyan"); <br>
+            }  else{ <br>
+               alert("shat vat azganun uneq hakob " + lastname); <br>
+               } <br>
+        } <br>
+        else if(name==="anush"){ <br>
+        alert("voxjuyn anush"); <br>
+        } <br>
+        else if(name==="vazgen"){ <br>
+        alert("barev vazgen"); <br>
+        } <br>
+        else{ <br>
+        alert("hajoxutyun"); <br>
+        } 
+
+    </h2>
+
+
+
+
+
+
+
+    <script src="index5js/index5js.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+.items {
+  margin: 80px auto;
+  max-width: 900px;
+  height: 900px;
+  background: blueviolet;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+
+
+}
+
+.item {
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  line-height: 150px;
+  background: rgb(12, 107, 64);
+  border: 2px solid red;
+
+}
+
+.item:nth-child(1) {
+  align-self: flex-start;
+}
+
+.item:nth-child(2) {
+  align-self: stretch;
+  width: unset;
+}
+
+.item:nth-child(3) {
+  align-self: center;
+  height: 500px;
+}
+
+.item:nth-child(4) {
+  font-size:25px;
+}

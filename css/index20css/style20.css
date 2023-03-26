@@ -1,0 +1,88 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    
+    
+}
+
+html{
+
+
+}
+
+body{
+    background:var(--bg-color);
+    color:var(--text-color)
+}
+
+:root{
+    --bg-color:#232537;
+    --second-bg-color:#4e6390;
+    --text-color:#FFFFFF;
+    --main-color:#f4fb30;
+}
+
+
+/*header design*/
+
+/* եթե box-sizing:border-box; հրամանը տված չի էլեմենտին, էլեմենտի ընդահանուր լայնությունն ու բարձրությունն ընդունում է էլեմենտին տված լայնության ու բարձրության(width-ին ու heigth-ին)տված չափին ավելացնելով padding-ի և border-ի չափը
+
+   եթե box-sizing:border-box; հրամանը տված է էլեմենտին իսկ padding-ի և border-ի չափը իրար հետ փոքր է լայնության կամ բարձրության չափերից ապա էլեմենտի ընդհանուր լայնությունն ու բարձրությունն ընդունում է էլեմենտին տված լայնության ու բարձրության(width-ի ու height-ի) չափով, իսկ (padding-ի ու border-ի չափը ավելացնելով մեջից)
+   եթե box-sizing:border-box; հրամանը տված է էլեմենտին իսկ padding-ի և border-ի չափը իրար հետ մեծ է լայնության կամ բարձրության չափերից ապա էլեմենտի ընդհանուր լայնությունն ու բարձրությունն ընդունում է էլեմենտին տված padding-ի և border-ի չափը իրար հետ
+   */
+
+
+.header{
+  width: 100%;
+  height: 72px;
+
+  padding:0 40px;
+    
+  border: 2px solid red;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content:center;
+}
+
+
+.logodiv{
+    max-width:700px;
+    min-width: 200px;
+    height: 40px;
+border: 2px solid blue;
+}
+.logoa{
+   
+    
+}
+
+
+#menu-icon{
+
+}
+
+
+.navbar{
+display:flex;
+
+
+
+border:2px solid rgb(26, 146, 70);
+}
+.navbar a{
+    text-align: center;
+    line-height: 30px;
+
+  
+   height: 40px;
+   border:2px solid rebeccapurple;
+   
+}
+
+.active,.navbar a:hover{
+    
+}

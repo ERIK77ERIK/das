@@ -1,0 +1,21 @@
+.parent {
+    margin: 80px auto;
+    max-width: 900px;
+    height: 900px;
+    background: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+    
+    }
+
+    .child {
+        width: 150px;
+        height: 150px;
+        color: #fff;
+        text-align: center;
+        line-height: 150px;
+        background: rgb(12, 107, 64);
+        border:2px solid red;
+    }

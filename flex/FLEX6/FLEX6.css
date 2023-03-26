@@ -1,0 +1,21 @@
+.items {
+    margin: 80px auto;
+    max-width: 900px;
+    height: 900px;
+    background: blueviolet;
+    display: flex;
+    flex-flow:row wrap;
+    align-items: center;
+    
+    
+    }
+
+    .item {
+        width:40%;
+        height: 150px;
+        color: #fff;
+        text-align: center;
+        line-height: 150px;
+        background: rgb(12, 107, 64);
+        border:2px solid red;
+    }

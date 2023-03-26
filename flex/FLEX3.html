@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX 3</title>
+    <link rel="stylesheet" href="FLEX3/FLEX3.css">
+</head>
+<body>
+    <hr>
+    <h1>
+      ORDER(կարգ)
+    </h1>
+    <hr>
+    <br><br>
+  
+    <a href="FLEX2.html" target="_blank">FLEX 2</a>
+  
+    <br><br>
+  
+    <h2>
+       1.order-ը թույլ է տալիս child էլեմենտները տեղափոխել, և փոխել հերթականությունը<br>
+       2.order-ը մենք տալիս ենք երեխա էլեմենտներին<br>
+       3.էլեմենտների սկզբնական order-ի արժեքը order:0; է<br>
+       4.էլեմենտները իրար կողք դասաորվում են order-ի փոքր արժեքից մեծ արժեք ձախից աջ հերթականությամբ,իսկ եթե երկու էլեմենտի order-ին տալիսենք նույն արժեքը բրաուզերը դասաորում է սկզբնական դասաորվածությամբ<br>
+       .child:nth-child(1) {<br>
+        order:1;<br>
+    }<br>
+    .child:nth-child(2) {<br>
+    order:1;<br>
+    background:blue;<br>
+    }<br>
+    .child:nth-child(3) {<br>
+    order:-1;<br>
+    }<br>
+    .child:nth-child(4) {<br>
+    <br>
+    background: red;<br>
+    }
+    </h2>
+
+<div class="parent">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+</div>
+
+</body>
+</html>

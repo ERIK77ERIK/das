@@ -1,0 +1,94 @@
+p {
+    margin-top: 0px;
+}
+
+
+.somediv {
+    height: 200px;
+    width: 200px;
+    background: rgb(9, 2, 2);
+    padding: 20px;
+    overflow-x: hidden;
+    display: inline-block;
+}
+
+.somediv2 {
+    width: 1200px;
+    height: 1200px;
+    background: rgb(230, 8, 8);
+}
+
+
+
+.somediv3 {
+    height: 200px;
+    width: 200px;
+    background: rgb(9, 2, 2);
+    padding: 20px;
+    overflow-y: hidden;
+    display: inline-block;
+}
+
+.somediv4 {
+    width: 1200px;
+    height: 1200px;
+    background: rgb(230, 8, 8);
+}
+
+th {
+    padding: 20px;
+}
+
+td {
+    padding: 20px;
+}
+
+
+
+
+
+
+.lik {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+
+}
+
+
+.somediv5 {
+    height: 200px;
+    width: 200px;
+    background: rgb(9, 2, 2);
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.somediv6 {
+    width: 1200px;
+    height: 1200px;
+    background: rgb(230, 8, 8);
+}
+
+
+
+.somediv7 {
+    height: 200px;
+    width: 200px;
+    background: rgb(9, 2, 2);
+    padding: 20px;
+    overflow-y:hidden;
+    
+}
+
+.somediv8 {
+    width: 1200px;
+    height: 1200px;
+    background: rgb(230, 8, 8);
+    
+}
+
+
+
+
+
+

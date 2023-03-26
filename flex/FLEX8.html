@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX 8</title>
+    <link rel="stylesheet" href="flex8/flex8.css">
+</head>
+
+<body>
+    <hr>
+    <h1>
+        FLEX-BASIS: .. px;
+
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="FLEX7.html" target="_blank">FLEX 7</a>
+
+    <br><br>
+
+    <h2>
+    1.flex-basis հրամանը մենք տալիս ենք երեխա էլեմենտներին(item-ներին)<br>
+    2.flex-basis հրամանը կարողանումա փոխել item-ների և լայնությունը(width-ը) և բարձրությունը(height-ը), բայց ոչ միառժամանակ<br>
+    եթե ծնող էլեմենտի(items-ի) գլխաոր ուղղությունը լինի row ապա flex-basis հրամանը փոխում է միայն լայնությունը, իսկ բարձրությունը պետք է փոխենք սովորական height հրամանով<br>
+    եթե ծնող էլեմենտի(items-ի) գլխաոր ուղղությունը լինի column ապա flex-basis հրամանը փոխում է միայն բարձրությունը, իսկ լայնությունը պետք է փոխենք սովորական width հրամանով<br>
+    3.row-ի դեպքում flex-basis հրամանը ավելի առաջնահերթ է width հրամանից<br>
+      column-ի դեպքում flex-basis հրամանը ավելի առաջնահերթ է height հրամանից
+
+    </h2>
+
+    <div class="sparent">
+        <div class="items">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+
+        <div class="parent">
+            <div class="child">1</div>
+            <div class="child">2</div>
+            <div class="child">3</div>
+            <div class="child">4</div>
+        </div>
+    </div>
+</body>
+
+</html>

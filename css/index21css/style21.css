@@ -1,0 +1,346 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+    border:none;
+    outline: none;
+    font-family: 'poppins', sans-serrif;
+    scroll-behavior: smooth;
+
+}
+
+/* header1 design*/
+
+.header1{
+    width: 100%;
+    height: 72px;
+
+    padding: 0px 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:100;
+
+    background: #fff;
+}
+
+.masaraji{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    
+}
+
+
+.logo{
+    font-size:30px;
+    font-weight: 600;
+    color:rgb(0,0,0);
+    font-family:  cursive ;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.divmejybuttonner{
+    display: flex;
+    margin-right: 10%;
+    margin-left: auto;
+}
+.divmejybuttonner button{
+    font-size: 30px;
+    background: none;
+    cursor:pointer;
+}
+button.ggggg{
+    color:rgb(72, 72, 244);
+}
+.hr77hr{
+font-size: 30px;
+cursor: default;
+margin:0 25px;
+color: rgba(0, 0, 0, 0.53);
+
+
+}
+
+
+
+.maserkrord{
+    display:flex;
+    align-items: center;
+   
+}
+
+.maserkrord .maserkrordimejip{
+    
+    margin: 0 24px;
+    font-size: 16px;
+    font-weight: 400;
+    
+    
+}
+
+
+.maserkrord .a1{
+font-size: 14px;
+font-weight: 300;
+color: #20303c;
+}
+
+.maserkrord .a2{
+    text-decoration: none;
+    color:#fff;
+    background: #116dff;
+    border-radius: 21px;
+    margin: 0 0 0 40px;
+    padding:0 27px;
+    height:42px;
+    line-height: 42px;
+    font-size: 16px;
+    
+}
+
+
+/* header2 design */
+
+
+.www{
+    height: 72px;
+}
+
+.navbar1a{
+    position: fixed;
+    z-index: 100;
+    width: 332px;
+    height: 102px;
+    background: #EDCD1F;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar1a img{
+    width: 49px;
+    height: 51px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.masmek{
+display: flex;
+flex-direction: column;
+padding: 0 10px;
+width: 200px;
+}
+
+.masmek a{
+font-size:23px;
+text-decoration: none;
+color:#3b3a3a;
+}
+.ll{
+font-weight: bold;
+}
+
+
+
+.navbar2a{
+width: 100%;
+height: 100px;
+background: #20303c;
+position: fixed;
+z-index: 99;
+}
+
+.navbar2a ul{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-right: 30px;
+    margin-top: 50px;
+    
+}
+.navbar2a ul li{
+    height: 37px;
+    padding: 0 40px;
+    display: flex;
+   align-items: center;
+}
+
+.navbar2a a{
+color:#ffff;
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+transition: .4s ease;
+}
+.navbar2a a:hover{
+    color:#EDCD1F;
+    
+}
+
+/* ГЛАВНАЯ section design */
+
+.wwww{
+    height: 100px;
+}
+
+section{
+    height: 130vh;
+}
+
+section.ГЛАВНАЯ{
+background: url(https://static.wixstatic.com/media/11062b_4f14b356c1df4854968cf1cc94ca98c5f000.jpg/v1/fill/w_1210,h_642,al_c,q_85,usm_0.33_1.00_0.00,enc_auto/11062b_4f14b356c1df4854968cf1cc94ca98c5f000.jpg);
+background-attachment: fixed;
+width: 100%;
+
+background-size: cover;
+}
+
+.jjj{
+font-size: 40px;
+
+height: 204px;
+text-align: center;
+padding-top:70px ;
+color:#fff;
+margin-left:75px;
+}
+.jjj h1{
+
+}
+.jjj a{
+font-size: 140px;
+cursor: pointer;
+color:#fff;
+}
+
+.jj{
+    margin:0 auto;
+    width: 665px;
+}
+
+
+/*  УСЛУГИ section design */
+
+
+section.УСЛУГИ{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+section.УСЛУГИ h2{
+font-size: 55px;
+margin-top:60px;
+}
+
+ .oo{
+width: 200px;
+height: 20px;
+background: #EDCD1F;
+
+margin-bottom: 52px;
+
+}
+
+section.УСЛУГИ .ppp{
+    padding-left:10px;
+
+}
+
+section.УСЛУГИ .ppp .pp{
+    
+    display: flex;
+}
+
+section.УСЛУГИ .ppp .qq{
+margin:0 10px;
+}
+
+section.УСЛУГИ .ppp .qq img{
+width: 300px;
+height: 227px;
+}
+
+
+section.УСЛУГИ .ppp .qq .dd{
+    width: 300px;
+    height: 253px;
+    background: #6a4343;
+    transform: translateY(-10px);
+    padding:33px 20px;
+    text-align: center;
+}
+section.УСЛУГИ .ppp .qq .dd h2{
+font-size: 22px;
+margin:0;
+}
+
+section.УСЛУГИ .ppp .qq .dd p{
+font-size: 15px;
+line-height: 25px;
+}
+
+@media screen and (max-width:1100px){
+
+/* header1 design */
+
+    .masaraji{
+
+    }
+    .logo{
+
+    }
+    .hr77hr{
+        margin:0 14px;
+    }
+
+    .maserkrord{
+    
+    }
+    .maserkrord .maserkrordimejip{
+       font-size: 14px;
+    }
+    .maserkrord .a1{
+
+    }
+    .maserkrord .a2{
+       font-size: 14px;
+       margin:0 30px;
+    }
+
+
+    /* header2 design */
+
+/* ГЛАВНАЯ section design */
+
+/* УСЛУГИ section design */
+}
+
+
+
+@media screen and (max-width:320px){
+
+    /* header1 design ??*/
+
+
+
+    /* header2 design */
+
+
+
+    /* ГЛАВНАЯ section design */
+
+
+    /* УСЛУГИ section design */
+
+}
