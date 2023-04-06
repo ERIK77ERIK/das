@@ -9,7 +9,7 @@ if (user> 18 || user < 12) {
 } 
 
 let user2 = +prompt("How old are you?");
-if (!!!(user2> 18)) {
+if (!!!(user2 > 18)) {
     alert("ձեր տարիքը համապատասխանում է");
 } 
 

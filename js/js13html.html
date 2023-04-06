@@ -2,32 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS 13</title>
-    <link rel="stylesheet" href="index13js/index13js.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 13</title>
+  <link rel="stylesheet" href="index13js/index13js.css">
 </head>
 
 <body>
 
+  <hr>
+  <h1>
+    JAVASCRIPT - % օպերատոր
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="js12html.html" target="_blank">JS 12</a>
+
+  <br><br>
+
+  <h2>
+    1.%(տոկոս) օպերատորը բաժանում է երկու թիվ և վերադարձնում է մնացորդը <br>
+    2.մենք կարող ենք % օպերատորը օգտագործել որպեսզի հասկանանք որևէ թիվ կենտ է թե զույգ այսինքն եթե մենք որևէ թիվ անենք %
+    2 և արդյունքը լինի 0 կիմանանք որ զույգ է իսկ հակառակ դեպքում կիմանանք որ կենտ Է <br>
+    <br><br>
+    alert(5 % 2); <br>
+    կտպի 1
+    <br><br><br>
+    let x = [5, 56, 4, 2, 7, 579, 6]; <br>
+    let y = []; <br>
+    <br>
+    let i = 0; <br>
+    let i2 = 0; <br>
+    while(i < x.length) { <br>
+       if(x[i] % 2 !== 0) { <br>
+        y[i2]=x[i] <br>
+      i2=i2 + 1 <br>
+    } <br>
+    i=i + 1 <br>
+    } <br>
+    alert(y); <br>
+    <br>
+    կտպի զանգվածի մեջի կենտ թվերը <br>
+    <br><br>
+    i=0; <br>
+    i2=0; <br>
+    while(i < x.length) { <br>
+      if(x[i] % 2 === 0) { <br>
+        y[i2]=x[i] <br>
+        i2=i2 + 1 <br>
+      } <br>
+      i=i + 1 <br>
+    } <br>
+    alert(y); <br>
+    <br>
+    կտպի զանգվածի մեջի զույգ թվերը
+  </h2>
+
+  <br><br><br>
+
     <hr>
     <h1>
-      JAVASCRIPT - 
+      Վարժություն
     </h1>
     <hr>
-    <br><br>
-
-    <a href="js12html.html" target="_blank">JS 12</a>
-
-    <br><br>
+    <br>
 
     <h2>
-       
+      let a = 55; <br>
+      let b = 7; <br>
+      let z = 12, d = a + b; <br>
+      let o = [a*2]; <br>
+      o[b] = 3; <br>
+      <br>
+      alert( ( !!!(z === 4+3*2+(5%2)) && !(o[0] === 112) ) || ( a*b<100 && o.length>=8 ) ); <br>
+        <br>
+      կտպի true
     </h2>
 
-
-    <script src="index13js/index13js.js"></script>
+      <script src="index13js/index13js.js"></script>
 </body>
 
 </html>
