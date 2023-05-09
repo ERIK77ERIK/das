@@ -1,5 +1,3 @@
-debugger;
-
 let x=7, y=5;
 alert(x + y + "բարև" + x + y);
 

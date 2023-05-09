@@ -15,17 +15,19 @@
 // alert(zoo);
 
 // let zoo = [5, 2, 3];
-// let ref = [];
+// let r = [];
 // zoo.forEach(function(val,i) {
-//    ref[i] = val * 3;
+//    r[i] = val * 3;
 // });
-// alert(ref);
+// alert(r);
 
 
 // // 2  
-// map ֆունկցիաին տված ֆունկցիան էն արժեքը որը որ վերադարձնում է, map ֆունկցիայի մեջ վերագրվում է նոր զանգվածի նույն index-ի մեջ, հին զանգվածը չի փոխում, և map ֆունկցիան մեզ վերադարձնում է այդ նոր զանգվածը
+// // ֆունկցիան աշխատելով այնքան անգամ որքան մեր տված զանգվածի մեջ եղած անդամների քանակն է և ամեն անգամ ստանալով մեր տված զանգվածի անդամները հերթականությամբ 
+// // map ֆունկցիաին տված ֆունկցիան էն արժեքը որը որ վերադարձնում է, map ֆունկցիայի մեջ վերագրվում է նոր զանգվածի նույն index-ի մեջ, հին զանգվածը չի փոխում, և map ֆունկցիան մեզ վերադարձնում է այդ նոր զանգվածը
 
 // let zoo = [5, 2, 3];
+
 // let map = function(arr, fun) {
 //     let r = [];
 //     let i = 0;
@@ -41,34 +43,49 @@
 // }));
 // alert(zoo);
 
+// // կամ
+
+// let zoo = [5, 2, 3];
+// let map = function(arr, fun) {
+//     let r = [];
+//     arr.forEach(function(val,i){
+//         r[i] = fun(val);
+//     };
+//     return r;
+// }
+
+// alert(zoo.map(function(val) {
+//       return val * 3;
+// }));
+// alert(zoo);
 
 
-// // 3
+// // 3 օրինակ
 
-// let people = [
-//     {
-//         name: "Jone",
-//         lastname: "Mikayelyan"
-//     },
-//     {
-//         name:"Mike",
-//         lastname: "Poghosyan"
-//     }
-// ];
+let people = [
+    {
+        name: "Jone",
+        lastname: "Mikayelyan"
+    },
+    {
+        name:"Mike",
+        lastname: "Poghosyan"
+    }
+];
 
-// let nam = [];  
-// people.forEach( function(val, i) {
-//     nam[i] = val.name ;
-// });
-// alert(nam);
+let nam = [];  
+people.forEach( function(val, i) {
+    nam[i] = val.name ;
+});
+alert(nam);
 
 
 
-// let names = people.map(function(val) {
-//     return val.name;
-// });
+let names = people.map(function(val) {
+    return val.name;
+});
 
-// alert(names);
+alert(names);
 
 
 

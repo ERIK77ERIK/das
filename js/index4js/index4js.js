@@ -10,6 +10,7 @@ let b=false;
 alert(a + b);
 alert(a + " " + b);
 
+
 let z=prompt("գրիր 7");
 
 alert(z===7);
