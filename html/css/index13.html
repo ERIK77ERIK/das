@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 13</title>
+  <link rel="stylesheet" href="index13css/style13.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    MEDIA ՀԱՐՑՈՒՄՆԵՐ || +responsive
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="index12.html" target="_blank">CSS 12</a>
+
+  <br><br>
+
+  <h2>
+    1. @media screen(էկրան) and (max-width:600px) {<br>
+    selector {
+    <br>
+    }<br>
+    }<br>
+    2.median-ն առաջնահերթություն չի և բրաուզերը կարդում է ներքեվից վերև <br>
+    3.եթե նույն media-ին երկու արժեք ենք տալի բրաուզերը ընտրում է հատումը <br>
+    @media screen and (max-width:600px) and (min-width:300px) {<br>
+    selector {
+    <br>
+    }<br>
+    }<br>
+    4.եթե երկու իրար տակ media է գրած media-ների width-երի րնդհանուր մասի ժամանակ բրաուզերը ընտրում է տարբեր media-ների
+    մեջի նույն selector-ի մեջի գրած min-width-ի և max-width-ի 2 պայմաներն ել առաջնահերթ համարելով մեծ արժեքը <br> օրինակ
+    եթե նույն selector-ի մեջի min-width-ը 200px է և max-width-ը 100px ապա 200-ից ավել չի փոքրացնում բայց չի ել մեծացնում
+
+  </h2>
+
+
+
+
+  <div class="somediv">Lorem ipsum dolor excepturi, nam dolorum.</div>
+
+  <p id="lll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur molestiae provident dignissimos esse
+    distinctio doloremque, voluptas earum dolorum quae reprehenderit!</p>
+
+  <p id="kkk">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quam.</p>
+</body>
+
+</html>

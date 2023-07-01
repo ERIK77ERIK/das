@@ -1,0 +1,36 @@
+.some_div{
+width:400px;
+height:400px;
+border:2px solid rgb(0,0,0);
+}
+
+.some_div_child{
+background:red;
+height:100%;
+width:100%;
+}
+
+
+.some{
+    background: rebeccapurple;
+}
+
+
+p{
+    display: inline;/*block(արգելփակել), inline(տողի մեջ), inline-block, none(ոչինչ), | display(ցուցադրել)*/
+    color:rgb(232, 224, 211);
+}
+
+#a1{
+    background: rgb(19, 5, 112);
+
+}
+
+#a2{
+    background: green;
+}
+
+span{
+    display:block;
+}
+

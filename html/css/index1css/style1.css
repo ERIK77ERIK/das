@@ -1,0 +1,39 @@
+/*
+h1, class, id, p, span
+
+  selector:{
+    code:resault;
+  }
+
+  1.CSS-ը կարդում է ներքևից վերև
+  2.պետք է ամեն հրամանից հետո կետ ստորակետով փակել տողը
+  3.չպետք է գլոբալ սթայլեր տալ ինչ որ էլեմենտների կամ թեգերի
+
+  գույները
+  r - red
+  g - green
+  b - blue
+
+  class = .
+  id = #
+*/
+
+h2{
+color:rgb(2, 2, 133);
+font-size:30px;
+font-family:arial;
+background:rgb(148, 48, 48);
+}
+
+h1 > span {
+color:gray;
+font-style:italic;
+}
+
+.some{
+color:rgb(245, 60, 8);
+background:rgb(231, 138, 112);
+}
+
+
+

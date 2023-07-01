@@ -1,0 +1,70 @@
+/*1.median-ն առաջնահերթություն չի և բրաուզերը կարդում է ներքեվից վերև 
+  2.եթե նույն media-ին երկու արժեք ենք տալի բռաւզերը ընտրում է հատումը  
+  3.եթե երկու իրար տակ media է գրած media-ների width-երի րնդհանուր մասի ժամանակ բրաուզերը ընտրում է տարբեր media-ների մեջի նույն selector-ի մեջի գրած min-width-ի և  max-width-ի 2 պայմաներն ել առաջնահերթ համարելով մեծ արժեքը 
+    օրինակ եթե նույն selector-ի մեջի min-width-ը 200px է և max-width-ը 100px ապա 200-ից ավել չի փոքրացնում բայց չի ել մեծացնում  */
+
+
+.somediv {
+    background: rgb(237, 12, 12);
+    color: antiquewhite;
+    padding: 20px;
+    font-family: cursive;
+    height: 300px;
+}
+
+
+  @media screen and (min-width:500px) {
+    .somediv {
+        background: rgb(128, 0, 105);
+       
+        max-width: 100px;
+        font-size: 30px;
+
+    }
+
+    #lll {
+        background: rgb(46, 204, 96);
+        color: rgb(250, 255, 205);
+        font-size: 20px;
+    }
+}
+  
+  
+  @media screen and (max-width:700px) {
+    .somediv {
+        background: rgb(0, 128, 23);
+        min-width: 300px;
+        font-size: 30px;
+
+    }
+    #lll {
+        background: rgb(46, 204, 85);
+        color: rgb(208, 255, 205);
+        font-size: 20px;
+    }
+}
+
+
+#lll {
+    background: rgb(12, 9, 169);
+    color: rgb(200, 175, 139);
+    font-size: 20px;
+}
+
+
+
+
+
+#kkk {
+    color: brown;
+    background: rebeccapurple;
+    display: none;
+}
+@media screen and (max-width:600px) and (min-width:300px) {
+    #kkk {
+        display: block;
+        min-width: 200px;
+        max-width: 400px;
+        
+    }
+}

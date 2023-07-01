@@ -1,0 +1,25 @@
+.aaaa{
+    max-width: 700px;
+    max-height: 700px;
+    background: rgb(4, 4, 23);
+    color:antiquewhite;
+}
+
+.aaa{
+    min-width: 700px;
+    min-height: 700px;
+    background: rgb(4, 4, 23);
+    color:antiquewhite;
+}
+
+
+
+/*
+width:ֆիքսված չափ
+min-width:չի փոքրանում մեր կողմից գրված չափից բայց մեծանումա
+max-width:չի մեծանում մեր կողմից գրված չափից բայց փոքրանումա 
+
+height:ֆիքսված չափ
+min-height:չի փոքրանում մեր կողմից գրված չափից բայց մեծանումա
+max-height:չի մեծանում մեր կողմից գրված չափից բայց փոքրանումա 
+*/

@@ -1,42 +1,75 @@
-// Գրել ֆունկցիա transform անունով, որը կստանա օբյեկտներից կազմված զանգված այլ տեսքի
+/*
+Math
+   round
+   floor
+   ceil
 
-let a = [
-    {fn: "Joe", In: "Mikayelyan", ph: "039 323 233", gender: "male"},
-    {fn: "Mike", In: "Hovsepyan", ph: "039 323 233", gender: "male"},
-    {fn: "Jane", In: "Karapetyan", ph: "039 323 233", gender: "female"},
-    {fn: "Jill", In: "Isahaknyan", ph: "039 323 233", gender: "female"}
-]
+   min
+   max
 
-// ֆունկցիան պետք է զանգվածից ստանա միայն այն արժեքները, որոնց gender-ի արժեքը "female" է,
-// և վերադարձնի այդ օբյեկտներից կազմված զանգված հետևյալ տեսքի
+   pow
 
-// [
-//     {firstName: "Jane", lastName: "Karapetyan", phone: "039 323 233", gender: "female" },
-//     {firstName: "Jill", lastName: "Ishakyan", phone: "039 323 233", gender: "female" }
-// ]
+   random  // 0 - 1
+*/
 
-
-// // Օրինակ'
-// Transform([
-//     {fn: "Joe", In: "Mikayelyan", ph: "039 323 233", gender: "male"},
-//     {fn: "Mike", In: "Hovsepyan", ph: "039 323 233", gender: "male"},
-//     {fn: "Jane", In: "Karapetyan", ph: "039 323 233", gender: "female"},
-//     {fn: "Jill", In: "Isahaknyan", ph: "039 323 233", gender: "female"}
-// ])
-// // վերադարձնում է'
-// [
-//     {firstName: "kate", lastName: "Karapetyan", phone: "039 323 233", gender: "female" },
-//     {firstName: "Jill", lastName: "Isahakyan", phone: "039 323 233", gender: "female" }
-// ]
+// // Math object-ին կցած են որոշ ֆունկցիաներ որոնք որ հնարաորություն են տալիս որոշ մաթեմաթիկական գործողություններ անել
 
 
-function transform(arr) {
- return arr.filter(function(val){
-    return val.gender === "female"
-}).map(function(val) {
-    
-     return {firstName: val.fn, lastName: val.In, phone: val.ph, gender: val.gender}
-})
-};
 
-alert(JSON.stringify(transform(a)))
+// // 1. round ֆունկցիային տալիս ենք թիվ և նա այդ թիվը կլորացնում 
+
+// alert(Math.round(3.5));
+
+// // կտպի 4
+
+
+
+// // 2. floor(հատակ) ֆունկցիան թիվը կլորացնում է դեպի ներքև
+
+// alert(Math.floor(3.9));
+
+// // կտպի 3
+
+
+
+// // 3. ceil(առաստաղ) ֆունկցիան թիվը կլորացնում է դեպի վերև
+
+// alert(Math.ceil(3.1))
+
+// // կտպի 4
+
+
+// // 4. min ֆունկցիաին տալիս ենք թվեր և նա վերադարձնում է ամենափոքր թիվը
+
+// alert(Math.min(5, 47, 18, 3));
+
+// // կտպի 3
+
+// // 5. max ֆունկցիաին տալիս ենք թվեր և նա վերադարձնում է ամենամեծ թիվը
+
+// alert(Math.max(3, 10, 20, 5));
+
+// // կտպի 20
+
+
+// // 6. pow ֆունկցիային տալիսենք երկու թիվ և նա վերադարձնում է առաջի թվին բարձրացրած երկրորդ թվի աստիճանը
+
+// alert(Math.pow(2, 3));
+
+// // կտպի 8
+
+
+
+// // 7. random(պատահական) ֆունկցիան վերադարձնում է որևէ թիվ 0-ից մինչև 1-ը ընկած սահմանում
+
+// alert(Math.random());
+
+// // կտպի 0 կամ 0,․․
+
+
+/// եթե մենք ուզում ենք ստանանք 1-ից մինչև 10
+
+// alert(Math.floor(Math.random() * 10) + 1);
+// for(let i = 0; i < 10; i++ ) {
+//     alert(Math.floor(Math.random() * 10) + 1);
+// }

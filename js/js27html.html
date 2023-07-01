@@ -33,7 +33,7 @@
     և նաև վերադարձնումա մեր տված զանգվածի մեջի անդամների քանակը(ավելի ճիշտ արդեն փոխած զանգվածի վերջի անդամի index-ը +
     1) <br>
     <br>
-    let x = [7, 10, 22,]; <br>
+    let x = [7, 10, 22]; <br>
     <br>
     let unshift = function(arr, val) { <br>
     let i = arr.length - 1; <br>
@@ -169,19 +169,19 @@
        return -1 <br>
     }; <br>
     <br>
-    alert(findIndex(x, function(var) { <br>
-        return var === 10 <br>
+    alert(findIndex(x, function(val) { <br>
+        return val === 10 <br>
     })) <br>
     կտպի 1
     <br><br>
     7.find ֆունկցիաին տալիս ենք զանգված ու ֆունկցիա և մեր տված ֆունկցիան <br>
     աշխատելով այնքան անգամ որքան մեր տված զանգվածի մեջ եղած անդամների քանակն է և ամեն անգամ ստանալով մեր տված զանգվածի անդամները հերթականությամբ <br>
-    այն արժեքը որի ժամանակ աշխատացնելուց findIndex ֆունկցիային տված ֆունկցիան կվերադարձնի true , findIndex ֆունկցիան մեզ կվերադարձնի այդ արժեքը <br>
+    այն արժեքը որի ժամանակ աշխատացնելուց findIndex ֆունկցիային տված ֆունկցիան կվերադարձնի true , find ֆունկցիան մեզ կվերադարձնի այդ արժեքը <br>
     <br>
     x = [7, 10, 22, 55, 100, 3, 10]; <br>
     <br>
     let find = function(arr, fun) { <br>
-       let i = findIndex(arr, fun); <br>
+       let i = arr.findIndex(fun); <br>
        if(i !== -1) { <br>
         return arr[i] <br>
        } <br>

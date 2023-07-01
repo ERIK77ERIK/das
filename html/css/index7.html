@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 7</title>
+    <link rel="stylesheet" href="index7css/style7.css">
+</head>
+<body>
+
+    <hr>
+    <h1>DISPLAY(ցուցադրել)։block; <br>(block(արգելփակել), inline(տողի մեջ), inline-block, none(ոչինչ), flex(ճկել), grid(ցանց))<br><br>
+    MARGIN, PADDING</h1>
+    <hr>
+    <br><br>
+
+<a href="index6.html" target="_blank">CSS 6</a>
+<br><br>
+
+<h2>1.inline տիպի էլեմենտները չեն ունենում ոչ լայնություն և ոչ բարձրություն<br>
+2.inline տիպի էլեմենտներին լայնություն և բարձրություն տալու համար կամ պիտի սարքենք block(display:block;) տիպի կամ եթե ուզում ենք իրար կողք կանգնի  inline-block(display:inline-block;)<br> 
+3.եթե ծնող div-ին տալիս ենք flex(display:flex;)  իսկ երեխա div-ը դարձնում ենք inline(display:inline;) ապա flex-ը պահում է երեխա div-ի  լայնությունն ու բարձրությունը<br>
+4.display:flex;-ը և display:grid;-ը մենք չենք կարող տալ երեխա div-ին այլ պետք է տանք ծնող div-ին<br>
+5.եթե մենք ուզումենք 4 div-երը կանգնեն իրար կողք   grid-template-columns:repeat(4, 1fr);(ֆրակցիա,grid-ի չափման միավոր, որ աշխատում է միայն գրիդի հետ)<br><br>
+
+6.inline տիպի էլեմենտների վրա չեն աշխատում margin(-top)-ն ու margin(-bottom)-ը միայն աշխատում է միայն margin(-left)-ն ու margin(-right)-ը<br>
+7.եթե ցանկանումեք Էլեմենտների տալ margin և նրանք աշխատեն չորս կողմից կարողեք նրանց տալ կամ display:block; կամ display:inline-block;<br>
+8.MARGIN-ը օգտագործում է էլեմենտից դուրս գտնվող տարածքը<br>(երկու էլեմենտների վերևի և ներքևի margin-ները իրարից հեռավորություն չեն պահում(օրինակ եթե առաջին div-ը ունի margin-bottom:20px իսկ երկրորդ div-ը margin-top:10px; ապա նրանց հեռավորությունը կլինի 20px), երկու էլեմենտների աչ և ձախ margin-ները իրարից հեռավորություն են պահում, օրինակ եթե առաջին div-ը ունի margin-right:10px; իսկ երկրորդ div-ը margin-left:20px; նրանց հեռավորությունը կլինի 30px)<br>
+9.PADDING-ը օգտտագործում է Էլեմենտից ներս գտնվող տարածքը()</h2>
+ <div class="parent">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    
+    
+ </div>
+ 
+ <div class="parent1">
+    <p class="divp">lorem4</p>
+ </div>
+<p class="p2">Lorem ipsum dolor sit amet.</p>
+
+
+</body>
+</html>

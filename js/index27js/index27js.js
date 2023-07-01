@@ -210,11 +210,10 @@
 // այն արժեքը որի ժամանակ աշխատացնելուց findIndex ֆունկցիային տված ֆունկցիան կվերադարձնի true , findIndex ֆունկցիան մեզ կվերադարձնի այդ արժեքը 
 
 
-
 // let x = [7, 10, 22, 55, 100, 3, 10];
 
 // let find = function(arr, fun) {
-//    let i = findIndex(arr, fun);
+//    let i = arr.findIndex(fun);
 //    if(i !== -1) {
 //     return arr[i]
 //    }
@@ -238,5 +237,6 @@
 //   return val > 50;
 // }))
 
+// // կտպի 3 հետո 55
 
 // // javascript array api

@@ -1,0 +1,13 @@
+.someclass {
+    width: 200px;
+    height: 200px;
+    background: rebeccapurple;
+
+    transform: translate(200px);
+    transition: 4s;
+}
+
+
+.someclass:hover {
+    transform: rotate(225deg) ;
+}

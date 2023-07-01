@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 5</title>
+    <link rel="stylesheet" href="index5css/style5.css">
+</head>
+<body>
+
+    <hr>
+    <h1>BACKGROUND(ֆոն)(-size, -repeat, -position)<br>
+        BACKGROUND-ATTACHMENT(հավելված):scroll; (scroll,local   fixed(ամրագրված,ֆիքսված)  inherit(ժառանգել)) <br>
+        BORDER(եզրագիծ)(-top, -right, -bottom, -left,   -radius(-top-left-radius, bottom-ridge-radius))<br>
+         PX, %, VH, VW</h1>
+    <hr>
+    <br><br>
+
+
+
+<a href="index4.html" target="_blank">CSS 4</a>
+<br><br><br>
+
+
+
+<h2>1.background:url('');  (../image/images.jpg)
+<br><br>
+    2.background-size:auto;   auto,cover(ծածկոց),contain(պարունակում է(ամբողջ նկարը)),100% <br>
+    cover -ը ուղահայաց նկարների դեպքում կենտրոնը ընտրվում է ըստ բարձրության,հորիզոնական նկարների դեպքում կենտրոնը ընտրում է ըստ լայնության <br>
+    height< width(contain=100%),height>width(cover=100%)
+<br><br>
+    3.background-repeat:repeat;   repeat(կրկնել),no-repeat(չկրկնել),repeat-x(հորիզոնական դիրքով է կրկնում),repeat-y(ուղղահայաց դիրքով է կրկնում)
+<br><br>
+    4.background-position: 50% 50%;    X, Y | 0% 0% | position(դիրք)
+</h2>
+
+    <div class="das"></div>
+
+
+
+    
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur id voluptas totam animi dicta fugit reprehenderit cupiditate eveniet ad voluptates explicabo repudiandae, temporibus placeat aliquam dignissimos. Quo consequuntur beatae obcaecati voluptatibus impedit exercitationem illum, sed tempora, molestias aperiam id magni.</p>
+
+    <h2> BACKGROUND-ATTACHMENT(հավելված):scroll; (scroll,local   fixed(ամրագրված,ֆիքսված)  inherit(ժառանգել))</h2>
+    <h2>1.նկարը fixed-ի հետ օգտագործելիս contain-ը ամբողջ էկրանի չափովա բերում | | ուղղահայաց նկարների դեպքում width:x% -ի դեպքում եթե էջը փոքրացնելուց div-ի եզրագիծը հասնում է նկարի x%-ին նկարը համատեղ փոքրանում է էջի հետ , | հորիզոնական նկարների դեպքում width:x% -ի դեպքում  div-ի մեջ նկարը ընդունում է լայնության x%-ը և էջը փոքրացնելիս  էջի հետ համատեղ փոքրանում է քանի որ contain-ի նպատակը ամբողջ նկարը ցույց տալն է
+        <br>
+        2.նկարը fixed-ի հետ օգտագործելիս cover-ը ամբողջ էկրանի չափովա բերում | | ուղղահայաց նկարների դեպքում   էջը փոքրացնելիս  նկարը փոքրանում է էջի հետ համատեղ, քանի որ cover-ը ծածկում է ամբողջ  div-ը կենտրոնը ընտրելով ըստ բարձրության, | հորիզոնական նկարների դեպքում էջը փոքրացնելիս նկարը չի փոքրանում քանի որ cover-ի նպատակը ազատ տեղ չթողնելն է և նկարը ամբողջ էկրանի չափով տեղաորվելուց կենտրոնը ընտրել է ըստ լայնության</h2>
+    <div class="mydiv"></div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aut provident consequuntur, autem aspernatur debitis voluptas quisquam nulla pariatur atque excepturi libero nesciunt odio consectetur iste vel quia! Adipisci labore vero accusamus deleniti itaque explicabo similique dolor voluptas necessitatibus ipsa.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel soluta assumenda esse suscipit neque consequatur porro, illo rem numquam autem similique adipisci voluptatem ratione sunt facilis maiores voluptates dolorem ducimus quos sequi omnis optio? Cum nobis numquam pariatur obcaecati reprehenderit.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia praesentium qui harum fugit. Eveniet in quod repellat, laboriosam nemo explicabo dignissimos commodi voluptates ipsa quis quo voluptatum neque mollitia. Aliquam cumque quisquam non vitae neque, ipsam autem architecto culpa est?</p>
+
+
+
+
+
+
+
+<h2>
+      BORDER(եզրագիծ)<br>
+    1.border:2px(եզրագծի լայնությունը) inset(ձևը) rgb(գույնը);<br>
+    border(-top, -right, -bottom, -left,):<br>
+    2.border-radius: x x x x ;
+    border(-top-ridge-radius: 10px 100px; ,bottom-left-radius: 100px 10px;)</h2>
+
+    <div class="super"></div>
+    <br>
+
+    <div class="super1"></div>
+
+</body>
+</html>

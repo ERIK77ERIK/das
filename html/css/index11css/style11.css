@@ -1,0 +1,566 @@
+/*animation(անիմացիա), infinte(անվերջ), alternate(հաջորդել)*/
+
+
+
+.sham {
+    width: 1000px;
+    height: 1000px;
+    transform: translateX(300px) translateY(100px);
+}
+p {
+    display: flex;
+    justify-content: center;
+
+    font-size: 15px;
+    margin: 1px 0px;
+    padding: 5px;
+}
+
+
+.ketdiv {
+    width: 200px;
+    height: 200px;
+    border: 0.5px solid red;
+    transform: scale(1.06) translatex(47px);
+    border-radius: 50%;
+    background: url('https://c8.alamy.com/compfr/2b24d29/statue-de-la-liberte-paris-france-une-replique-de-la-statue-originale-sur-l-ile-aux-cygnes-paris-france-2b24d29.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    animation: rotateanime 60s infinite alternate;
+
+}
+  .q1 {
+    transform: translateX(1px) translatey(-8.4px);
+    font-size: 7px;
+  }
+
+  .q2 {
+    transform: translateX(-1px) translatey(-27px);
+    font-size: 7px;
+  }
+
+  .q3 {
+    font-size: 7px;
+    transform: translateX(10.625px) translateY(-45.6px) rotate(6deg);
+  }
+
+  .q4 {
+    font-size: 7px;
+    transform: translateX(21.25px) translatey(-63.2px) rotate(12deg);
+  }
+
+  .q5 {
+    font-size: 7px;
+    transform: translateX(31.875px) translatey(-78.5px) rotate(18deg);
+  }
+
+  .q6 {
+    font-size: 7px;
+    transform: translateX(42.5px) translatey(-93.4px) rotate(24deg);
+  }
+
+  .q7 {
+    font-size: 7px;
+    transform: translateX(60px) translateY(-102px) rotate(36deg);
+  }
+
+  .q8 {
+    font-size: 7px;
+    transform: translateX(67px) translateY(-115px) rotate(42deg);
+  }
+
+  .q9 {
+    font-size: 7px;
+    transform: translateX(74px) translateY(-126.5px) rotate(48deg);
+  }
+
+  .q10 {
+    font-size: 7px;
+    transform: translateX(80px) translateY(-138px) rotate(54deg);
+  }
+
+  .q11 {
+    font-size: 7px;
+    transform: translateX(90px) translateY(-139.5px) rotate(66deg);
+  }
+
+  .q12 {
+    font-size: 7px;
+    transform: translateX(93.3px) translateY(-150px) rotate(72deg);
+  }
+
+  .q13 {
+    font-size: 7px;
+    transform: translateX(96px) translateY(-158px) rotate(78deg);
+  }
+
+  .q14 {
+    font-size: 7px;
+    transform: translateX(98px) translateY(-165px) rotate(84deg);
+  }
+
+
+
+
+#tver {
+    border-radius: 50%;
+    border: 0.5px solid rgb(0, 0, 0);
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    transform: translatey(-201.5px) translateX(50px);
+}
+  .p1 {
+    transform: translatex(45px) translatey(-15px) rotate(30deg);
+  }
+  .p2 {
+    transform: translatex(75px) translatey(-15px) rotate(60deg);
+  }
+  .p3 {
+    transform: translatex(90px) rotate(90deg);
+  }
+  .p4 {
+    transform: translateX(75px) translatey(15px) rotate(120deg);
+  }
+  .p5 {
+    transform: translatex(45px) translatey(15px) rotate(150deg);
+  }
+  .p6 {
+    transform: rotate(180deg);
+  }
+  .p7 {
+    transform: translatex(-45px) translatey(-43px) rotate(210deg);
+ }
+  .p8 {
+    transform: translateX(-75px) translatey(-101px) rotate(240deg);
+  }
+  .p9 {
+    transform: translatex(-90px) translatey(-170px) rotate(270deg);
+  }
+  .p10 {
+    transform: translatex(-75px) translatey(-245px) rotate(300deg);
+  }
+  .p11 {
+    transform: translatex(-45px) translatey(-305px) rotate(330deg);
+  }
+
+
+
+
+
+
+.mejtexigic12 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translateX(148.7px) translateY(-407px) rotate(90deg);
+}
+.mejtexigic3 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translateX(252px) translateY(-304px);
+}
+.mejtexigic6 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translateX(148.7px) translateY(-203.2px) rotate(90deg);
+}
+.mejtexigic9 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(45px) translatey(-307.5px);
+}
+.mejtexigic1 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(203.5px) translatey(-397.5px) rotate(-60deg);
+}
+.mejtexigic2 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(238px) translatey(-363px) rotate(-30deg);
+}
+.mejtexigic4 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(238px) translatey(-261px) rotate(30deg);
+}
+.mejtexigic5 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(203.5px) translatey(-227px) rotate(60deg);
+}
+.mejtexigic7 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(94.5px) translatey(-228.5px) rotate(120deg);
+}
+.mejtexigic8 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(61.5px) translatey(-262.5px) rotate(150deg);
+}
+.mejtexigic10 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(61.5px) translatey(-375px) rotate(30deg);
+}
+.mejtexigic11 {
+    width: 2px;
+    border: 0.5px solid rgb(0, 0, 0);
+    transform: translatex(94.5px) translatey(-408.5px) rotate(60deg);
+}
+
+
+
+
+
+
+.mejtexishrjan {
+    width: 150px;
+    height: 150px;
+    border: 0.5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    transform: translatex(74.6px) translatey(-396.5px) scale(0.04);
+}
+
+
+
+.slaqner {
+    transform: translateX(100.4px) translateY(-512.9px);
+
+}
+
+  .divvarkyanslaqdiv {
+    width: 100px;
+    height: 100px;
+    
+  }
+  .varkyanslac {
+    font-size: 60px;
+    font-weight: 100;
+    transform: translateY(-35.5px);
+  }
+  .varkyanslaqdiv {
+  animation: basanime 60s infinite ;
+  }
+
+  .divropeslaqdiv {
+    width: 100px;
+    height: 100px;  
+    transform: translateY(-111.5px) ;
+  }
+  .ropeslac {
+    font-size: 60px;
+    font-weight: 800;
+    transform: translateY(-25.2px);
+  }
+  .ropeslaqdiv {
+    width: 100px;
+    height: 100px;
+    animation: basanime 3600s infinite;
+  }
+
+
+  .divshamslaqdiv {
+    width: 100px;
+    height: 100px;
+    transform: translateY(-213px) rotate(60deg);
+  }
+  .shamslaq {
+    font-size: 40px;
+    font-weight: 900;
+    transform: translateY(-3.3px);
+  }
+  .shamslaqdiv {
+    width: 100px;
+    height: 100px;
+    animation: basanime 43200s infinite;
+  }
+
+
+
+@keyframes basanime {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    1.66% {
+        transform: rotate(6deg);
+    }
+
+    3.32% {
+        transform: rotate(12deg);
+    }
+
+    4.98% {
+        transform: rotate(18deg);
+    }
+
+    6.64% {
+        transform: rotate(24deg);
+    }
+
+    8.3% {
+        transform: rotate(30deg);
+    }
+
+    9.96% {
+        transform: rotate(36deg);
+    }
+
+    11.62% {
+        transform: rotate(42deg);
+    }
+
+    13.28% {
+        transform: rotate(48deg);
+    }
+
+    14.94% {
+        transform: rotate(54deg);
+    }
+
+    16.6% {
+        transform: rotate(60deg);
+    }
+
+    18.26% {
+        transform: rotate(66deg);
+    }
+
+    19.92% {
+        transform: rotate(72deg);
+    }
+
+    21.58% {
+        transform: rotate(78deg);
+    }
+
+    23.24% {
+        transform: rotate(84deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    26.66% {
+        transform: rotate(96deg);
+    }
+
+    28.32% {
+        transform: rotate(102deg);
+    }
+
+    29.98% {
+        transform: rotate(108deg);
+    }
+
+    31.64% {
+        transform: rotate(114deg);
+    }
+
+    33.3% {
+        transform: rotate(120deg);
+    }
+
+    34.96% {
+        transform: rotate(126deg);
+    }
+
+    36.62% {
+        transform: rotate(132deg);
+    }
+
+    38.28% {
+        transform: rotate(138deg);
+    }
+
+    39.94% {
+        transform: rotate(144deg);
+    }
+
+    41.6% {
+        transform: rotate(150deg);
+    }
+
+    43.26% {
+        transform: rotate(156deg);
+    }
+
+    44.92% {
+        transform: rotate(162deg);
+    }
+
+    46.58% {
+        transform: rotate(168deg);
+    }
+
+    48.24% {
+        transform: rotate(174deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    51.66% {
+        transform: rotate(186deg);
+    }
+
+    53.32% {
+        transform: rotate(192deg);
+    }
+
+    54.98% {
+        transform: rotate(198deg);
+    }
+
+    56.64% {
+        transform: rotate(204deg);
+    }
+
+    58.3% {
+        transform: rotate(210deg);
+    }
+
+    59.96% {
+        transform: rotate(216deg);
+    }
+
+    61.62% {
+        transform: rotate(222deg);
+    }
+
+    63.28% {
+        transform: rotate(228deg);
+    }
+
+    64.94% {
+        transform: rotate(234deg);
+    }
+
+    66.6% {
+        transform: rotate(240deg);
+    }
+
+    68.26% {
+        transform: rotate(246deg);
+    }
+
+    69.92% {
+        transform: rotate(252deg);
+    }
+
+    71.58% {
+        transform: rotate(258deg);
+    }
+
+    73.24% {
+        transform: rotate(264deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    76.66% {
+        transform: rotate(276deg);
+    }
+
+    78.32% {
+        transform: rotate(282deg);
+    }
+
+    79.98% {
+        transform: rotate(288deg);
+    }
+
+    81.64% {
+        transform: rotate(294deg);
+    }
+
+    83.33% {
+        transform: rotate(300deg);
+    }
+
+    84.96% {
+        transform: rotate(306deg);
+    }
+
+    86.62% {
+        transform: rotate(312deg);
+    }
+
+    88.28% {
+        transform: rotate(318deg);
+    }
+
+    89.94% {
+        transform: rotate(324deg);
+    }
+
+    91.6% {
+        transform: rotate(330deg);
+    }
+
+    93.26% {
+        transform: rotate(336deg);
+    }
+
+    94.92% {
+        transform: rotate(342deg);
+    }
+
+    96.58% {
+        transform: rotate(348deg);
+    }
+
+    98.24% {
+        transform: rotate(354deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.kkk{
+    display:flex;
+    
+}
+.hh{
+    margin-left: 30px;
+}
+
+
+
+#newanimation {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 30px;
+    /*animation:barev 5s  infinite alternate;*/
+    color: rgb(119, 129, 128);
+    transform:translateY(-600px);
+}
+
+@keyframes barev {
+    from {
+        color: brown;
+
+        font-size: 5px;
+    }
+
+    to {
+        color: blue;
+        font-size: 20px;
+
+    }
+}

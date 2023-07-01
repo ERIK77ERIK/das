@@ -1,0 +1,80 @@
+
+/*hover, focus, active*/
+
+.google{
+    color:blue;
+}
+
+.google:hover{
+    color:rgb(221, 240, 8);
+}
+
+.google:focus{
+    color:rgb(7, 210, 37);
+}
+
+.google:active{
+    color:rgb(122, 7, 7);
+}
+
+/*nth-child(4)(n-րդ երեխա), first-child(առաջին երեխա), last-child(վերջին երեխա)*/
+
+.parent{
+    color:rgb(206, 40, 11);
+    font-size:30px;
+}
+
+.sometext:nth-child(4){
+    color:blue;
+}
+
+.sometext:first-child{
+    color:rgb(3, 162, 80);
+}
+
+.sometext:last-child{
+    color:blueviolet;
+}
+
+
+/*first-letter(առաջին տառ), first-line(առաջին տողը)*/
+
+.patmutyun:first-letter{
+color:brown;
+font-size:30px;
+}
+
+.patmutyun:first-line{
+    color:rgb(8, 92, 64);
+    background:rgb(132, 121, 121) ;
+}
+
+
+/*before(նախքան), after(հետո), content(բովանդակություն,պարունակություն)*/
+
+.ba{
+    color:rgb(0, 0, 255);
+    font-size:40px;
+}
+
+.ba:before{
+    content:'HELLO';
+    color:rgb(255,0,0);
+}
+
+.ba:after{
+    content:'ARMENIA';
+    color:rgb(224, 118, 4);
+}
+
+
+/*[type="", name="", data-'..'=".."]*/
+
+input[data-anun="name"]{
+    background:rgb(236, 7, 201);
+}
+
+input[data-anun="lastname"]{
+    background:rgb(227, 194, 151);
+}
+

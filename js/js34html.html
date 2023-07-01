@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 34</title>
+  <link rel="stylesheet" href="index34js/index34js.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    JAVASCRIPT - null, ինչպես պարզել արժեքի տիպը
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="js33html.html" target="_blank">JS 33</a>
+
+  <br><br>
+
+  <h2>
+    1. null(դատարկ)-ը արժեք է որը նշանակում է ոչմիբան <br>
+    <br>
+    2. null-ը իրականում անպետք է,կառաջարկեմ որ null-ը ընդահնրապես չօգտագործեք <br>
+    բայց պետք է գիտակցել որ այսպիսի արժեք կա որովհետև կարող է հանդիպեք օրինակ մի հատ ֆունկցիայի որը ինչ որ ուրիշ ծրագրաորող է գրել որը ասենք թե որ այսինչ այսինչ պայմաններում վերադարձնում է null և ձեզ կարող է պետք լինի համեմատել մի րոպե էս արժեքը null է եթե այո էս սա արա հակառակ դեպքում նա արա <br>
+    <br>
+    3. typeof() ֆունկցիան վերադարձնում է տեքստ որի մեջ կա են արժեքի տիպը որը դուք փոխանցելեք <br>
+    <br>
+    let a = 3.4; <br>
+    alert(typeoff(a)); <br>
+    կտպի number <br>
+    <br>
+    let b = "abc"; <br>
+    alert(typeoff(b)); <br>
+    կտպի string <br>
+    <br>
+    let c = true; <br>
+    alert(typeof(c)); <br>
+    կտպի boolean <br>
+    <br>
+    let d = undefined; <br>
+    alert(typeof(d)); <br>
+    կտպի undefined <br>
+    <br>
+    let e = NaN; <br>
+    alert(typeof(e)) <br>
+    կտպի number <br>
+    <br>
+    եթե մենք ուզում ենք ստուգենք եթե ինչ որ արժեքը NaN է թե չէ մեզ պետք է կանչել isNaN() ֆունկցիան և սա կվերադարձնի true եթե NaN է false եթե ոչ <br>
+    <br>
+    let f = null; <br>
+    alert(typeof(f)); <br>
+    կտպի object <br>
+    <br>
+    (null-ի) դատարկ արժեքի type-ը object է(դա սխալներից մեկն է), առաջարկումեմ null չօգտագործեք <br>
+    եթե մենք ուզում ենք ստուգենք եթե ինչ որ արժեքը null է թե չէ, մեզ պետք է համեմատել null-ի հետ(alert(f === null)) և սա կվերադարձնի true եթե null է false եթե ոչ <br>
+    <br>
+    let g = function() { <br>
+    }; <br>
+    alert(typeof(g)); <br>
+    կտպի  function <br>
+    <br>
+    let h = [5, 43, 2]; <br>
+    alert(typeof(h)); <br>
+    կտպի object <br>
+    <br>
+    զանգվածը object է ուղղակի ինքը շատ կոնկրետ շատ սպեցիֆիկ object է, ինքնել ունի իր մեջ բանալի և արժեք ուղղակի են բանալիները որ ինքը օգտագործում է թվեր են 0-ից մինչև ինչ որ մի բան, ինքը ունի length, ինքը ունի տարբեր ֆունկցիաներ օրինակ forEach և այլն, բայց ինքը object է որին կցած են էտ բոլոր ֆունկցիաները որի մեջ կան էլի ինչպես որ ցանկացած object բանալի արժեք կոմբինացիաներ զույգեր ուղղակի ինքը մի քիչ ավելի specifik տիպի object է որը ունի որոշ հատկություններ <br>
+    եթե մենք ուզում ենք ստուգենք եթե ինչ որ արժեքը իրոք հենց զանգված է թե չէ մեզ պետք է կանչել Array.isArray(), Array-ը դա object է որին կցած է isArray ֆունկցիան, որը  վերցնում է ինչ որ արժեք ու ասում է զանգված է թե ոչ, սա կվերադարձնի true եթե զանգված է false եթե ոչ <br>
+    <br>
+    let i = { <br>
+      name: "Joe", <br>
+      nationality: "Armenian" <br>
+    } <br>
+    alert(typeof(i)); <br>
+    կտպի object <br>
+    <br><br>
+
+    4.իրականում function-ը ինքը object է բայց երբ որ անում ենք typeof() վերադարձնում է function բայց իրականում ինքն էլ տակից object է, բայց դե մենք չենք տեսնում տենց չենք պատկերացնում իրեն տենց օգտագործում ենք իրեն որպես ուղղակի function որը նորմալա եթե էտ փաստը պարզ չի մի մտածեք կարող եք մոռանաք դրա մասին ուղղակի գիտակցեք որ իրականում function-ը, զանգվածը և object-ը երեքնել object են տակից <br>
+    <br>
+    էս են բոլոր տիպի արժեքները որոնք որ գոյություն ունեն javascript-ի մեջ <br>
+
+  </h2>
+
+
+    <script src="index34js/index34js.js"></script>
+</body>
+
+</html>

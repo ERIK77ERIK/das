@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'poppins', sans-serrif;
+    scroll-behavior: smooth;
+}
+
+
+
+/*  ej1 */
+
+.iteams1 {
+    width: 1358px;
+    height: 1508px;
+    padding: 96px 71px;
+    margin: 0 auto;
+
+
+    border:2px solid red;
+};
+
+
+
+
+/* header design */
+/* child1 */
+
+
+.child1 {
+
+    width: 1216px;
+
+    margin-bottom: 96px;
+    text-align: center;
+}
+
+.child1 h2 {
+
+    width: 1216px;
+    height: 40px;
+    margin: 0 auto 16px;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+
+}
+
+.child1>p {
+    width: 768px;
+    height: 56px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: center;
+
+
+}
+
+
+/* child2 */
+
+.child2 {
+    display: flex;
+    margin-bottom: 96px;
+}
+
+/*1 */
+
+.child2t>h2 {
+    width: 592px;
+    height: 36px;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 12px;
+}
+
+.child2t>p {
+    width: 592px;
+    height: 112px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 40px;
+}
+
+.child2t>.aa {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 16px;
+}
+
+.aa>.imgaa {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+}
+
+.aa>.aa1>h2 {
+    width: 528px;
+    height: 24px;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+
+.aa>.aa1>p {
+    width: 528px;
+    height: 72px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+
+
+.child2 > img {
+    width: 490px;
+    height: 570px;
+    margin: 12px 51px 10px 83px;
+}
+
+
+
+/* child3 */
+
+
+.child3 {
+    display: flex;
+}
+
+.child3 > img {
+    width: 490px;
+    height: 374px;
+    margin: 24px 83px 118px 51px;
+}
+
+;
+
+
+.child3t h2 {
+    width: 592px;
+    height: 36px;
+    margin-bottom: 12px;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+
+.child3t p {
+    width: 592px;
+    height: 84px;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 40px;
+}
+
+.child3t .dd {
+    display: flex;
+    gap: 16px;
+}
+
+
+
+
+
+.dd .imgdd {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+}
+
+
+
+
+.dd1 h2 {
+    width: 528px;
+    height: 24px;
+    margin-bottom: 8px;
+}
+
+.dd1 p {
+    width: 528px;
+    height: 72px;
+    margin-bottom: 40px;
+}
+
+
+/* ej2 */
+
+.iteams2{
+    width: 1358px;
+    min-height: 528px ;
+    padding: 48px 0 ;
+    text-align: center;
+    margin:100px auto;
+
+    border:2px solid red;
+}
+
+.parents2 > h3 {
+max-width: 1216px;
+height: 24px;
+line-height: 24px;
+color:#4F46E5;
+margin: 0 71px 8px 71px;
+}
+
+.parents2 > h2 {
+    max-width: 1216px;
+    height:40px ;
+    margin: 0 71px 16px 71px;
+}
+
+.parents2 > p {
+  width: 672px;  
+  height: 56px;
+  margin:0 343px 40px 343px;
+}
+
+/*???*/
+.chil{
+    gap:40px;
+    margin:0 71px;
+}
+
+.parents2 .chil1{
+  display:flex;
+  gap: 32px;
+}
+
+.chil1 .chil12{
+  display:flex;
+  gap:16px;
+}
+
+.chil1 .chil12 img{
+  width:48px;
+  height: 48px;
+  border-radius: 6px;
+}
+
+
+
+.chil1 .chil12 .chil121 h2{
+width: 528px;
+height: 24px;
+line-height: 24px;
+margin-bottom: 8px;
+
+}
+
+.chil1 .chil12 .chil121 p{
+width: 528px;
+height: 72px;
+line-height: 24px;
+}
