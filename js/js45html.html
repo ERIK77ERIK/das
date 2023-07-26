@@ -13,7 +13,7 @@
 
     <hr>
     <h1>
-      
+        JAVASCRIPT - this 2
     </h1>
     <hr>
     <br><br>
@@ -23,7 +23,182 @@
     <br><br>
 
     <h2>
-   
+    1. <br>
+    ինչպես հիշում եք this-ը որոշվում է միայն այն պահին երբ մենք function-ին կանչում ենք <br>
+    <br>
+    function fun(a) { <br>
+        alert(this) <br>
+        alert(a) <br>
+    } <br>
+    <br>
+    const obj = { <br>
+        func: fun <br>
+    } <br>
+    <br>
+    1. obj.func(5)  // this = obj <br>
+    <br>
+    2. fun(5)       // this = window/undefined <br>
+    <br>
+    3. fun.apply(obj, [5])    // this = obj <br>
+       fun.call(obj, 5)       // this = obj <br>
+       <br>
+    4. const boundFunc = fun.bind(obj) <br>
+        boundFunc(5)     // this = obj <br>
+    
+    5. new fun(5)       // this = {} <br>
+    <br>
+    
+    this-ը որոշվում է են պահին երբ որ մեր ֆունկցիան կանչվում է ոչ թե են պահին երբ որ նա ստեղծվում է այլ երբ որ նա կանչվում է <br>
+    էս բոլոր օրինակներում մենք էտ ֆունկցիային կանչում ենք, փակագծերով կանչում ենք իրեն հետևաբար էտ պահին որոշվում է իրա this-ը և նայած ոնց ենք այս նույն ֆունկցիաին կանչում իրա this-ը կարա լինի տարբեր <br>
+    <br><br>
+
+    2. <br>
+    պետք է հիշել երկու կարևոր բան <br>
+    this-ը որոշվում է են պահից երբ մենք կանչում ենք իրան <br>
+    և պետք է ընդամենը էտ պահը գտնել և գտնել էտ օրենքը մեր ցուցակի մեջ <br>
+    <br>
+    օրինակներ <br>
+    <br>
+    2.1 <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function(f) { <br>
+        f() <br>
+        } <br>
+    } <br>
+    a.foo(function() { <br>
+        alert(this) <br>
+    }) <br>
+    կտպի [object Window] <br>
+    <br>
+
+    2.2 <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function() { <br>
+            alert(this.name) <br>
+        } <br>
+    } <br>
+    a.foo() <br>
+    կտպի Joe <br>
+    <br>
+
+    2.3 <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function(f) { <br>
+            alert(this) <br>
+        } <br>
+    }; <br>
+    [1, 2, 3].forEach(function() { <br>
+        alert(this) <br>
+    }) <br>
+    կտպի [object Window] երեք անգամ <br>
+    <br>
+    մենք ստեղ չենք կանչում ֆունկցիային, մենք ստեղ ընդամենը հղում ենք փոխանցում forEach ֆունկցիաին դեպի այս ֆունկցիային հետո forEach-ը իր մեջ կկանչի այս ֆունկցիային ինքը չի կանչի կետով կամ bind-ով ինքը ընդամենը կկանչի իրեն հետևաբար իր this-ը կլինի window object-ը կամ իհարկե undefined եթե strick mode-ում ենք աշխատում <br>
+    <br>
+
+    2.4 <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function() { <br>
+            alert(this) <br>
+        } <br>
+    } <br>
+    const f = a.foo <br>
+    f() <br>
+    կտպի [object Window] <br>
+    <br><br>
+
+    3. <br>
+    // 1.1 // <br>
+    պարզվում է forEach-ը կարող է ընդունել երկու արժեք <br>
+    երկրորդ արժեքը context-նա(this-նա) տված ֆունկցիայի <br>
+    <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function() { <br>
+            alert(this.name) <br>
+        } <br>
+    }; <br>
+    [1, 2, 3].forEach(a.foo, a); <br>
+    կտպի Joe երեք անգամ <br>
+    <br>
+    այսինքն forEach-ը հիմա եթե տեսնի որ մենք այս a արժեքը փոխանցել ենք ինքը այս ֆունկցիան կաշխատացնի այ էս a this-ով, a-ը կաշխատացնի որպես this <br>
+    այսինքն ինքը տակից a.foo ֆունկցիան կկանչի կամ call-ով կամ apply-ով որի առաջի արժեքը կլինի a-ը <br>
+    <br>
+    /* context և this նույն բան են դուք հիշեք այդպես */ <br>
+    <br>
+
+    // 1.2 // <br>
+    // // forEach-ի լոգիկան // // <br>
+    <br>
+    function forEach(arr, fun, obj) { <br>
+        for(let i = 0; i < arr.length; i++) { <br>
+            fun.call(obj) <br>
+        } <br>
+    } <br>
+    <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function() { <br>
+            alert(this.name) <br>
+        } <br>
+    }; <br>
+    <br>
+    forEach([1, 2, 3], function(val) { <br>
+        alert(this.name) <br>
+    }, a) <br>
+    <br>
+    կտպի Joe երեք անգամ
+    <br><br>
+
+    // 2 // <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function() { <br>
+            alert(this.name) <br>
+        } <br>
+    }; <br>
+    <br>
+    forEach-ի դեպքում մենք կարող ենք փոխանցենք առանձին context որպես վերջին պարամետր <br>
+    [1, 2, 3].forEach(a.foo, a) <br>
+    <br>
+    map-ի դեպքում էլ <br>
+    [1, 2, 3].map(a.foo, a) <br>
+    <br>
+    filter-ի դեպքում էլ <br>
+    [1, 2, 3].filter(a.foo, a) <br>
+    <br>
+    
+    բայց reduce-ի ժամանակ երկրորդ արժեքը դա ոնցոր առաջին ագրեգատրի արժեքն է <br>
+    այնպես որ reduce-ի ժամանակ իրականում context մենք չենք կարող փոխանցենք reduce-ի ժամանակ միշտ պետք է եթե this-ով ենք աշխատելու անենք dott bind և փոխանցենք իրա this-ը որը մենք ուզում ենք օգտագործենք այս տրված ֆունկցիայի մեջ <br>
+    [1, 2, 3].reduce(a.foo.bind(a), a) <br>
+    <br><br>
+
+    4. <br>
+    որպեսզի մի քիչ պարզացնենք սա և ասենք որ ուզում ենք այս ֆունկցիան աշխատի այս a object-ի context-ի մեջ այսպես ասած իրա this-ը որ լինի այս object-ը մենք կարող ենք անենք այսպես <br>
+    <br>
+    const a = { <br>
+        name: "Joe", <br>
+        foo: function() { <br>
+            alert(this.name) <br>
+        } <br>
+    }; <br>
+    <br>
+    [1, 2, 3].forEach(a.foo.bind(a)); <br>
+    կտպի Joe երեք անգամ <br>
+    <br>
+    սա ինչ է ստացվում որ այ էս ամենը a.foo.bind(a)  կվերադարձնի մի հատ լրիվ նոր ֆունկցիա որը կաշխատի նույն ձևի ոնց որ այս ֆունկցիան բայց իրա this-ը կլինի a object-ը 
+
+
+
+
+    
+
+
+
+    
     </h2>
 
 

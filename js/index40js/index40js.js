@@ -523,7 +523,7 @@ function update() {
     data.y += yDelta
 }
 
-function loop() {
+function loop() {    
     requestAnimationFrame(loop)
 
     update()

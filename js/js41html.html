@@ -23,7 +23,105 @@
     <br><br>
 
     <h2>
-   <canvas width="500" height="300"></canvas>
+        1. <br>
+        const canvas = document.querySelector("canvas") <br>
+        const context = canvas.getContext("2d") <br>
+        <br>
+        let data = { <br>
+        xDelta: 0, <br>
+        x: 10, <br>
+        y: 10, <br>
+        width: 50, <br>
+        height: 50 <br>
+        } <br>
+        <br>
+        function update() { <br>
+        data.x += data.xDelta <br>
+        } <br>
+        <br>
+        function draw() { <br>
+        context.clearRect(0, 0, canvas.width, canvas.height) <br>
+        context.fillRect(data.x, data.y, data.width, data.height) <br>
+        } <br>
+        <br>
+        function loop() { <br>
+        requestAnimationFrame(loop) <br>
+        update() <br>
+        draw() <br>
+        } <br>
+        loop() <br>
+        <br>
+        document.addEventListener("keydown", function() { <br>
+        data.xDelta = 1 <br>
+        }) <br>
+        <br>
+        document.addEventListener("keyup", function() { <br>
+        data.xDelta = 0 <br>
+        }) <br>
+
+        <br>
+        <canvas width="500" height="300" id="aa"></canvas> <br>
+        js-ում comment-ածա կոդը <br>
+        <br>
+
+        սա ցանկացած կոճակ եթե մենք սխմենք ինքը կսկսի շարժվել և եթե էտ կոճակը մենք թողնենք stop կտա <br>
+        <br><br>
+
+        2. <br>
+        բայց եկեք տարբերենք աջ կոճակը ձախ կոճակից <br>
+        <br>
+        evt object-ը ունի լիքը ինֆորմացիա որից մեկը code: "ArrowRight" տեքստնա այսինքն հղում դեպի աջ <br>
+        // code: "ArrowRight" է գրվել որովհետև սխմելենք դեպի աջ կնոպկեն եթե սխմենք օրինակ d տառը կգրվեր code: "KeyD" <br>
+        // code: "ArrowRight",  code: "ArrowLeft",  code: "ArrowDown",  code: "ArrowUp" <br>
+        <br>
+        const canvas = document.querySelector("canvas") <br>
+        const context = canvas.getContext("2d") <br>
+        <br>
+        let data = { <br>
+        xDelta: 0, <br>
+        x: 10, <br>
+        y: 10, <br>
+        width: 50, <br>
+        height: 50 <br>
+        } <br>
+        <br>
+        function update() { <br>
+        data.x += data.xDelta <br>
+        } <br>
+        <br>
+        function draw() { <br>
+        context.clearRect(0, 0, canvas.width, canvas.height) <br>
+        context.fillRect(data.x, data.y, data.width, data.height) <br>
+        } <br>
+        <br>
+        function loop() { <br>
+        requestAnimationFrame(loop) <br>
+        <br>
+        update() <br>
+        draw() <br>
+        } <br>
+        <br>
+        loop() <br>
+        <br>
+        document.addEventListener("keydown", function(evt) { <br>
+        if(evt.code === "ArrowRight") { <br>
+        data.xDelta = 5 <br>
+        } else if(evt.code === "ArrowLeft") { <br>
+        data.xDelta = -5 <br>
+        } <br>
+        }) <br>
+        <br>
+        document.addEventListener("keyup", function(evt) { <br>
+        data.xDelta = 0 <br>
+        }) <br>
+
+        <br>
+        <canvas width="500" height="300" class="bb"></canvas> <br>
+        <br><br>
+
+        3. <br>
+        js-ում չի լինում երկու canvas էլեմենտի հետ միանգամից աշխատել նույնիսկ մեկը class-ով մեկը id-ով վերցրած բայց լինում է html-ում բացել
+
     </h2>
 
 
@@ -31,4 +129,3 @@
 </body>
 
 </html>
-

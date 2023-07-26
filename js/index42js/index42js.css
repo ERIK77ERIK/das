@@ -1,0 +1,9 @@
+canvas {
+    border: 2px solid red;
+}
+
+
+div {
+    max-width: 300px;
+    overflow: hidden;
+}
