@@ -24,10 +24,37 @@
 
     <h2>
         1. Վարժություն 1 <br>
+        <br>
+        Փոխեք այս կոդը այնպես, որ այն alert անի 45 <br>
+        <br>
+        const a = { <br>
+            age: 23, <br>
+            foo: function(arr) { <br>
+                arr.forEach(function(val) { <br>
+                    alert(this.age + val) <br>
+                }) <br>
+            } <br>
+        } <br>
+        a.foo([22]) <br>
+        կտպի NaN <br>
+        <br>
 
-
+        ճիշտը <br>
+        const a = { <br>
+            age: 23, <br>
+            foo: function(arr) { <br>
+                // alert(this.age);  // 23 <br>
+                arr.forEach(function(val) { <br>
+                    alert(this.age + val) <br>
+                }.bind(this)) <br>
+            } <br>
+        } <br>
+        <br>
+        a.foo([22]) <br>
+        կտպի 45 <br>
         <br><br>
 
+        
         2. Վարժություն 2 <br>
 
 

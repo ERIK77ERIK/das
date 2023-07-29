@@ -86,13 +86,17 @@
     2.3 <br>
     const a = { <br>
         name: "Joe", <br>
-        foo: function(f) { <br>
+        foo: function() { <br>
             alert(this) <br>
         } <br>
     }; <br>
+    [1, 2, 3].forEach(a.foo) <br>
+
+    /* <br>
     [1, 2, 3].forEach(function() { <br>
         alert(this) <br>
-    }) <br>
+    })
+    */ <br>
     կտպի [object Window] երեք անգամ <br>
     <br>
     մենք ստեղ չենք կանչում ֆունկցիային, մենք ստեղ ընդամենը հղում ենք փոխանցում forEach ֆունկցիաին դեպի այս ֆունկցիային հետո forEach-ը իր մեջ կկանչի այս ֆունկցիային ինքը չի կանչի կետով կամ bind-ով ինքը ընդամենը կկանչի իրեն հետևաբար իր this-ը կլինի window object-ը կամ իհարկե undefined եթե strick mode-ում ենք աշխատում <br>

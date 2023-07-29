@@ -1,22 +1,47 @@
-// վարժություն 1
-// Փոխեք այս կոդը այնպես, որ այն alert անի 45
-
-// const a = {
-//     age: 23,
-//     foo: function(arr) {
-//         arr.forEach(function(val) {
-//             alert(this.age + val)
-//         })
-//     }
+// function fun(a) {
+//     alert(this)
+//     alert(a)
 // }
 
-// a.foo([22])
-// // կտպի NaN
+// const obj = {
+//     func: fun
+// }
 
-// // ճիշտ
+// 1. obj.func(5)  // this = obj
+
+// 2. fun(5)       // this = window/undefined
+
+// 3. fun.apply(obj, [5])    // this = obj
+//    fun.call(obj, 5)       // this = obj
+
+// 4. const boundFunc = fun.bind(obj)
+//    boundFunc(5)     // this = obj
+
+// 5. new fun(5)       // this = {}
+
+
+
+
+// // վարժություն 1
+// // Փոխեք այս կոդը այնպես, որ այն alert անի 45
+
+// // const a = {
+// //     age: 23,
+// //     foo: function(arr) {
+// //         arr.forEach(function(val) {
+// //             alert(this.age + val)
+// //         })
+// //     }
+// // }
+// // a.foo([22])
+// // // կտպի NaN
+
+
+// // ճիշտը
 // const a = {
 //     age: 23,
 //     foo: function(arr) {
+//         // alert(this.age);  // 23
 //         arr.forEach(function(val) {
 //             alert(this.age + val)
 //         }.bind(this))
@@ -24,25 +49,25 @@
 // }
 
 // a.foo([22])
-// // // կտպի 45
+// //  կտպի 45
 
 
 
-// վարժություն 2
-// ինչ alert կարվի էկրանին և ինչու
+// // վարժություն 2
+// // ինչ alert կարվի էկրանին և ինչու
 
-// function zoo() {
-//     alert(this.age)
-// }
-// const b = {
-//     age: 44
-// }
-// const a = {
-//     age: 23,
-//     foo: zoo.bind(b)
-// }
-// a.foo()
-// // կտպի 44
+// // function zoo() {
+// //     alert(this.age)
+// // }
+// // const b = {
+// //     age: 44
+// // }
+// // const a = {
+// //     age: 23,
+// //     foo: zoo.bind(b)
+// // }
+// // a.foo()
+// // // կտպի 44
 
 
 // // սա նույն է ինչպես սա
