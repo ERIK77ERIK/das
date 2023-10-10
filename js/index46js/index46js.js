@@ -88,9 +88,43 @@
 
 
 
-// վարժություն 3
-// Փոխեք այս կոդը այնպես, որ այն alert անի "Mike"
 
+// // վարժություն 3
+// // Փոխեք այս կոդը այնպես, որ այն alert անի "Mike"
+
+// // const a = {
+// //     name: "Joe",
+// //     f: function() {
+// //         alert(this.name)
+// //     }
+// // }
+
+// // const b = {
+// //     name: "Mike"
+// // }
+
+// // a.f()
+// // կտպի Joe
+
+
+// // սա նույն է ինչպես սա
+// // function z() {
+// //     alert(this.name)
+// // }
+
+// // const a = {
+// //     name: "Joe",
+// //     f: z
+// // }
+
+// // const b = {
+// //     name: "Mike"
+// // }
+
+// // a.f()
+
+
+// // ճիշտը
 // const a = {
 //     name: "Joe",
 //     f: function() {
@@ -102,44 +136,30 @@
 //     name: "Mike"
 // }
 
-// a.f.apply(b)  // a.f.call(b)   /// .bind(b)????  /// a.f.bind(b)()
+// a.f.apply(b)  /// a.f.call(b)   /// a.f.bind(b)()
+// կտպի Mike
+
+// // // z.apply(b)  /// .bind(b)????  /// z.bind(b)()
 
 
 
-// // սա նույն է ինչպես սա
-// function z() {
-//     alert(this.name)
-// }
+// // վարժություն 4
+// // փոխեք այս կոդը այնպես, որ այն ստեղծի նոր Person օբյեկտ
 
-// const a = {
-//     name: "Joe",
-//     f: z
-// }
+// // function Person() {
+// //    this.name = "Mike";
+// //    this.age = 33;
+// // }
 
-// const b = {
-//     name: "Mike"
-// }
+// // const a = Person()
+// // alert(a)
+// // կտպի undefined
 
-// z.apply(b)  /// .bind(b)????  /// z.bind(b)()
-
+/// alert(window.age)
+/// կտպի 33
 
 
-
-
-
-// վարժություն 4
-// փոխեք այս կոդը այնպես, որ այն ստեղծի նոր Person օբյեկտ
-
-// function Person() {
-//     this.name = "Mike";
-//     this.age = 33;
-// }
-
-// const a = Person()
-// alert(a)
-
-
-// // // ճիշտ
+// // ճիշտը
 // function Person() {
 //     // this = {}
 //     this.name = "Mike";
@@ -149,43 +169,43 @@
 
 // const a = new Person()
 // alert(JSON.stringify(a, undefined, 2))
+// // կտպի {"name": "Mike", "age": 33}
+
+// alert(new Person().name)
+// // կտպի Mike
+
+
+/* 
+function Person(name, age) {
+    this.name = name
+    this.age = age
+}
+
+const a = new Person("Mike", 33)
+alert(JSON.stringify(a, undefined, 2))
+կտպի {"name": "Mike", "age": 33}
+
+// պետք է հասկանալ որ մենք կարող ենք էս պահին ստեղծենք object-ը երկու ձևով կամ կարող ենք ստեղծենք ինքնուրույն այսպես {} կամ կարող ենք ստեղծենք ֆունկցիա որին եթե new ով կանչենք կստեղծի այդ նոր object-ը և կվերադարձնի
+*/
 
 
 
-/// ////
+// // վարժություն 5
+// // Փոխեք կոդը այնպես, որ ֆունկցիայի գործառույթում this-ը լինի undefined
 
-// const a = {
-//     name: "Mike",
-//     age: 33
-// };
+// // function func() {
+// //     alert(this)
+// // }
+// // func()
 
-/// /// 
-
-// function Person(name, age) {
-//     this.name = name
-//     this.age = age
-// }
-// const a = new Person("Mike", 33)
-// alert(JSON.stringify(a, undefined, 2))
-
-
-// վարժություն 5
-// Փոխեք կոդը այնպես, որ ֆունկցիայի գործառույթում this-ը լինի undefined
-
-// function func() {
-//     alert(this)
-// }
-
-// func()
-
-// // // // ճիշտ
+// // ճիշտը
 // "use strict"
 
 // function func() {
 //     alert(this)
 // }
-
 // func()
+
 
 
 

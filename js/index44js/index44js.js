@@ -188,6 +188,26 @@
 // zoo()
 // // կտպի Hopar
 
+// 3 // <br>
+// եթե window object-ի name բանալու մեջ վերագրում ենք արժեք աշխատացնում ենք կոդը և հետո ջնջում ենք այդ կոդի մասը որտեղ վերագրել ենք միևնույն է window-ի name բանալու արժեքը մնում է այդ արժեքը որը վերագրել էինք 
+
+// function zoo() { 
+//     alert(this.name) 
+//     alert(this.age) 
+// } <br>
+// window.name = "Joe" 
+// window.age = "30" 
+// zoo() 
+// կտպի Joe հետո 30 
+
+// երբ որ ջնջենք 
+
+// function zoo() { 
+//     alert(this.name) 
+//     alert(this.age) 
+// } 
+// zoo() 
+// կտպի Joe հետո undefined 
 
 
 
@@ -235,7 +255,7 @@
 
 // // 9.
 // 1 //
-// // դրա համար ստեղծվել է մի հատ այսպես ասած strick mode
+// // դրա համար ստեղծվել է մի հատ այսպես ասած strict mode
 // // եթե մենք այս տեքստը "use strict" ամենա վերևում գրենք մեր javascript-ի, մեր javascript-ը կաշխատի մի քիչ ուրիշ, մի քիչ ուրիշ ասելով էս this-ը եթե մենք փորձենք աշխատացնել սովորական  ֆունկցիայի մեջ որը կցած չի կամ չի աշխատում որևէ կոնկրետ object-ի մեջ իրա this-ը կլինի undefined այսինքն հիմա եթե մենք սենց անենք ու print անենք this-ը, this-ը undefined է էլ գլոբալ փոփոխականը չի էլ գլոբալ object-ը չի ավելի շուտ, window-ն չի այլ undefined է
 
 
@@ -456,6 +476,8 @@ zoo("barev", 1)
 
 
 // 2 //
+// // սխալով
+
 // function zoo(txt, x) {
 //     alert(txt + " " + this.name + x)
 // }
@@ -486,6 +508,8 @@ zoo("barev", 1)
 
 
 // 3 //
+// // սխալով
+
 // function zoo(txt, x) {
 //     alert(txt + " " + this.name + x)
 // }
@@ -495,7 +519,8 @@ zoo("barev", 1)
 //     age: 33
 // }
 
-// // այս կոդը աշխատումա այնպես ինչպես որ աշխատում է bind ֆունկցիան 
+// // // //  այս կոդը աշխատումա այնպես ինչպես որ աշխատում է bind ֆունկցիան 
+// // // //  այս կոդը աշխատումա լրիվ ոչ այնպես ինչպես որ աշխատում է bind ֆունկցիան 
 // function bin(func, context, ...args ) {
 //     return function(...arg) {
 //                 function rr() {
@@ -517,6 +542,44 @@ zoo("barev", 1)
 // // առանց վերագրել
 // bin(zoo, person, "hello world", 9)("barev sjdh", 11)
 // // կտպի hello world Joe9
+
+
+
+// // սխալով քանի որ
+// zoo.bind(person, "hello world")(9, "barev sjdh", 11)
+// // կտպի hello world Joe9
+
+// bin(zoo, person, "hello world")(9, "barev sjdh", 11)
+// // կտպի hello world Joeundefined
+
+
+
+// 4 //
+// // ճիշտը
+
+// function zoo(txt, x) {
+//     alert(txt + " " + this.name + x)
+// }
+
+// let person = {
+//     name: "Joe",
+//     age: 33
+// }
+
+// // այս կոդը աշխատումա այնպես ինչպես որ աշխատում է bind ֆունկցիան 
+// function bin(func, context, ...args ) {
+//     return function(...arg) {
+        
+//         return func.apply(context, args.concat(arg))
+//     }
+// }
+
+// zoo.bind(person, "hello world")(9, "barev sjdh", 11)
+// // կտպի hello world Joe9
+
+// bin(zoo, person, "hello world")(9, "barev sjdh", 11)
+// // կտպի hello world Joe9
+
 
 
 

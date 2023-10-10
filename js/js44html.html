@@ -179,6 +179,29 @@
         կտպի Hopar <br>
         <br><br>
 
+        // 3 // <br>
+        եթե window object-ի name բանալու մեջ վերագրում ենք արժեք աշխատացնում ենք կոդը և հետո ջնջում ենք այդ կոդի մասը որտեղ վերագրել ենք միևնույն է window-ի name բանալու արժեքը մնում է այդ արժեքը որը վերագրել էինք <br>
+        <br>
+        function zoo() { <br>
+            alert(this.name) <br>
+            alert(this.age) <br>
+        } <br>
+        window.name = "Joe" <br>
+        window.age = "30" <br>
+        zoo() <br>
+        կտպի Joe հետո 30 <br>
+        <br>
+        // երբ որ ջնջենք <br>
+        <br>
+        function zoo() { <br>
+            alert(this.name) <br>
+            alert(this.age) <br>
+        } <br>
+        zoo() <br>
+        կտպի Joe հետո undefined <br>
+        <br><br>
+
+
         6. <br>
         այսինքն էս պահին մենք սովորել ենք երկու օրենք թե ինչպես կարելիյա որոշել function-ի this-ը ինչ է <br>
         <br>
@@ -189,7 +212,6 @@
         function zoo() { <br>
             alert(this.name) <br>
         } <br>
-        zoo() <br>
         <br>
         let person = { <br>
         name: "Joe", <br>
@@ -204,7 +226,7 @@
         person2.foo = zoo <br>
         <br>
         person2.foo() <br>
-        կտպի Joe <br>
+        կտպի Mike <br>
         <br>
         այսինքն this-ը foo ֆունկցիայի կլինի person2 object-ը այսինքն կետի ձախ կողմից <br>
         <br><br>
@@ -232,7 +254,7 @@
         <br><br>
 
         // 2 // <br>
-        javascript-ը այսօրվա օրով հիմանականում գրում են strick mode-ում <br>
+        javascript-ը այսօրվա օրով հիմանականում գրում են strict mode-ում <br>
         <br>
         նենց որ պետքա հասկանալ որ եթե դուք strict mode-ում ուղղակի առանձին ֆունկցիա ստեղծեք և իրան կանչեք իրա this-ը կլինի undefined <br>
         բայց էտ նույն ֆունկցիան եթե մենք կպցնենք ինչ որ մի object-ին և հետո ըստ էտ object-ի կանչենք իրեն այսինքն կանչենք նենց որպեսզի ինքը աշխատի էտ object-ի մեջ էտ ժամանակ իրա this-ը կլինի էտ object-ը որին մենք կարող ենք անենք this.name օրինակ էս պարագայում դա կլինի Mike այսինքն եթե ֆունկցիան կցածա մի հատ object-ին ու մենք էտ object-ի միջոցով կանչում ենք էտ ֆունկցիաին էտ ֆունկցիայի this-ը դարնումա էտ object-ը <br>
@@ -421,6 +443,8 @@
         <br><br>
 
         // 2 // <br>
+        սխալով <br>
+        <br>
         function zoo(txt, x) { <br>
             alert(txt + " " + this.name + x) <br>
         } <br>
@@ -452,6 +476,42 @@
         bin(zoo, person, "hello world", 9)("barev sjdh", 11) <br>
         կտպի hello world Joe9 <br>
         <br> <br>
+
+        սխալով քանի որ <br>
+        zoo.bind(person, "hello world")(9, "barev sjdh", 11) <br>
+        կտպի hello world Joe9 <br>
+        <br>
+        bin(zoo, person, "hello world")(9, "barev sjdh", 11) <br>
+        կտպի hello world Joeundefined <br>
+        <br><br>
+
+
+        ճիշտը <br>
+        function zoo(txt, x) { <br>
+            alert(txt + " " + this.name + x) <br>
+        } <br>
+        <br>
+        let person = { <br>
+            name: "Joe", <br>
+            age: 33 <br>
+        } <br>
+        <br>
+
+        այս կոդը աշխատումա այնպես ինչպես որ աշխատում է bind ֆունկցիան <br>
+        function bin(func, context, ...args ) { <br>
+            return function(...arg) { <br>
+                return func.apply(context, args.concat(arg)) <br>
+            } <br>
+        } <br>
+        <br>
+
+        zoo.bind(person, "hello world")(9, "barev sjdh", 11) <br>
+        կտպի hello world Joe9 <br>
+        <br>
+        bin(zoo, person, "hello world")(9, "barev sjdh", 11) <br>
+        կտպի hello world Joe9 <br>
+        <br><br>
+
 
         // // // ինչը պարզ չի եղել // // // <br>
         // 1 // <br>
