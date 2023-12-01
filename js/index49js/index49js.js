@@ -1,187 +1,311 @@
+// // 1
+// // նախ և առաջ պետք է վեր հիշենք փոփոխականների հասանելիություն օրենքները, scope(տեսադաշտ)-ի օրենքները
+// // let-ով ստեղծված փոփոխականին կարողեք օգտագործել միայն իրան ստեղծելու պահից հետո և միայն իրան կարողեք օգտագործել նույն block scope-ի մեջ այսինքն իրա սահմանում
+
+// // 1.1
+// alert(x);  // error
+// let x = 5;
 
 
-// function sumPairExists(a, b, v) {
-//     debugger
-//     const obj = b.reduce(function(aggr, value) {
-//         aggr[value] = true
-//         return aggr
-//     }, {})
+// // 1.2
+// let x = 5;
 
-//     for(let i = 0; i < a.length; i++) {
-//         const target = v-a[i]
-//         if(obj[target] === true) {
-//             return true
-//         }
-//     }
-//     return false
+// if(x === 5) {
+//     alert(y);  // error
+    
+//     let y = 7;
+//     alert(x + y); // 12
+   
 // }
-
-// alert(sumPairExists([4, 2, 6, 1], [12, 10, 13, 9], 18))
-
+// alert(y)  // error
 
 
+// // 1.3
+// let x = 5;
 
-// function sumPairExists(a, b, v) {
-//     for(let i1 = 0; i1 < b.length; i1++) {
-//         for(let i = 0; i < a.length; i++) {
-//             if(v-a[i] === b[i1]) {
-//                 return true
-//             }
-//         }
-//     }
-//     return false
+// if(x === 5) {
+//     alert(y);  // error
+    
+//     let y = 7;
+//     let x = 2;
+//     alert(x + y); // 9
+   
 // }
+// alert(y)  // error
+// alert(x)  // 5
 
-// alert(sumPairExists([4, 2, 6, 1], [12, 10, 13, 9], 8))
+// // y-ը եթե փորձենք կարդանք կասի տենց բան գոյություն չունի որովհետև y-ը ստեղծվածա ներքին blok-ի մեջ
+// // իսկ մենք կարող ենք կարդանք փոփոխականները որոնք որ մեր blok-ում ունենք կամ մեր blok-ից վերև
 
 
+// // 1.4
+// let x = 5;
 
-
-// const person1 = {
-//     name: "Joe",
-//     lastName: "Jaspers",
-//     age: 55,
-//     friends: [],
-//     getFullName: function() {                      // getFullName() {
-//         return this.name + " " + this.lastName     //       return this.name + " " + this.lastName
-//     }                                              //  }
+// let f = function() {
+//     let y = 7;
+//     alert(y + x);  // 12
 // };
 
-// person1.getFullName()
+// alert(y); // error
 
-// const person2 = {
-//     name: "Mike",
-//     lastName: "Jackson",
-//     age: 66,
-//     friends: [person1],
-//     getFullName: function() {                       // getFullName() {
-//         return this.name + " " + this.lastName      //             return this.name + " " + this.lastName
-//     }                                               //  }
+
+
+
+// // 2
+// // 2.1
+
+// let x = 5;
+
+// let f = function() {
+//     let y = 7;
+//     alert(x + y);
+// };
+
+// f()
+
+// // եթե հիշում եք ֆունկցիան արժեքա որին մենք վերագրել ենք f-ի մեջ ու հիմա մենք f-ին կարող ենք օրինակ կանչենք էտ f-ին կարող ենք փոխանցենք որպես ինչ-որ արժեք ուրիշ ֆունկցիաին, ինքը արժեքա
+// // բայց էս արժեքը բացի նրանից որ իր մեջ ունի կոդ որը աշխատումա ինքը ունի կախվածություն դրսի x-ի վրա
+// // ինքը հերիք չի որ ինքը ինքնուրույն մի հատ ֆունկցիայա որը ունի մարմին մեջը ինչ որ կոդ ինչ որ alert-ա անում ինչ որ y ունի ինքը նաև x-ի հղում ունի որը իրենից դուրս է գտնվում իր մեջ չի ստեղծված x-ը հետևաբար այդ ֆունկցիան հերիք չի որ ինքը իր ներքին լոգիկան ունի պետք է հիշի հղումները դրսի փոփոխականների
+
+// // այսինքն
+
+// // ֆունկցիան և էտ հղումները դրսի փոփոխականներին ամբողջը միասին կոչվում են Closures(փակումներ)
+
+
+
+// // 2.2
+// // debugger-ով ուսումնասիրեք
+// //  որտեղ որ գրված է watch գրեք ֆունկցիայի անունը և ուսումնասիրեք
+
+// let x = 5;
+
+// let f = function() {
+//     let y = 7;
+//     alert(x + y);
+// };
+
+// debugger;
+
+
+// // հիմա եթե էս ֆունկցիաին ուսամնասիրենք մեջը լիքը խառը դետալներ կան որը ոնցոր այդ ծրագիրը որը աշխատացնում է մեր կոդը այսպես ասած javascript execution engine(javascript կատարման շարժիչ)-ը են ինչ որ աշխատացնում է մեր javascript-ը լիքը տարբեր բաներ է իրեն կպցնում իրա համար իրականում որը իքը հիշի որ ինքը հասկանա հիմնականում ինչ է կատարվում 
+// // բայց կարճ ասած նայեք թե ինչ կա կցած f()-ին եթե մենք մտնենք scopes-ի մեջ հետո script-ի մեջ տեսնում եք իրեն կցած է այ էս x-ը որը 5 է այսինքն նաև լիքը ուրիշ բաներ բայց այ էս x-ը որը 5 է կցած է ֆունկցիաին ինքը մենակ ֆունկցիա չի որը ասումա էս ես ֆունկցիան եմ էս իմ կոդնա էս հերիքա, չէ, ինքը բացի նրանից որը ինքը առանջին ֆունկցիա է իրեն պետք է կցած լինի հղումը դեպի են դրսի փոփոխականի որպեսզի նա կարողանա աշխատել
+
+
+
+
+// // 3
+// // 3.1
+// let f = function() {
+//     return 1
+// }
+// f()  // 1
+
+
+// // 3.2
+// let f = function() {
+//     return function() {
+//         alert("hi");
+//     };
+// };
+
+// let f2 = f(); //   function() { alert("hi"); };
+
+// f2();  // hi
+
+
+// // 3.3
+// let y = 9;
+
+// let f = function() {
+//     let x = 8;
+//     let x2 = 99;
+//     // alert(x)  // 8
+//     // // y = 5;
+//     // // alert(y);  // 5
+//     return function() {
+//         let z = 2;
+//         // // y = 6;
+//         // // alert(x + y + z)  // 8 + 6 + 2 // 16
+//         alert(x + y + z)  // 8 + 20 + 2 // 30
+//     };
+    
+// };
+
+// // alert(x) // error
+
+// let f2 = f(); //   function() {  let z = 2; alert(x + y + z)  // 8 + 9 + 2 // 19 };
+// y = 20;
+
+// f2();  // hi
+
+
+// // այսինքն ինչ է ստացվում որ են պահին երբ նա աշխատում է էտ պահից նա օգտագործում է փոփոխականները իսկ փոփոխականները էտ պահին ինչ որ արժեք որ ունեն էտ արժեքնել կօգտագործվեն
+
+// // // ոչ թե աշխատելու պահից վերև է ընտրում փոփոխակաների արժեքները այլ աշխատելու պահից է ֆունկցիան օգտագործում փոփոխականերին իսկ իրենց արժեքը ընտրում է ֆունկցիան որտեղից որ ստեղծված է այդտեղից փոփոխականների օրենքներին համապատասխան(let-ով ստեղծված փոփոխականին կարողեք օգտագործել միայն իրան ստեղծելու պահից հետո և միայն իրան կարողեք օգտագործել նույն block scope-ի մեջ այսինքն իրա սահմանում, այսինքն եթե իր block-ի scope-ի մեջ հայտարարված չի ինքը մանա գալիս մի հատ բարձր սահմանում) էտ պահին ինչ որ արժեք որ ունեն    վերևի օրինակում կտպի 5 հետո 16
+/*
+1.
+let y  = 10;
+
+function aa() {
+    alert(y);
+}
+y = 20;
+
+aa();  // կտպի 20 
+
+2.
+let y  = 10;
+
+function aa() {
+    y = 5;
+    alert(y);
+}
+y = 20;
+
+aa();  // կտպի 5
+*/
+
+// debugger;
+
+// // ինքը միայն հիշում է հղումները դեպի էն փոփոխականներին որոնք որ իրան պետք են որոնք որ ինքը օգտագործում է այսինքն եթե ստեղծենք փոփոխական ու իրեն չօգտագործենք ինքը չի հիշի  օրնակ let x2 = 99;
+
+// // ???? // // f-ը scopes-ի մեջի script-ի մեջա y-ի  y: 20 հղումը պահում, f2-ուն scopes-ի մեջի script-ի մեջա y-ի  y: 20 հղումը պահում իսկ x-ի  x: 8 հղումը scopes-ի մեջի  closure-ի մեջա պահում
+
+
+
+// // 4
+// // closures-ը դա ինչ է դա ֆունկցիա է որը նաև իր հետ փաթեթաորված ունի հղումներ դեպի բոլոր են դրսի փոփոխականները որ ինքը իր ներքին իր մեջ օգտագործում է, այդ ամենը միասին կոչվում է closures(փակումներ)
+
+
+
+
+
+
+// // Javascript - Վարժություն (Closures)
+
+// // վարժություն 1
+// // Ի՞նչ կցուցադրի
+
+// let x = 7;
+
+// function a(y) {
+//     return x + y;  // 7 + 4 // 11
 // }
 
-// function getFullName(name, lastName) {
-//     return name + " " + lastName
+// function b(z) {
+//     let x = 99;
+//     return z(4); // 11
 // }
 
+// alert(b(a)); // 11
 
 
-// /// OOP
+// // // ոչ թե աշխատելու պահից վերև է ընտրում փոփոխակաների արժեքները այլ աշխատելու պահից է ֆունկցիան օգտագործում փոփոխականերին իսկ իրենց արժեքը ընտրում է ֆունկցիան որտեղից որ ստեղծված է այդտեղից փոփոխականների օրենքներին համապատասխան(let-ով ստեղծված փոփոխականին կարողեք օգտագործել միայն իրան ստեղծելու պահից հետո և միայն իրան կարողեք օգտագործել նույն block scope-ի մեջ այսինքն իրա սահմանում, այսինքն եթե իր block-ի scope-ի մեջ հայտարարված չի ինքը մանա գալիս մի հատ բարձր սահմանում) էտ պահին ինչ որ արժեք որ ունեն
+/*
+1.
+let y  = 10;
+
+function aa() {
+    alert(y);
+}
+y = 20;
+
+aa();  // կտպի 20 
+
+2.
+let y  = 10;
+
+function aa() {
+    y = 5;
+    alert(y);
+}
+y = 20;
+
+aa();  // կտպի 5
+*/
 
 
-// /// members ,  mefid
+
+// // վարժություն 2
+// // Ի՞նչ կցուցադրի
+
+// function a(x) {
+//     return (y) => x + y;
+// }
+
+// alert(a(2)(4));   // 6
 
 
-// /// function constructor
 
-// function F(){
+
+// // վարժություն 3
+// // Ի՞նչ կցուցադրի
+
+// function a(x) {
+//     return function(y) {
+//         return function(z) {
+//             return x + y + z;
+//         };
+//     };
+// }
+
+// alert(a);           // function a(x) { function(y) {return function(z) { return x + y + z; }; }; }
+// alert(a(2));        // function(y) {return function(z) { return x + y + z; }; };
+// alert(a(2)(4));     // function(z) { return x + y + z; };
+// alert(a(2)(4)(9));  // 15
+
+
+
+// // վարժություն 4
+// // Ի՞նչ կցուցադրի
+
+// function Cat() {
 //     // this = {}
 
-//     this.name = "Joe"
+//     let numLives = 7;
+//     let name = "Jack";
+
+//     this.age = 5;
+//     this.getName = () => {
+//         return name;
+//     };
+
+//     // this.setName = (str) => {
+//     //     if(typeof(str) === "string") {
+//     //         name = str;
+//     //     }
+//     // };
+
+//     this.getAge = () => {
+//         return this.age;
+//     };
+//     this.catDies = () => {
+//         numLives--;
+//     };
+//     this.isDead = () => {
+//         return numLives <= 0;
+//     };
 
 //     // return this
-// }
+// };
 
-// alert(JSON.stringify(new F()))
+// let a = new Cat();
 
+// a.catDies();
+// a.catDies();
+// a.catDies();
+// a.catDies();
+// alert(a.isDead());   // false
+// a.catDies();
+// a.catDies();
+// a.catDies();
+// alert(a.isDead());   // true
+// alert(a.getName());  // Jack
+// a.age = 99;
+// alert(a.age);   // 99
 
-
-
-const canvas = document.querySelector("canvas");
-const btn = document.querySelector("button");
-const context = canvas.getContext("2d");
-
-
-
-let data = {
-    balls: []
-};
-
-function update() {
-    data.balls.forEach(function(ball) {
-        ball.update();
-    })
-}
-
-function draw() {
-    context.clearRect(0, 0, canvas.width, canvas.height)
-    data.balls.forEach(function(ball) {
-        ball.draw();
-    })
-}
-
-function loop() {
-    requestAnimationFrame(loop);
-    update();
-    draw();
-}
-
-loop();
-
-function Ball() {
-    this.r = random(5, 40);
-    this.x = random(this.r, canvas.width-this.r);
-    this.y = random(this.r, canvas.height-this.r);
-
-    this.xDelta = random(-5, 5);
-    this.yDelta = random(-5, 5);
-
-    this.color = "rgb(" + random(0, 255) + ", " + random(0, 255) + ", " + random(0, 255) +")";
-
-    this.update = function() {
-        if((this.x + this.r) > canvas.width ||
-        this.x - this.r < 0) {
-            this.xDelta *= -1;
-        }
-
-        if((this.y + this.r) > canvas.height ||
-        this.y - this.r < 0) {
-            this.yDelta *= -1;
-        }
-
-        this.x += this.xDelta;
-        this.y += this.yDelta;
-    }
-
-
-    this.draw = function() {
-        context.fillStyle = this.color;
-
-        context.beginPath();
-        context.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-        context.fill();
-    }
-}
-
-btn.addEventListener("click", function() {
-    const ball = new Ball();
-    data.balls.push(ball);
-})
-
-
-function random(min, max) {
-    return Math.floor(Math.random() * (max-min)) + min;
-}
-
-
-
-function approximatePi(n) {
-  let ins = 0;
-
-  for (let i = 0; i < n; i++) {
-    const x = Math.random();
-    const y = Math.random();
-    const distance = Math.sqrt(x * x + y * y);
-
-    if (distance <= 1) {
-      ins++;
-    }
-  }
-
-  return (ins / n) * 4;
-}
-
-// You can adjust the number of samples for better accuracy
-const approximatedPi = approximatePi(1000000);
-
-console.log(`Approximated π: ${approximatedPi}`);
+// // a.name = [];
+// // եթե name-կցած լիներ object-ին այսինքն ֆունկցիայի մեջ "Jack"-ը մենք վերագրեյնք this.name-ի մեջ մենք կկարողանայնք դսից փոխել օրինակ անել a.name և վերագրել ինչ որ արժեք
+// // հետևաբար եթե սենց անենք name-ը չի փոխի որովհետև name-ը կցած չի object-ին name-ը առանձին փոփոխական է ուղղակի որը closure-ի միջոցով նենցա անում որպեսզի ինքը հասանելի լինի այս ֆունկցիաների մարմնի մեջից
+// // այսինքն մենք getName-ով և setName-ով կարողանում ենք խաղալ այս անունի հետ բայց ոչ անմիջապես չենք կարող ուղղակի ասենք ․name ու ինչ որ բան անենք
 

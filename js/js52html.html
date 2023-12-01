@@ -13,6 +13,8 @@
 
     <hr>
     <h1>
+
+        JAVASCRIPT OOP - object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում) -- Նախատիպային ժառանգություն (Prototypal Inheritance)
       
     </h1>
     <hr>
@@ -23,6 +25,438 @@
     <br><br>
 
     <h2>
+        1. <br>
+        intheritance(ժառանգություն)-ը կարևոր կոնցեպտ է object oriented programning-ի մեջ <br>
+        երկու տարբեր մոտեցում կա intheritance(ժառանգություն)-ի <br>
+        .1. Prototypal Inheritance(նախատիպային ժառանգություն) <br>
+        .2. Classical Inheritance(դասական ժառանգություն) <br>
+        <br>
+        Classical Inheritance(դասական ժառանգություն)-ը դա այն ժառանգություննա որը հիմնականում օգտագործվում է java-ում, C++-ում և մոտաորապես տենց մի բան կա javascript-ի մեջ  <br>
+        իսկ Prototypal Inheritance(Նախատիպային ժառանգություն)-ը դա հիմանականում javascript-ում է շատ օգտագործվում և նաև օգտագործվում են ուրիշ լեզուներում բայց շատ տարածված չեն <br>
+        <br><br>
+
+
+        2. <br>
+        ինչ է Prototypal Inheritance(Նախատիպային ժառանգություն)-ը <br>
+        prototypal inheritance(նախատիպային ժառանգություն)-ը հնարաորություն է տալիս որ մենք անընդհատ եթե լիքը object-ներ ունենք որոնք որ ունեն մոտաորապես նույն տեսքը նույն ֆունկցիաները նույն արժեքները անընդհատ չկրկնենք այլ ստեղծենք մի հատ object որի մեջ թող լինեն էտ ֆունկցիաները օրինակ և հետո ունենանք լիքը ուրիշ object-ներ որոնք որ ընդամենը ժառանգեն իրենից <br>
+        javascript-ում բավականին տարածված է prototypal inheritance(նախատիպային ժառանգություն)-ը, հետևաբար արժի հասկանալ, կոնցեպտը շատ պարզ է object-ները ժառանգում են իրարից <br>
+        <br>
+        .1. <br>
+        <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        <br>
+        a.__proto__ = b; <br>
+        <br>
+        alert(a.lastName);  // Jackson <br>
+        <br>
+        այս տարoրինակ հղումը ինչ է անում դա հղում է ստեղծում a-ից դեպի b object որը հնարաորություն է տալիս a-ին ժառանգել արժեքներ b-ից <br>
+        հիմա a.lastName-ը գնում է մտնում է a-ի մեջ ման է գալիս lastName-ին և չի գտնում, երբ չի գտնում նա անմիջապես չի վերադարձնում undefined այլ նա հետևում է այս __proto__ հղմանը դեպի հաջորդ object-ին և այդ object-ից է հարցնում իսկ կարողա դուք ունենաք lastName եթե ունի վերադարձնում է եթե չունի վերադարձնում է undefined, էս պարագայում ունի որի արժեքը Jackson է եթե մենք աշխատացնենք կտեսնենք Jackson <br>
+        <br>
+
+        .2. <br>
+        մենք նաև կարող ենք էլի object-ներ ստեղծել <br>
+        և եկեք նենց անենք որ b-ն ժառանգի c-ից (b.__proto__ = c) <br>
+        <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        <br>
+        const c = { <br>
+            age: 19, <br>
+        }; <br>
+        <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        <br>
+        alert(a.age); // 19 <br>
+        <br>
+        ինքը նախ և առաջ կմանգա age-ի a-ի մեջ չի գտնի, proto-ով կգնա դեպի b չի գտնի, proto-ով կգնա դեպի c կգտնի և կվերադարձնի 19 <br>
+        այսինքն այսպես մենք ստեղծում ենք շղթա object-ներից որը ամեն մեկը ժառանգում է հաջորդից և այսպես շղթա ենք կարողանում ստեղծել որպեսզի արժեքները մի object-ից կարողանա ժառանգել ուրիշ object <br>
+        <br>
+
+        .3. <br>
+        հիմա մենք նույնպես ինչպես որ կարող ենք ժառանգենք արժեքներ նաև կարող ենք ժառանգենք ֆունկցիաներ  <br>
+        օրինակ․ <br>
+        <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        <br>
+        const c = { <br>
+            age: 19, <br>
+            showAge() { <br>
+                alert(this.age); <br>
+            } <br>
+        }; <br>
+        <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        <br>
+        a.showAge(); // 19 <br>
+        <br>
+        և հիմա նա կգնա կմտնի a-ի մեջ showAge չի գտնի, կգնա b-ի մեջ չի գտնի showAge, կգնա կմտնի c-ի մեջ կգտնի և կվերադարձնի որին մենք կկանչենք և հետևաբար կտեսնենք 19 <br>
+        <br><br>
+
+
+        3. <br>
+        հիմա հարց այս showAge ֆունկցիայի this-ը ինչ է <br>
+        հիշում եք օրենքը որ երբ որ մենք անում ենք ինչ որ object կետ ինչ որ ֆունկցիա այդ ֆունկցայի this-ը դառնումա կետի ձախ կողմի արժեքը(object-ը), երբ որ իհարկե նա սովորական ֆունկցիայա և ոչ թե arrow ֆունկցիա <br>
+        այսինքն ինչ է ստացվում այս this-ը իրականում քանի որ a-ով ենք կանչում a-ն է որը նշանակումա որ մենք ստեղ կարող ենք անենք օրինակ this.name անենք և աշխատացնենք և կստանանք Joe, ինչու որովհետև իրա this-ը հղվածա դեպի a object-ին <br>
+        բա this.age-ը ոնց աշխատեց, ժառանգությունով այսինքն իրա this-ը հղված էր a object-ից բայց երբ որ մենք age ուզեցինք իրա մեջ չէր, գնաց b-ի մեջ իրա մեջ է չէր, գնաց հասավ c-ին տեսավ որ կար և վերադարձրեց 19 <br>
+        <br>
+        .1. <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const c = { <br>
+            age: 19, <br>
+            showAge() { <br>
+                alert(this.name); <br>
+            } <br>
+        }; <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        a.showAge(); // Joe <br>
+        <br>
+
+        .2. <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const c = { <br>
+            age: 19, <br>
+            showAge() { <br>
+                alert(this.age); <br>
+            } <br>
+        }; <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        a.showAge(); // 19 <br>
+        <br>
+
+        .3. <br>
+        այսինքն եթե մենք ստեղ ունենանք օրինակ a{age: 99} և մենք անենք a.showAge() քանի որ իրա this-ը հղավածա դեպի այս a object-ին անմիջապես այս a-ի մեջի age-ը կվերադարձնի էլ չի շարունակի գնա հասնի c-ին որովհետև 99 արդեն կա <br>
+        const a = { <br>
+            age: 99, <br>
+            name: "Joe" <br>
+        }; <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const c = { <br>
+            age: 19, <br>
+            showAge() { <br>
+                alert(this.age); <br>
+            } <br>
+        }; <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        a.showAge(); // 99 <br>
+        <br>
+
+        .4. <br>
+        մենք գիտենք որ ցանկացած object-ին մենք կարող ենք ավելացնենք ինչ որ արժեք, մենք կարող ենք անենք a.age թող լինի 99(a.age = 99), սենց մենք ավելացնում ենք այս բանալին age-ը որը դեռ չկա և ավելացնում ենք 99 որպես իր արժեքը այսինքն հիմա a-ի մեջ կլինի {name: "Joe", age: "99"} <br>
+        այսինքն հիմա եթե անենք a.showAge() մենք կտեսնենք 99 <br>
+        <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const c = { <br>
+            age: 19, <br>
+            showAge() { <br>
+                alert(this.age); <br>
+            } <br>
+        }; <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        a.age = 99; <br>
+        a.showAge(); // 99 <br>
+        <br><br>
+
+
+        4. <br>
+        կա delete հասկացողությունը (delete a.age;) <br>
+        delete նշանակումա ջնջիր այս բանալին <br>
+        այսինքն այլևս սրանից(delete a.age;) հետո age չի լինի a-ի մեջ <br>
+        իսկ հիմա եթե մենք a.showAge() աշխատացնենք ինչ կտեսնենք, կտեսնենք 99 հետո 19 <br>
+        մենք ավելացրեցինք age-ը հենց a-ին և ջնջեցինք age-ը հենց a-ից, c-ի age-ը մնաց որպես 19 <br>
+        <br>
+        const a = { <br>
+                name: "Joe" <br>
+            }; <br>
+            const b = { <br>
+                lastName: "Jackson" <br>
+            }; <br>
+            const c = { <br>
+                age: 19, <br>
+                showAge() { <br>
+                    alert(this.age); <br>
+                } <br>
+        }; <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        <br>
+        a.age = 99; <br>
+        a.showAge(); // 99 <br>
+        <br>
+        delete a.age; <br>
+        a.showAge(); // 19 <br>
+        <br><br>
+
+
+        5. <br>
+        երբ որ մենք ժառանգում ենք եթե մենք անենք Object.keys() կամ Object.value() a-ի վրա, մենք չենք ստանա ժառանգության արժեքները մենք կստանանք հենց են բանալիները կամ արժեքները որոնք որ կցած են a-ին    <br>
+        Object.keys() կամ Object.values() միայն կվերադարձնի այն արժեքները կամ բանալիները որոնք որ անմիջապես էտ object-ից են կցած <br>
+        դա կարևոր է հասկանալ <br>
+        <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const c = { <br>
+            age: 19, <br>
+            showAge() { <br>
+                alert(this.age); <br>
+            } <br>
+        }; <br>
+        <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        <br>
+        alert(Object.keys(a));    // name <br>
+        alert(Object.values(a));  // Joe <br>
+        <br><br>
+
+
+        6. <br>
+        javascript-ում ընդանրապես երբ որ մենք տեսնում ենք որևէ փոփոխական կամ որևէ անուն որը սկսում է տակի գծիկով դա նշանակում է որ մենք չպետք է ձեռք տանք դա նշանակում է որ դա տակի ներքին ինչ որ փոփոխական է որը կպած է այս object-ին բայց դա մեզ համար չէ մենք չպետքա դրան կարդանք կամ գրենք կամ որևէ բան անենք դա մեր գործը չէ  <br>
+        <br>
+        այսինքն էն ինչ որ ստեղ անում ենք դա շատ վատ բանա չի կարելի տենց բան անել a.__proto__ = b; <br>
+        բա ոնց անենք որպեսզի ավելի ճիշտ մոտեցում ցույց տանք, բա ճիշտը ոնցա ինչպես կարող ենք անենք որպեսզի a-ը ժառանգի օրինակ b-ից <br>
+        const a = { <br>
+            name: "Joe" <br>
+        }; <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const c = { <br>
+            age: 19, <br>
+            showAge() { <br>
+                alert(this.age); <br>
+            } <br>
+        }; <br>
+        a.__proto__ = b; <br>
+        b.__proto__ = c; <br>
+        <br>
+
+        երկու մոտեցում կա <br>
+        <br>
+        .1. առաջինը մենք կարող ենք անենք հետևյալը Object.create() և պաս տանք b <br>
+        դա մեզ կվերադարձնի մի հատ նոր object որը տակից ունի proto հղում դեպի իրեն տված object-ը(այս դեպքում b object-ը) <br>
+        հետևաբար մենք հիմա կարող ենք անենք օրինակ a.name = "Joe" <br>
+        և հիմա կարող ենք alert անենք կամ a.name որը մեզ կտա Joe կամ a.lastname որը մեզ կտա "Jackson" <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const a = Object.create(b); <br>
+        a.name = "Joe" <br>
+        alert(a.name); // Joe <br>
+        alert(a.lastName); // Jackson <br>
+        <br>
+        սա մի տարբերակն է թե ինչպես մենք կարող ենք ստեղծենք object որը ունի այդ __proto__ հղումը դեպի ուրիշ object, Object.create()-ի միջոցով <br>
+        Object.create()-ը կստեղծի մի հատ նոր object որի տակի էտ __proto__ հղումը հղված է դեպի իրեն տված object-ը <br>
+        այսինքն (const a = Object.create(b)) === (a.__proto__ = b) <br>
+        <br>
+        .2. երկրորդ տարբերակը մենք կարող ենք a-ի համար ստեղծել մի հատ object constructor կարող ենք անենք function A() {} որը կստեղծի մեր երկրորդ object-ին որին մենք կանենք this.name = "Joe"; <br>
+        և ինչպես գիտեք ինքը տակից երբ որ մենք սա new-ով կանչենք կանի // this = {}; // return this <br>
+        այսինքն եթե մենք անենք new A(); մեզ կվերադարձնի մի հատ object որի մեջ կլինի name: "Joe" <br>
+        <br>
+        բայց մենք կարող ենք ասենք  A constructor ջան երբ որ դու սարքես դա դու դիր այդ այդ նոր ստեղծված object-ի __proto__ հղումը դեպի մեր ուզած object-ը անելով A.prototype = b; <br>
+        այսինքն ինքը տակից կարելի է ասել սենց բանա անում, անումա // this.__proto__ = A.prototype //b իսկ A.prototype-ին մենք դնում ենք հղում դեպի b // A.prototype = b <br>
+        <br>
+        այսինքն prototype-ին function constructor-ում վերագրում ենք են object-ը որին կհղվի էտ նոր ստեղծված object-ը այդ __proto__ -ով <br>
+        <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        function A() { <br>
+            // this = {} <br>
+            // this.__proto__ = A.prototype; // b <br>
+            this.name = "Joe"; <br>
+            // return this; <br>
+        } <br>
+        A.prototype = b; <br>
+        <br>
+        const a = new A(); <br>
+        <br>
+        alert(a.lastName); // Jackson <br>
+        <br>
+        այսինքն մենք տեսնում ենք որ մենք կարող ենք prototypal inheritance(նախատիպային ժառանգություն)-ով այնպես անենք որպեսզի մի object-ը ուրիշ object-ից ժառանգի <br>
+        <br><br>
+
+
+        7. <br>
+        .1. <br>
+        իսկ ոնց կարելիա սա(prototypal inheritance(նախատիպային ժառանգություն)-ը) կիրառել սա ինչով է հետաքրքիր <br>
+        իրականում մենք արդեն սա(prototypal inheritance(նախատիպային ժառանգություն)-ը) կիրառում ենք <br>
+        <br>
+        ամեն անգամ երբ դուք ստեղծում եք մի հատ նոր object(const a = {};), սա տակից նույն է ինչպես որ մենք անենք սենց const a = new Object(); <br>
+        կա մի հատ function constructor որը կոչվում է Object, որը վերադարձնում է մի հատ object <br>
+        այսինքն սա {} նույն է ինչպես որ սա new Object(); <br>
+        <br>
+        const a = {}; // const a = new Object(); <br>
+        <br>
+        .2. <br>
+        իսկ ինչ է ստացվում երբ որ մենք գրում ենք new Object () <br>
+        դե մենք ստանում ենք մի հատ նոր object չէ <br>
+        <br>
+        իսկ էտ Object function constructor-ը   որին կցած է իմիջայլոց keys() ֆունկցիան որը կվերադարձնի բանալիները տրված Object-ի, որին կցած է values() ֆունկցիան որը կվերադարձնի արժեքները որոնք որ կան տրված object-ի մեջ <br>
+        ինքը նաև function constructor է որը ունի prototype <br>
+        այսինքն ամեն անգամ մենք ստեղծում ենք մի հատ object ինքը տակից ունի __proto__ հղումը դեպի ինչ որ object <br>
+        ինչ կա այդ object-ի մեջ եկեք ուսումնասիրենք <br>
+        // այսինքն վերևի օրինակում եթե մենք A.prototype-ին չվերագրեինք b ինքը տակից(ներքին բլոկից) կաներ this.__proto__ = A.prototype; որտեղ prototype-ը մի object է որի մեջ կա լիքը հետաքրքիր ֆունկցիաներ <br>
+        <br>
+        const a = {}; // const a = new Object() <br>
+        <br>
+        
+        function Object() { <br>
+            // this = {} <br>
+            // this.__proto__ = Object.prototype; <br>
+            <br>
+            // return this; <br>
+        } <br>
+        
+        <br>
+        const b = Object.prototype <br>
+        debugger <br>
+        <br>
+        այդ object-ի մեջ կա լիքը հետաքրքիր ֆունկցիաներ որից մեկը կոչվում է toString(); <br>
+        <br>
+        .2. 1<br>
+        ինչ է անում toString()-ը <br>
+        toString()-ը դա ոնցոր տեքստաորում է, դարձնում է տեքստ տրված object-ը <br>
+        այսինքն ինչ է ստացվում որ եթե մենք կանչենք a.toString();,  կվերադարձնի [object Object] <br>
+        <br>
+        const a = {}; <br>
+        <br>
+        alert(a);            // [object Object] <br>
+        alert(a.toString()); // [object Object] <br>
+        <br>
+
+        .2. 2 <br>
+        այս toString-ը որտեղից եկավ <br>
+        դա ժառանգվեց այն object-ից որին ինքը հղված է __proto__ -ով  <br>
+        այսինքն ամեն անգամ մենք ստեղծում ենք մի հատ նոր դատարկ object իրականում նա ամբողջովին դատարկ չէ, ինքը դատարկ է բայց ինքը ունի __proto__ հղում մի հատ ուրիշ object, որը իր մեջ ունի լիքը տարբեր բաներ որից մեկը toString() ֆունկցիան է, որը գիտի տեքստաորել իրեն,տեքստի վիճակի բերել <br>
+        <br>
+        function Object() { <br>
+            // this = {} <br>
+            // this.__proto__ = Object.prototype; <br>
+            <br>
+            // return this; <br>
+        }; <br>
+        const a = new Object(); // const a = {}; <br>
+        <br>
+
+        .2. 3 <br>
+        երբ է այս toString()-ը օգտագործվում <br>
+        <br>
+        const a = {}; <br>
+        alert(a + " this is fun"); <br>
+        կտպի [object Object] this is fun <br>
+        <br>
+        երբ որ մենք սենց անենք javascript engine-ը են ինչ որ աշխատացնում է մեր կոդը սա տեսնում է ասում է սա a-ը object է, object-ին մենք պետք է դարձնենք տեքստ, բա ոնցա ինքը որոշում ոնց դարձնի տեքստ տրված object-ը ինքը իր toString()-ն է տակից կանչում ավտոմատ <br>
+        հետևաբար եթե մենք սենց անենք կտեսնենք նույն toString()-ի արդյունքը <br>
+        <br>
+        այսինքն toString()-ը դա մի ֆունկցիա է որը բոլոր object-ները ժառանգում են prototype object-ից (իրան չենք ստեղծում, մենք ստեղծեցինք ստեղ մի հատ դատարկ object բայց էս object-ը արդեն ունի իր ներքին բլոկից __proto__ հղումով հղված դեպի prototype object, որն էլ ունի իրեն կցած տարբեր ֆունկցիաներ որից մեկը toString() ֆունկցիան է, որը ավտոմատ կանչվում է տակից) <br>
+        <br>
+
+        .2. 4 <br>
+        փորձենք toString()-ը փոխենք <br>
+        <br>
+        const a = {}; <br>
+        <br>
+        Object.prototype.toString = function() { <br>
+            return "yay"; <br>
+        }; <br>
+        <br>
+        alert(a); <br>
+        կտպի yay <br>
+        <br>
+        հիմա եթե մենք alert() անենք a-ին, a-ը դե պետքա տեքստաորվի որպեսզի նկարվի էկրանի վրա, որպեսզի նա տեքստաորվի իր toString() ֆունկցիան պետքա կանչվի որը մենք ստեղ փոխեցինք  <br>
+        հետևաբար եթե մենք հիմա աշխատացնենք մենք տեսնում ենք yay ոչ թե [object Object] <br>
+        այսինքն ինչ արեցինք ստեղ prototype-ը հղում է են object-ին որին a.__proto__ հղված է(a.__proto__ = Object.prototype) <br>
+        <br>
+        կարող ենք նաև ստուգենք <br>
+        const a = {}; <br>
+        alert(a.__proto__ === Object.prototype); <br>
+        կտպի true <br>
+        <br>
+        այսինքն Object constructor-ին ասում ենք երբ որ object ստեղծես դու, թող իրա __proto__ հղումը լինի դեպի prototype object-ին և մենք այդ object-ի(prototype object-ի) toString()-ը փոխում ենք հետևաբար ապագայում եթե մենք աշխատացնենք a.toString() կամ որևէ ժամանակ a-ը տեքստաորվի դա կկանչի տակից այս toString() ֆունկցիան և մենք կստանանք ցանկացած բան ինչ որ մենք ուզենանք <br>
+        <br><br>
+
+
+        8. <br>
+        ընդհանուր ամփոփում <br>
+        այսինքն prototypal inheritance(նախատիպային ժառանգություն)-ը ինչովա հետաքրքիր, ինչովա լավ որ ինքը հնարաորություն է տալիս որ մենք անընդհատ եթե լիքը object-ներ ունենք որոնք որ ունեն մոտաորապես նույն տեսքը նույն ֆունկցիաները նույն արժեքները անընդհատ չկրկնենք այլ ստեղծենք մի հատ object որի մեջ թող լինեն էտ ֆունկցիաները օրինակ և հետո ունենանք լիքը ուրիշ object-ներ որոնք որ ընդամենը ժառանգեն իրենից <br>
+        prototypal inheritance(նախատիպային ժառանգություն)-ը շատ լավ բան է շատ հարմար բան է բայց ինքը շատ հաճախ չի օգտագործվում ինքը միայն օգտագործվում է javascript-ի մեջ և էլի որոշ լեզուների մեջ որոնք որ academy-իաում են օգտագործվում բայց հիմնականում տենց proect չեք հանդիպի որ գրեք ինչ որ լեզվով որը prototype-ովա գրված բացի javascript-ից <br>
+        <br>
+        բայց javascript-ում բավականին տարածված է prototypal inheritance(նախատիպային ժառանգություն)-ը, հետևաբար արժի հասկանալ, կոնցեպտը շատ պարզ է object-ները ժառանգում են իրարից <br>
+        ոնց են ժառանգում, ամեն object-ը ունի __proto__ դեպի իր ծնողը որից ինքը ժառանգում է, որը ունի __proto__ դեպի իր ծնողը և այլն և այլն միչև վերջ, և քանի որ __proto__ հղումը տակի գծիկներով է ստեղծված և մենք իրավունք չունենք ինքնուրույն ստեղծենք այդ հղումը, մենք միայն կարող ենք ստեղծենք այդ տիպի հղում կամ <br>
+        .1. <br>
+        մենք միայն կարող ենք ստեղծենք այդ տիպի հղում կամ function constructor-ի միջոցով, այսինքն function constructor-ին ասում ենք օգտագործիր այս prototype-ը որպես իր այդ հղումը(this.__proto__ = Object.prototype) <br>
+        function Object() { <br>
+            // this = {} <br>
+            // this.__proto__ = Object.prototype; <br>
+            <br>
+            // return this; <br>
+        }; <br>
+        const a = new Object(); // const a = {}; <br>
+        <br>
+        .2. <br>
+        կամ օգտագործելով object.create() ում մենք տալիս ենք այդ object-ը ինքը ստեղծում է մի հատ նոր object որը ունի այդ __proto__ հղումը դեպի այդ տրված object-ը հետո ինչ ուզում անում ենք այդ object-ով <br>
+        const b = { <br>
+            lastName: "Jackson" <br>
+        }; <br>
+        const a = Object.create(b); <br>
+        a.name = "Joe" <br>
+        alert(a.name); // Joe <br>
+        alert(a.lastName); // Jackson <br>
+        <br><br>
+
+
+        9. <br>
+        հետաքրքրության համար <br>
+        alert(a); // [object Object] <br>
+        alert(a.toString()); // [object Object] <br>
+        const a = {} // new Object(); <br>
+        alert(JSON.stringify(a.toString(), undefined, 2)); // "[object Object]" <br>
+        alert(JSON.stringify(a, undefined, 2)); // {} 
+
    
     </h2>
 

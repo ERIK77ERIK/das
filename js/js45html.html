@@ -144,7 +144,7 @@
         <br>
         function forEach(arr, fun, obj) { <br>
         for(let i = 0; i < arr.length; i++) { <br>
-            fun.call(obj) <br>
+            fun.call(obj, arr[i], i) <br>
             } <br>
             } <br>
             <br>

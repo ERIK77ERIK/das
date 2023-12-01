@@ -13,6 +13,8 @@
 
     <hr>
     <h1>
+
+        Javascript OOP - object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում) -- &nbsp; Static(Ստատիկ)
       
     </h1>
     <hr>
@@ -23,7 +25,236 @@
     <br><br>
 
     <h2>
-   
+        1. <br>
+        class Person { <br>
+            sayHi() { <br>
+                alert("hi") <br>
+            } <br>
+            sayBye() { <br>
+                alert("bye") <br>
+            } <br>
+        } <br>
+        <br>
+        const obj = new Person(); <br>
+        <br><br><br>
+
+        2. <br>
+        շաբլոնին կցենք մի հատ ֆունկցիա դա նշանակումա էս ֆունկցիան շաբլոնի մասնիկը չի այսինքն ինքը չի նկարագրում շաբլոնին(իր ստեղծած object-ի մեջ չի այսինքն this-ին կպած չի), ինքը ուղղակի ֆունկցիայա որը կպածա շաբլոնին <br>
+        այսինքն ինչ է ստացվում որ այս obj-ը հիմա ում վերագրածա new Person() այսինքն Person-ի ստեղծած object-ը, ինքը իր մեջ կունենա sayHi և sayBi բայց boo չի ունենա որովհետև boo-ն շաբլոնի մասնիկը չի ինքը չի նկարագրում ստրուկտուրան(իր ստեղծած object-ի մեջ չի) ինքը ուղակի ֆունկցիա է որը կպած է հենց շաբլոնին <br>
+        դա նշանակում է որ եթե ուզենամ էս boo-ն կանչեմ ես պետքա անեմ Person.boo() <br>
+        <br>
+        ֆունկցիաները որոնք որ կցած են class-ից ոչ թե նկարագրում են ապագա object-ին(այսինքն այն object-ի մեջ են որը որ ստեղծում է class-ը) այլ հենց class-ից են կցած էտ տիպի ֆունկցիաները կոչվում են static ֆունկցիաներ <br>
+        իրենց javascript-ում կարելիա ստեղծել երկու տարբերակով <br>
+        .1. <br>
+        կամ կարելիա հենց այ սենց ուղակի class-ին կպցնել <br>
+        <br>
+        class Person { <br>
+            sayHi() { <br>
+                alert("hi") <br>
+            } <br>
+            sayBye() { <br>
+                alert("bye") <br>
+            } <br>
+        } <br>
+        Person.boo = function() { <br>
+            alert("boo") <br>
+        } <br>
+        Person.boo(); // boo <br>
+        <br>
+        const obj = new Person(); <br>
+        <br>
+        obj.boo();      // Uncaught TypeError: obj.boo is not a function <br>
+        Person.sayHi(); // Uncaught TypeError: Person.sayHi is not a function <br>
+        <br>
+        .2. <br>
+        կամ կարելիա անել այսպես գրել static և ֆունկցիան <br>
+        հիմա zoo-ն քանի որ static է նույն է ինչ որ boo-ն այսինքն ինքը կցած է հենց class-ից հետևաբար մենք կարող ենք անենք Person.zoo() և ստանանք, obj-ը բայց չի ունենա այսինքն եթե մենք փորձենք անել obj.zoo() չի աշխատի որովհետև obj-ը zoo չունի zoo-ն this-ին չի կցվում, zoo-ն կցվումա հենց class-ին <br>
+        <br>
+        class Person { <br>
+            sayHi() { <br>
+                alert("hi"); <br>
+            } <br>
+            sayBye() { <br>
+                alert("bye"); <br>
+            } <br>
+            <br>
+            static zoo() { <br>
+                alert("zoo"); <br>
+            } <br>
+        } <br>
+        <br>
+        Person.boo = function() { <br>
+            alert("boo") <br>
+        } <br>
+        <br>
+        Person.boo(); // boo <br>
+        Person.zoo(); // zoo <br>
+        <br>
+        const obj = new Person(); <br>
+        obj.boo();   // Uncaught TypeError: obj.boo is not a function <br>
+        Person.sayHi(); // Uncaught TypeError: Person.sayHi is not a function <br>
+        <br>
+
+        static ֆունկցիաները կցած են class-ից <br>
+        սովորական ֆունկցիաները ուղղակի նկարագրում են ապագա object-ին այսինքն կցվում են this-ի վրա և ստեղծվում են միայն են պահից երբ որ էտ object-ը ստեղծվում է և գտնվում են իր մեջ  <br>
+        <br><br><br>
+
+
+        3. <br>
+        որտեղ ենք տեսել այդպիսի օրինակ <br>
+        <br>
+        3. .1. <br>
+        const a = [] <br>
+        a[0] = 5; <br>
+        a[1] = 9; <br>
+        <br>
+        alert(a); // 5,9 <br>
+        <br><br>
+        3. .2. <br>
+        Array-ը կարելիա պատկերացնել որպես շաբլոն որպես class <br>
+        տենց կարելիա պատկերացնել, իրականում function constructor է բայց դե էս պարագայում կապ չունի ինչ որ մի class է որից մենք կանչում ենք new և ստանում ենք մի հատ զանգված  <br>
+        <br>
+        const a = new Array(); // [] <br>
+        a[0] = 5; <br>
+        a[1] = 9; <br>
+        <br>
+        alert(a); // 5, 9 <br>
+        <br><br>
+
+        3. .3. <br>
+        այդ զանգվածը ունի անմիջապես իրեն կցած լիքը ֆունկցիաներ օրինակ push, pop, forEach, map, reduce, filter <br>
+        այսինքն մենք հիմա կարող ենք անենք a.forEach();  <br>
+        <br>
+        const a = new Array(); // [] <br>
+        a[0] = 5; <br>
+        a[1] = 9; <br>
+        <br>
+        a.forEach((val) => { <br>
+            alert(val); <br>
+        }); <br>
+        կտպի 5 հետո 9 <br>
+        <br><br>
+
+        3. .4. <br>
+        այսինքն ինչ է ստացվում որ էս forEach-ը հիմա կցած է object-ին(a object-ին), հիմա հարց էս forEach-ը Array-ի վրա կա թե չէ, եթե մենք անեինք alert(Array.forEach()) <br>
+        ճիշտ եք ենթադրում որ չի աշխատի տենց բան չկա որովհետև ինքը static չի ինքը չի կցած class-ից ինքը կցածա հենց object-ից(այսինքն այդ class-ից ստեղծած object-ի մեջ է, էս պարագայում էտ object-ը a-ն է) <br>
+        այսինքն մենք անում ենք new Array() ստանում ենք էտ նոր զանգվածը որը էտ պահին ստեղծում է իր մեջ բոլոր էտ ֆունկցիաները(forEach-ը, map-ը, filter-ը, reduce-ը և այլն) <br>
+        <br>
+        const a = new Array(); // [] <br>
+        a[0] = 5; <br>
+        a[1] = 9; <br>
+        <br>
+        alert(Array.forEach); // undefined <br>
+        <br><br>
+
+        3. .5. <br>
+        բայց Array-ը ունի static ֆունկցիա( isArray ), որը ստուգում է ինչ որ մի արժեք զանգված է թե ոչ <br>
+        isArray-ը static է, ինչու է static որովհետև ինքը կպած է հենց class-ից <br>
+        եթե մենք անենք  alert(a.isArray) կտեսնեք որ էս ֆունկցիան գոյություն չունի, բայց Array-ը ունի իր մեջ այդ static ֆունկցիան  <br>
+        <br>
+        const a = new Array(); // [] <br>
+        a[0] = 5; <br>
+        a[1] = 9; <br>
+        <br>
+        ///Array.isArray <br>
+        <br>
+        alert(Array.isArray); // function isArray() { [native code] } <br>
+        alert(Array.isArray(a));  // true <br>
+        <br>
+        alert(a.isArray); // undefined <br>
+        <br><br>
+
+        3. .6. <br>
+        նույն իմիջայլոց հիշում եք երբ որ մենք անում ենք Object.keys({name: "Joe"}); և ինքը վերդարձնում է զանգված որի մեջ կան բոլոր բանալիները <br>
+        սա էլա static ինչու որովհետև ինքը կցածա անմիջապես հենց ոնց որ function constructor-ից կամ կարելի է պատկերացնել որպես class էս Object-ը class է որովհետև կարելիա անել new Object(); որպեսզի ստեղծենք նոր object-ը  <br>
+        <br>
+        Object.keys({name: "Joe"}); <br>
+        <br>
+        new Object(); // {} <br>
+        <br><br><br>
+
+
+        4. <br>
+        այսինքն ինչ է ստացվում որ երբ որ մենք նկարագրում ենք շաբլոն կամ class մենք իր մեջ դնում ենք ֆունկցիաներ որոնք որ նկարագրում են թե ապագայում երբ որ object-ը ստեղծվի այդ շաբլոնով կամ այդ class-ով ինչ ֆունկցիաներ իր մեջ կունենա դրանք սովորական ոչ static ֆունկցիաներն են  <br>
+        կան նաև static ֆունկցիաներ, static ֆունկցիաները չեն ստեղծվում և կպնում էտ նոր object-ին այլ ուղղակի արդեն ստեղծված են և կպած են հենց class-ից կամ function constructor-ից  <br>
+        <br>
+        այսինքն որպեսզի օգտագործել ոչ static ֆունկցիաները class-ի մեջի, մենք պետքա սկզբից նոր object ստեղծենք որպեսզի էտ object-ի միջոցով կանչենք այդ ֆունկցիաներին <br>
+        իսկ static ֆունկցիաները արդեն class-ին կպած են ընդամենը պետքա անել class-ի անունը . և էտ class-ի անունը և էտ static ֆունկցիայի անունը որպեսզի օգտագործենք static ֆունկցիաներ <br>
+        <br><br><br>
+
+        5. <br>
+        հիշելու համար <br>
+        ...
+
+
+        <br><br><br><br>
+
+
+        Javascript OOP - Ամփոփում <br>
+        <br>
+        1. <br>
+        object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում)-ը առաջարկում է թե մենք ինչպես կարող ենք դասաորենք մեր կոդը, ինքը առաջարկում է որ մենք մեր ինֆորմացիան data-ն պահենք object-ների մեջ <br>
+        ինքը նաև ունի մի քանի կոնցեպտներ <br>
+        -Encapsulation, <br>
+        -Inheritance <br>
+        -Polymorphism <br>
+        -Abstraction <br>
+        <br><br>
+
+        - Encapsulation-ը դա նշանակումա որ object-ները իրենց ներքին խոհանոցը պահում են գաղտնիք այսինքն ներքին փոփոխականները կամ ներքին լոգիկան չեն թողում որ դուրս գա իրենից դուրս <br>
+        <br>
+        կա inheritance <br>
+        կա Նախատիպային ժառանգություն(Prototypal Inheritance) երբ որ object-ները ժառանգում են իրարից <br>
+        կա Դասական ժառանգություն (Classical Inheritance) որտեղ կան շաբլոններ կամ class-եր որոնք որ ժառանգում են իրարից, այդ շաբլոնները օգտագործելով մենք կարող ենք ստեղծենք object-ներ, այդ շաբլոնների մեջ կարող են լինել ֆունկցիաներ որոնք որ ստեղծվում են հենց են պահին երբ որ object-ն է ստեղծվում և մտնում են էտ object-ի մեջ, բայց նաև կան static ֆունկցիաներ որոնք որ կպած են հենց շաբլոնից հենց class-ից որոնք որ չեն մտնում ստեղծած object-ների մեջ այլ ուղղակի մնում են class-ին կպած և մենք կարող ենք իրան class-ի միջոցով կանչել <br>
+        <br>
+        Պոլիմորֆիզմ(Polymorphism) կոնցեպտի դերը նրանում է որ ֆունկցիան կարող է ունենալ տարբեր դերեր <br>
+        .1. կախված են արժեքների քանակից որ ինքը ստանումա է <br>
+        .2. կախված են արժեքների տիպից որ ինքը ստանումա է <br>
+        .3. կախված որ object-ին է նա կցած <br>
+        <br>
+        նաև կա Abstraction, Abstraction-ի միտքը նրանումա որ նայած context մենք միայն ցույց ենք տալիս են մասը object-ի որը պետք է կամ անհրաժեշտ է որպեսզի անել հենց այդ գորժոզությունը ոչ ավել, այսինքն մենք կենտրոնանում ենք են մասի վրա որը պետք է և էն մնացած դետալները որոնք որ էտ պահին կարողա պետք չգան մենք ցույց չենք տալիս մենք պահում ենք <br>
+        <br><br>
+
+        2. <br>
+        object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում)-ը իրականում կիրառվում է շատ տարբեր ծրագրաորման լեզուններով <br>
+        եկեք տեսնենք <br>
+        <br>
+        Javascript-ի syntax-ը <br>
+        class HelloWorld { <br>
+            hello() { <br>
+                console.log("Hello Armenia"); <br>
+            } <br>
+        } <br>
+        <br>
+        Java-ի syntax-ը <br>
+        public class HelloWorld { <br>
+            public static void main(String[] args) { <br>
+                System.out.println("Hello Armenia!!!"); <br>
+            } <br>
+        } <br>
+        <br>
+        C#(C shurp)-ի syntax-ը <br>
+        namespace HelloWorld <br>
+        { <br>
+            class Hello { <br>
+                static void Main(string[] args) <br>
+                { <br>
+                    System.Console.WriteLine("Hello Armenia!"); <br>
+                } <br>
+            } <br>
+        } <br>
+        <br>
+        C++-ի syntax-ը <br>
+        #include <`iostream> <br>
+        <br>
+        int main() { <br>
+            std::cout << "Hello Armenia!"; <br>
+            return 0; <br>
+        } <br>
+        <br>
+        այսինքն էն կոնցեպտները որ մենք սովորեցինք(ֆունկցիաները, class-երը, static է կամ static չէ, տեքստերը, թվերը, return է անում թե ուրիշ ինչ է անում) էտ ամբողջը կարելի է օգտագործել լրիվ ուրիշ ծրագրաորման լեզուների մեջ այսինքն ամբողջ նպատակը միայն javascript սովորելը չէ այլ սովորել կոնցեպտները որպեսզի մենք կարողանանք այդ նույն կոնցեպտները կիրառենք շատ ուրիշ լեզուներում 
+
+        
     </h2>
 
 

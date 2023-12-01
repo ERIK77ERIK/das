@@ -13,6 +13,8 @@
 
     <hr>
     <h1>
+
+        Javascript OOP - object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում) -- Abstraction(Աբստրակցիա)
       
     </h1>
     <hr>
@@ -23,7 +25,193 @@
     <br><br>
 
     <h2>
-   
+        1. <br>
+        Abstraction(Աբստրակցիա)-ն object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում)-ի չորս կարևոր կոնցեպտներից մեկն է <br>
+        աբստրակցիա նշանակում է թաքցնել <br>
+        այսինքն ինչ նկատի ունենք թաքցնել երբ որ մենք խոսում ենք OOP-ի մասին  <br>
+        <br>
+        պատկերացրեք ինչ որ ուրիշ ծրագրաորող թիմում ստեղծում է ինչ որ մի ֆունկցիա որը ենթադրում է որ պետք է աշխատի ուսանողների հետ <br>
+        այսինքն ինչ է ստացվում որ այդ ֆունկցիան ենթադրում է որ իրեն կտաք որպես object մի ուսանող և ինքը այդ ուսանողի հետ կաշխատի, և իրեն ինչա պետք էտ ուսանողից էս պարագայում պետք է ուսանողի թիվը(student.getStudentId();) և պետք են կուրսերը որ էս ուսանողը սովորում է որպեսզի էտ կուրսերից քաղի բոլոր անունները քցի մի հատ զանգվածի մեջ և alert անի այն ուսանողը որը որ ունի այս թիվը(ուսանող՝ ID-ով + id) սովորում է և ցույց տա կուրսերի անունները և կասի կուրսեր վերջում("is studying " + courseNames.join(", ") + " courses"); <br>
+        <br>
+        են մասնագետը որ funcForStudent ֆունկցիան գրել է ենթադրում է որ այս object-ը կունենա այն ֆունկցիաները իր մեջ որը կապ ունեն ուսանողի հետ <br>
+        բայց մենք իրեն փոխանցում ենք person որի մեջ կան այս բոլոր ֆունկցիաները մի մասը օրինակ getSalary ընդհանրապես ոչ մի կապ չունի ուսանողի հետ(funcForStudent ֆունկցիայի հետ) բա ինչի ենք փոխանցում էտ ինֆորմացիան ինչի ենք ավելորդ ինֆորմացիա փոխանցում այս funcForStudent ֆունկցիային եթե իրեն պետք չէ այդ ավելորդ ինֆորմացիան  <br>
+        այսինքն <br>
+        Abstraction(Աբստրակցիա)-ի ամբողջ գլխաոր գաղափարը նա է որ ավելորդ ինֆորմացիա ցույց չտան(թաքցնեն) <br>
+        <br>
+        class Person { <br>
+            constructor(name, lastName, passportId, studentId, salary) { <br>
+                this._name = name; <br>
+                this._lastName = lastName; <br>
+                this._passportId = passportId; <br>
+                this._studentId = studentId; <br>
+                this._salary = salary; <br>
+                this._courses = []; <br>
+            } <br>
+            <br>
+            getName() { <br>
+                return this._name; <br>
+            } <br>
+            <br>
+            setName(name) { <br>
+                this._name = name; <br>
+            } <br>
+            <br>
+            getFullName() { <br>
+                return this.name() + " " + this.getSurname(); <br>
+            } <br>
+            <br>
+            getPassportId() { <br>
+                return this._passportId; <br>
+            } <br>
+            <br>
+            getStudentId() { <br>
+                return this._studentId; <br>
+            } <br>
+            <br>
+            getSalary(salary) { <br>
+                this._salary = salary; <br>
+            } <br>
+            <br>
+            getCourses() { <br>
+                return this._courses; <br>
+            } <br>
+            <br>
+            addCourse(course) { <br>
+                this._courses.push(course); <br>
+            } <br>
+            <br>
+            removeCourse(courseId) { <br>
+                this._courses = this._courses.filter(c => c.id !== courseId); <br>
+            } <br>
+            <br>
+            clearCourses() { <br>
+                this._courses = []; <br>
+            } <br>
+        } <br>
+        <br>
+        const person = new Person("Mesrop", "Ademyan", "A3243432", "UNI7265376", 450000); <br>
+        <br>
+        person.addCourse({ <br>
+            name: "Introducton to Computer Science", <br>
+            id: "CS110" <br>
+        }); <br>
+        person.addCourse({ <br>
+            name: "Introduction to Biology", <br>
+            id: "BI0101" <br>
+        }); <br>
+        <br>
+        function funcForStudent(student) { <br>
+            const id = student.getStudentId(); <br>
+            const courseNames = student.getCourses().map((course) => course.name); <br>
+            alert("Student with the id of " + id + ", is studying " + courseNames.join(", ") + " courses"); <br>
+        } <br>
+        <br>
+        funcForStudent(person); <br>
+        // կտպի Student with the id of UNI7265376, is studying Introducton to Computer Science, Introduction to Biology courses <br>
+        <br><br>
+
+
+        2. <br>
+        այսինքն ինչ կստացվի որ մենք այս նույնը կարող էինք անեինք այսպես որպես ուղղակի մի տարբերակ <br>
+        մենք կարող ենք փոխանցենք մի հատ ուրիշ object որը կունենա միայն են ֆունկցիաները որը ինքը ուզում է <br>
+        <br>
+        ինչ ֆունկցիա է ուզում, ինքը ուզում է getStudentId որը երբ որ ինքը կանչի մենք տակից կկանչենք person.getStudentId() ինքը նաև տակից օգտագործելու է getCourses() և return կանենք person.getCourses(), ուրիշ ոչ մի ֆունկցիա ինքը չի օգտագործելու <br>
+        <br>
+        նույնպես աշխատեց ոչ մի բան չփոխվեց բայց ի տարբերակ մեր հին օրինակի էս անգամ մենք ընդամենը փոխանցում ենք մի object որը իր մեջ ունի միայն և միայն այն ֆունկցիաները որոնք որ պետք են այդ funcForStudent ֆունկցիայի մեջ այդ իրավիճակի մեջ <br>
+        ավելորդ ինֆորմացիա մենք ցույց չենք տալիս և հետևաբար մենք ստանում ենք մի քանի առավելություն <br>
+        <br>
+        .1. <br>
+        առաջինը, են ծրագրաորողը որը գրում է սա եթե հանկարծ debugger-ի մեջ մտնի և սկսի ուսումնասիրել ինքը չի տեսնի մի հատ object որը ունի շատ ինչոր ֆունկցիաներ ու ասի մի րոպե էս ինչ ֆունկցիաներ են, էս ֆունկցիաներից շատերը նույնիսկ ուսանողի հետ կապ չունեն ինչ եք ինձ տալիս ավելորդ ինֆորմացիա, որպեսզի ես հիմա էտ ամբողջ ինֆորմացիով պիտի անցնեմ որպեսզի գտնեմ են ֆունկցիաները որոնք որ կապ ունեն ուսանողի հետ <br>
+        այսինքն անիմաստ ավելորդ ինֆորմացիա է տրվում ֆունկցիաին որի մեջ ծրագրաորողը կարողա խճճվի  <br>
+        .2. <br>
+        երկրորդ պատճառը դա էնա որ մենք միշտ պետք է ցույց տանք միայն են ինչ որ պետքա և ոչ ավել ինչու որովհետև օգտագործողը բացի նրանից որ կարող է խճճվի շատ ինֆորմացիայից, ինքը նաև կարող է ինչ որ ավելորդ բան անի որտեղ ինքը գործ չունի անելու  <br>
+        օրինակ․  <br>
+        եթե մենք funcForStudent ֆունկցիային փոխանցենք ուսանողի object որի մեջ նաև լինի օրինակ իր աշխատավարձի մասին ինֆորմացիան մի գուցե մենք չենք ուզում են համակարգը որ աշխատում է ուսանողների հետ իմանա էտ ուսանողը տակից իրականում բացի ուսանող լինելուց նաև ինչքան փող է աշխատում դա էտ համակարգի էս մասնիկի կոդի(funcForStudent ֆունկցիայի) գործը չի միգուցե էս կոդը էտ ինֆորմացիան վերցնումա փաթեթաորումա և ուղարկումա դեկանին մեկել դեկանը բացումա ու տեսնումա որ էս ուսանողը բացի էս կուրսը վերցնելուց նաև էսքան աշխատավարձ է ստանում դեկանը գործ չունի դա իր գործը չէ  <br>
+        <br>
+        այսինքն Աբստրակցիա (Abstraction)-ի միտքը ինչում է որ մենք ավելորդ ինֆորմացիա ցույց չենք տալիս մի քանի պատճառով  <br>
+        .1. առաջինը որովհետև երբ որ շատ ինֆորմացիա ենք ցույց տալիս ավելի հեշտ է խճճվել <br>
+        .2. և երկրորդը ավելորդ ինֆորմացիա չենք տալիս որովհետև պետք չի որ էտ ավելորդ ինֆորմացիան էտ ֆունկցիան իմանա որովհետև կոպիտ ասած իր գործը չէ <br>
+        Աբստրակցիա(Abstraction)-ը նշանակումա են մասը որը պետք չի ցույց տալ մենք ցույց չենք տալիս այսինքն թաքցնել են մասը ինֆորմացիայի որը պետք չի և միայն ցուց տալ են մասը որը անհրաժեշտ է    <br>
+        <br>
+        class Person { <br>
+            constructor(name, lastName, passportId, studentId, salary) { <br>
+                this._name = name; <br>
+                this._lastName = lastName; <br>
+                this._passportId = passportId; <br>
+                this._studentId = studentId; <br>
+                this._salary = salary; <br>
+                this._courses = []; <br>
+            } <br>
+            <br>
+            getName() { <br>
+                return this._name; <br>
+            } <br>
+            <br>
+            setName(name) { <br>
+                this._name = name; <br>
+            } <br>
+            <br>
+            getFullName() { <br>
+                return this.name() + " " + this.getSurname(); <br>
+            } <br>
+            <br>
+            getPassportId() { <br>
+                return this._passportId; <br>
+            } <br>
+            <br>
+            getStudentId() { <br>
+                return this._studentId; <br>
+            } <br>
+            <br>
+            getSalary(salary) { <br>
+                this._salary = salary; <br>
+            } <br>
+            <br>
+            getCourses() { <br>
+                return this._courses; <br>
+            } <br>
+            <br>
+            addCourse(course) { <br>
+                this._courses.push(course); <br>
+            } <br>
+            <br>
+            removeCourse(courseId) { <br>
+                this._courses = this._courses.filter(c => c.id !== courseId); <br>
+            } <br>
+            <br>
+            clearCourses() { <br>
+                this._courses = []; <br>
+            } <br>
+        } <br>
+        <br>
+        const person = new Person("Mesrop", "Ademyan", "A3243432", "UNI7265376", 450000); <br>
+        <br>
+        person.addCourse({ <br>
+            name: "Introducton to Computer Science", <br>
+            id: "CS110" <br>
+        }); <br>
+        person.addCourse({ <br>
+            name: "Introduction to Biology", <br>
+            id: "BI0101" <br>
+        }); <br>
+        <br>
+        function funcForStudent(student) { <br>
+            const id = student.getStudentId(); <br>
+            const courseNames = student.getCourses().map((course) => course.name); <br>
+            alert("Student with the id of " + id + ", is studying " + courseNames.join(", ") + " courses"); <br>
+        } <br>
+        <br>
+        funcForStudent({ <br>
+            getStudentId() { <br>
+                return person.getStudentId(); <br>
+            }, <br>
+            getCourses() { <br>
+                return person.getCourses() <br>
+            } <br>
+        }) <br>
+        // կտպի Student with the id of UNI7265376, is studying Introducton to Computer Science, Introduction to Biology courses 
+
+        
     </h2>
 
 

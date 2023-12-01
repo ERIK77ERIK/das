@@ -33,7 +33,7 @@ let didWeWin = function (board, player) {
             if (player === "x") {
                 let i1 = 0;
                 while (i1 < board.length) {
-                    let i2 = 0;
+                    let i2 = 0; 
                     while (i2 < board.length) {
                         if (board[i1][i2] === "x") {
                             board[i1][i2] = "X";

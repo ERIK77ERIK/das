@@ -13,6 +13,8 @@
 
     <hr>
     <h1>
+
+        Javascript - truthy / falsy
       
     </h1>
     <hr>
@@ -23,6 +25,340 @@
     <br><br>
 
     <h2>
+        1. <br>
+        մենք գիտենք որ javascript-ում կա true և false արժեքներ, boolean արժեքներ <br>
+        javascript-ում նաև կա truthy և falsy հասկացողություն  <br>
+        truthy-ի նշանակում է true-ոտ <br>
+        falsy-ի նշանակում է false-ոտ <br>
+        <br>
+        բոլոր արժեքները javascript-ում ընկնում են էս երկու խմբակներից մեկի մեջ <br>
+        այսինքն ցանկացած արժեք կարելի է համարել ավելի true քան թե false կամ ավելի false քան թե true <br>
+        <br><br>
+
+
+        2. <br>
+        ինչպես իմանանք որ արժեքներն են ընկնում որ խմբակի մեջ հետևյալ ձևով <br>
+        մենք պետք է ուղղակի հիշենք վեց արժեքները որոնք որ համարվում են falsy և մնացածը truthy են  <br>
+        <br>
+        falsy - false, 0, "", undefined, null, NaN <br>
+        truthy - true, "ajghj", 1, [], {}, function() {} <br>
+        <br><br>
+
+
+        3. <br>
+        ինչի է սա կարևոր որովհետև truthy և falsy հասկացողությունը մենք կարող ենք օրինակ օգտագործենք if-ի մեջ  <br>
+        <br>
+        let a = ""; <br>
+        <br>
+        if(a) { <br>
+            alert("yay"); <br>
+        } else { <br>
+            alert("nooo"); <br>
+        }; <br>
+        կտպի nooo <br>
+        եթե մենք սա աշխատացնենք կստանանք nooo ինչու որովհետև քանի որ սա դատարկ է, դատարկ տեքստը ինչպես հիշում եք համարվում է falsy այսինքն ավելի false քան true, if-ը հարգում է էտ փաստը և ընդունելով a-ը և ընդունելով որ ինքը ավելի false է քան true ինքը a վերածում է boolean արժեքին այս դեպքում քանի որ falsy-ա դարձնումա false և առաջի բլոկը չի աշխատացնում այլ հակառակ դեպքն է աշխատացնում <br>
+        <br>
+
+        let b = "ehaahds"; <br>
+        <br>
+        if(b) { <br>
+            alert("yay"); <br>
+        } else { <br>
+            alert("nooo") <br>
+        } <br>
+        կտպի yay <br>
+        <br><br>
+
+
+        4. <br>
+        !(ոչ) գիտենք ինչա նշանակում, նշանակումա որ boolean արժեքը շուռ ենք տալիս <br>
+        բայց ստեղ boolean չի, a-ը սովորական տեքստ է բայց ինքը մեկա ընկնումա էտ երկու խմբակի մեջ կամ ավելի true-ա քան false կամ ավելի false-ա քան true, էս պարագայում քանի որ ինքը դատարկ տեքստ չի ինքը համարվումա truthy բայց երբ որ իրեն շուռ ենք տալիս ստանում ենք false <br>
+        այսինքն սա ! այս not օպերատորը վերադարձնումա boolean արժեք <br>
+        և ինչպես է նա աշխատում, ինքը ուսումնասիրումա a-ին ասումա ինքը truthy-ա թե falsy-ա, էս պարագայում truthy-ա ինքը դա վերածում է boolean արժեքին(դարձնումա true) և շուռ է տալիս նրան և ստանում է իր հակառակ boolean արժեքը(այս պարագայում false) <br>
+        <br>
+        եթե մենք truthy արժեքը շուռ ենք տալիս ստանում ենք false ոչ թե falsy <br>
+        նույն ձև երբ որ մենք falsy արժեքը շուռ ենք տալիս ստանում ենք true ոչ թե truthy <br>
+        դա շատ կարևոր է <br>
+        այսինքն not operator-ը միշտ միչև աշխատելը նախ և առաջ truthy դարձնում է true կամ falsy-ին դարձնում է false հետո նոր իրեն շուռ է տալիս <br>
+        <br>
+        let a = "ehaahds"; <br>
+        <br>
+        if(!a) { <br>
+            alert("yay"); <br>
+        } else { <br>
+            alert("nooo") <br>
+        } <br>
+        կտպի nooo <br>
+        <br>
+
+        այսինքն ցանկացած արժեք որը բնականաբար կամ truthy-ա կամ falsy մենք կարող ենք վերածենք իր համապատասխան boolean տարբերակին օգտագործելով !! <br>
+        ցանկացած truthy արժեքը !! -ով կարող ենք ստանանք true <br>
+        ցանկացած falsy արժեքից !! -ով կարող ենք ստանանք false <br>
+        <br>
+        let a = ""; <br>
+        let b = !a; <br>
+        <br>
+        alert(b); <br>
+        կտպի true <br>
+        <br>
+        alert(!!a) <br>
+        կտպի false <br>
+        <br><br>
+
+
+        5. <br>
+        or(կամ)-ը ինչպես է աշխատում truthy, falsy արժեքների հետ <br>
+        <br>
+        5.1 <br>
+        հիշեցում կամ(||)-ից <br>
+        մենք գիտենք որ սա false || true կվերադարձնի true <br>
+        <br>
+        let a = false || true; <br>
+        alert(a); <br>
+        կտպի true <br>
+        /// կամ <br>
+        let a = true || false; <br>
+        alert(a); <br>
+        կտպի true <br>
+        <br>
+        5.2 <br>
+        or(կամ)-ը truthy, falsy արժեքների հետ աշխատելիս միշտ նայում է նախ և առաջ իր ձախ կողմից և ստուգում է truthy է թե ոչ <br>
+        <br>
+        եթե truthy է հենց էտ արժեքը վերադարձնում է <br>
+        let a = "99" || false; <br>
+        alert(a); <br>
+        կտպի 99 <br>
+        <br>
+        եթե falsy է ինքը անմիջապես իր աջ կողմի արժեքն է վերադարձնում կապ չունի աջ կողմինը truthy-ա թե falsy-ա ինքը աջ կողմինը կվերադարձնի <br>
+        let a = "" || 99; <br>
+        alert(a); <br>
+        կտպի 99 <br>
+        <br>
+
+        հետևաբար երբ որ մենք անում ենք false || true ինքը իրականում տեսնումա որ ձախ կողմի արժեքը falsy է և վերադարձնում է աջ կողմի արժեքը և մենք ստանում ենք true <br>
+        նույնպես եթե մենք ունենում ենք true || false ինքը տեսնումա որ ձախ կողմի արժեքը truthy է և անմիջապես իրեն վերադարձնում է <br>
+        նույնպես եթե մենք ունենք true || true էլի նույն ձևիա աշխատում ինքը ձախ կողմինի արժեքը ուղակի վերադարձնումա աջին չի էլ նայում <br>
+        <br>
+
+        օրինակներ <br>
+        <br>
+        այսինքն եթե հիմա անենք <br>
+        <br>
+        if("yay" || 99) { <br>
+            alert("yay") <br>
+        } <br>
+        կտպի yay <br>
+        // || <br>
+        // \/ <br>
+        if("yay") { <br>
+            alert("yay") <br>
+        } <br>
+        կտպի yay <br>
+        <br>
+
+        if(NaN || null) { <br>
+            alert("yay") <br>
+        } <br>
+        չի աշխատի <br>
+        // || <br>
+        // \/ <br>
+        if(null) { <br>
+            alert("yay") <br>
+        } <br>
+        չի աշխատի <br>
+        <br>
+
+        if(!(NaN || null)) { <br>
+            alert("yay"); <br>
+        } <br>
+        կտպի yay <br>
+        <br>
+
+        let a = NaN || null || undefined || 8 || false; <br>
+        alert(a); <br>
+        կտպի 8 <br>
+        // || <br>
+        // \/ <br>
+        let a = null || undefined || 8 || false; <br>
+        alert(a); <br>
+        կտպի 8 <br>
+        // || <br>
+        // \/ <br>
+        let a = undefined || 8 || false; <br>
+        alert(a); <br>
+        կտպի 8 <br>
+        // || <br>
+        // \/ <br>
+        let a =  8 || false; <br>
+        alert(a); <br>
+        կտպի 8 <br>
+        // || <br>
+        // \/ <br>
+        let a =  8; <br>
+        alert(a); <br>
+        կտպի 8 <br>
+        <br><br>
+
+
+        6. <br>
+        and(և)-ը ինչպես է աշխատում truthy, falsy արժեքների հետ <br>
+        and(և)-ը աշխատում է truthy, falsy արժեքների հետ ճիշտ հակառակ ձևով <br>
+        <br>
+        6.1 <br>
+        հիշեցում և(||)-ից <br>
+        <br>
+        մենք գիտենք որ եթե մենք անենք <br>
+        <br>
+        let a = false && true; <br>
+        alert(a); <br>
+        կտպի false <br>
+        <br>
+        let a = true && false; <br>
+        alert(a); <br>
+        կտպի false <br>
+        <br><br>
+
+        6.2 <br>
+        and(և)-ը or-ի հակառակն է, այսինքն and(և)-ը truthy, falsy արժեքների հետ աշխատելիս միշտ նայում է նախ և առաջ իր ձախ կողմից և ստուգում է falsy է թե ոչ <br>
+        <br>
+        եթե falsy է հենց էտ արժեքը վերադարձնում է <br>
+        let a = NaN && true; <br>
+        alert(a); <br>
+        կտպի NaN <br>
+        <br>
+        եթե truthy է ինքը անմիջապես իր աջ կողմի արժեքն է վերադարձնում կապ չունի աջ կողմինը truthy-ա թե falsy-ա ինքը աջ կողմինը կվերադարձնի <br>
+        let a = 99 && undefined; <br>
+        alert(a); <br>
+        կտպի undefined <br>
+        <br>
+
+        հետևաբար երբ որ մենք անում ենք false && true ինքը իրականում տեսնումա որ ձախ կողմի արժեքը falsy է և անմիջապես իրեն վերադարձնում է <br>
+        նույնպես եթե մենք ունենում ենք true && false ինքը տեսնումա որ ձախ կողմի արժեքը truthy է և վերադարձնում է աջ կողմի արժեքը և մենք ստանում ենք false <br>
+        նույնպես եթե մենք ունենք true && true էլի նույն ձևիա աշխատում ինքը տեսնումա որ ձախ կողմի արժեքը truthy է և վերադարձնում է աջ կողմի արժեքը և մենք ստանում ենք true <br>
+        <br>
+
+        օրինակներ <br>
+        <br>
+        let a = 99 && "asdf" && true && 0 && "hi"; <br>
+        alert(a); <br>
+        կտպի 0 <br>
+        // || <br>
+        // \/ <br>
+        let a = "asdf" && true && 0 && "hi"; <br>
+        alert(a); <br>
+        կտպի 0 <br>
+        // || <br>
+        // \/ <br>
+        let a = true && 0 && "hi"; <br>
+        alert(a); <br>
+        կտպի 0 <br>
+        // || <br>
+        // \/ <br>
+        let a = 0 && "hi"; <br>
+        alert(a); <br>
+        կտպի 0 <br>
+        // || <br>
+        // \/ <br>
+        let a = 0; <br>
+        alert(a); <br>
+        կտպի 0 <br>
+        <br><br>
+
+
+        7. <br>
+        or(կամ)-ի պարագայում ձախ կողմինը վերադարձնում է են ժամանակ երբ նա truthy է <br>
+        and(և)-ի պարագայում նա վերադարձնում է ձախ կողմինը երբ որ նա falsy է <br>
+        մնացած բոլոր դեպքերում երկուսն էլ վերադարձնում են իրանց աջ կողմի արժեքը  <br>
+        <br><br>
+
+
+        8. <br>
+        and(և)-ը նաև հաճախ իրեն կոչում են պաշտպանվելու օպերատոր <br>
+        ինչ նկատի ունենք պաշտպանելու օպերատոր <br>
+        <br>
+        .1. <br>
+        խնդիրը նրանումա որ էս foo ֆունկցիան երբեմն պիտի զգույշ լինի բա որ էս տրված a-ը իր մեջ knows չունենա, ինչ կլինի, դե էտ ժամանակ error կլինի խնդիր կառաջանա, սխալներ կառաջանան մեր կոդի մեջ <br>
+        <br>
+        function foo(a) { <br>
+            alert(a.knows.name); <br>
+        } <br>
+        <br>
+        foo({ <br>
+            knows: { <br>
+                name: "Mike" <br>
+            } <br>
+        }) <br>
+        կտպի Mike <br>
+        <br>
+        function foo(a) { <br>
+            alert(a.knows.name); <br>
+        } <br>
+        <br>
+        foo({ <br>
+         <br>
+        }) <br>
+        TypeError: Cannot read properties of undefined (reading 'name') <br>
+        <br>
+
+        .2. <br>
+        որպեսզի մենք պաշտպանվենք էտ խնդրի արջև մենք կարող ենք անենք սենց մի բան <br>
+        <br>
+        function foo(a) { <br>
+            const name = a && a.knows && a.knows.name; <br>
+            alert(name); <br>
+        } <br>
+        foo({ <br>
+            knows: { <br>
+                name: "Mike" <br>
+            } <br>
+        }) <br>
+        կտպի Mike <br>
+        <br>
+        // || <br>
+        // \/ <br>
+        <br>
+        եթե name-ը չլինի մենք կստանանք undefined բայց ոչ մի բան չի չարդվի <br>
+        function foo(a) { <br>
+            const name = a && a.knows && a.knows.name; <br>
+            alert(name); <br>
+        } <br>
+        foo({ <br>
+            knows: { <br>
+             <br>
+            } <br>
+        }) <br>
+        կտպի undefined <br>
+        <br>
+        // || <br>
+        // \/ <br>
+        <br>
+        եթե knows-ը չլինի էլի մեր կոդը alert կանի կստանանք undefined բայց չի չարդվի <br>
+        function foo(a) { <br>
+            const name = a && a.knows && a.knows.name; <br>
+            alert(name); <br>
+        } <br>
+        foo({ <br>
+        <br>
+        }) <br>
+        կտպի undefined <br>
+        <br>
+        // || <br>
+        // \/ <br>
+        <br>
+        եթե ոչ մի բան պաս չտանք էլի մեր կոդը կաշխատի բայց մենք ընդամենը կստանանք undefined  <br>
+        function foo(a) { <br>
+            const name = a && a.knows && a.knows.name; <br>
+            alert(name); <br>
+        } <br>
+        foo() <br>
+        կտպի undefined <br>
+        <br>
+
+        այսինքն and(և)-ով մենք կարող ենք ոնցոր ստուգենք քայլառքայլ զգուշությամբ  <br>
+        որպեսզի հաստատենք a-ը քանի որ object-ա պետքա որ truthy լինի նենց որ իրեն վերցնում ենք իսկ հիշեք որ and(&& և) օպերատորը կվերադարձնի ձախ կողմը միայն են ժամանակ երբ որ նա falsy լինի այսինքն վերջի պարագայում քանի որ a-ը undefined-ա հենց a-ին վերադարձնում է, բայց եթե a-ը լիներ դատարկ object էտ պարագայում a-ը truthy-ա նենց որ ինքը կվերադարձնի իր աջ կողմի արժեքը a.knows-ը, քանի որ knows չկա ստեղ կլինի undefined նենց որ վերջում էտ undefined-ը կվերադարնա <br>
+        <br>
+        այսինքն and(&& և)-ով մենք կարող ենք պաշտվանվենք հետևաբար հաճախ and-ին կոչում են պաշտպանվելու օպերատոր
+
     </h2>
 
 

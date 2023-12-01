@@ -264,7 +264,6 @@
 // 5 //
 // գնդակները լինեն գունաոր //
 
-
 const canvas = document.querySelector("canvas");
 const btn = document.querySelector("button");
 const context = canvas.getContext("2d");
@@ -277,7 +276,6 @@ function update() {
     data.balls.forEach(function(ball) {
         ball.update()
     })
-    
 }
 
 function draw() {
@@ -327,7 +325,6 @@ btn.addEventListener("click", function() {
     const ball = new Ball()
     data.balls.push(ball)
 })
-
 
 function random(min, max) {
     return Math.floor(Math.random() * (max-min) + min)
