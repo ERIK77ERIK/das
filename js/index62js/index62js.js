@@ -278,3 +278,749 @@ alert("sdhagh")
 
 // // 11
 // // մեր գործը ոչ միայն կոդ ստեղծելն է, ծրագիր ստեղծելն է մեր գործը նաև սխալների գտնելը և իրենց շըկնելն է նենց որ պետք է բավականին ուժեղանանք այս հմտությունով
+
+
+
+
+// // 23:55
+// const root = document.getElementById("root");
+
+// function ListItem(todos) {
+//     const container = document.createElement("div");
+
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox"/>
+//         ${todos.label}
+//     </label>
+//     `
+
+//     return container;
+// }
+
+
+// function List(todos) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo);
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+
+
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     container.appendChild(List(todos));
+
+//     return container;
+// };
+
+// root.appendChild(App());
+
+
+// // 23 : 55
+
+
+// // 26:30
+// const root = document.getElementById("root");
+
+// function TodoForm() {
+//     const container = document.createElement("form");
+
+//     container.innerHTML = `
+//     <input type="text">
+//     <button> Add </button>
+//     `
+
+//     return container
+// }
+
+// function ListItem(todos) {
+//     const container = document.createElement("div");
+
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox"/>
+//         ${todos.label}
+//     </label>
+//     `
+
+//     return container;
+// }
+
+// function List(todos) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo);
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     container.appendChild(TodoForm());
+//     container.appendChild(List(todos));
+
+//     return container;
+// };
+
+// root.appendChild(App());
+
+// // 26:30
+
+
+
+// // 29 : 20
+// const root = document.getElementById("root");
+
+// function TodoForm() {
+//     const container = document.createElement("form");
+
+//     container.innerHTML = `
+//     <input type="text">
+//     <button> Add </button>
+//     `
+
+//     return container
+// }
+
+// function ListItem(todos) {
+//     const container = document.createElement("div");
+
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox"/>
+//         ${todos.label}
+//     </label>
+//     `
+
+//     return container;
+// }
+
+// function List(todos) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo);
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+// function TodoFooter(todos) {
+//     const container = document.createElement("div");
+
+//     const completed = todos.filter(todo => todo.completed === true).length
+//     container.innerHTML = `
+//     <span> ${completed} / ${todos.length} Completed</span>
+//     <button> Clear Completed </button>
+//     `
+
+//     return container;
+// }
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     container.appendChild(TodoForm());
+//     container.appendChild(List(todos));
+//     container.appendChild(TodoFooter(todos));
+
+//     return container;
+// };
+
+// root.appendChild(App());
+
+// // 29:20
+
+
+// // // ??????????????  33 : 50
+// const root = document.getElementById("root");
+
+// function TodoForm() {
+//     const container = document.createElement("form");
+
+//     container.innerHTML = `
+//     <input type="text">
+//     <button> Add </button>
+//     `
+
+//     container.addEventListener("submit", (e) => {
+//         e.preventDefault();
+
+//         const value = container.querySelector("input").value;
+
+//         alert(value);
+//     })
+
+//     return container
+// }
+
+// function ListItem(todos) {
+//     const container = document.createElement("div");
+
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox"/>
+//         ${todos.label}
+//     </label>
+//     `
+
+//     return container;
+// }
+
+// function List(todos) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo);
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+// function TodoFooter(todos) {
+//     const container = document.createElement("div");
+
+//     const completed = todos.filter(todo => todo.completed === true).length
+//     container.innerHTML = `
+//     <span> ${completed} / ${todos.length} Completed</span>
+//     <button> Clear Completed </button>
+//     `
+
+//     return container;
+// }
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     container.appendChild(TodoForm());
+//     container.appendChild(List(todos));
+//     container.appendChild(TodoFooter(todos));
+
+//     return container;
+// };
+
+// root.appendChild(App());
+
+// // // ??????????????  33 : 50
+
+
+
+// // // ??????????????  33 : 50
+// const root = document.getElementById("root");
+
+// function TodoForm(add) {
+//     const container = document.createElement("form");
+
+//     container.innerHTML = `
+//     <input type="text">
+//     <button> Add </button>
+//     `
+
+//     container.addEventListener("submit", (e) => {
+//         e.preventDefault();
+        
+//         const value = container.querySelector("input").value;
+//         add(value);
+//     })
+
+//     return container
+// }
+
+// function ListItem(todos) {
+//     const container = document.createElement("div");
+
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox"/>
+//         ${todos.label}
+//     </label>
+//     `
+
+//     return container;
+// }
+
+// function List(todos) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo);
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+// function TodoFooter(todos) {
+//     const container = document.createElement("div");
+
+//     const completed = todos.filter(todo => todo.completed === true).length
+//     container.innerHTML = `
+//     <span> ${completed} / ${todos.length} Completed</span>
+//     <button> Clear Completed </button>
+//     `
+
+//     return container;
+// }
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     function render() {
+//         container.appendChild(TodoForm(function(newText) {
+//             todos.push({
+//                 label: newText,
+//                 completed: false
+//             });
+//             render();
+//         }));
+//         container.appendChild(List(todos));
+//         container.appendChild(TodoFooter(todos));    
+//     }
+
+//     render()
+  
+//     return container;
+// };
+
+// root.appendChild(App());
+
+
+// // / 37 : 15 ????????????
+
+// const root = document.getElementById("root");
+
+// function TodoForm(add) {
+//     const container = document.createElement("form");
+
+//     container.innerHTML = `
+//     <input type="text">
+//     <button> Add </button>
+//     `
+
+//     container.addEventListener("submit", (e) => {
+//         e.preventDefault();
+        
+//         const value = container.querySelector("input").value;
+//         add(value);
+//     })
+
+//     return container
+// }
+
+// function ListItem(todos) {
+//     const container = document.createElement("div");
+
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox"/>
+//         ${todos.label}
+//     </label>
+//     `
+
+//     return container;
+// }
+
+// function List(todos) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo);
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+// function TodoFooter(todos) {
+//     const container = document.createElement("div");
+
+//     const completed = todos.filter(todo => todo.completed === true).length
+//     container.innerHTML = `
+//     <span> ${completed} / ${todos.length} Completed</span>
+//     <button> Clear Completed </button>
+//     `
+
+//     return container;
+// }
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     function render() {
+//         container.innerHTML = "";
+
+//         container.appendChild(TodoForm(function(newText) {
+//             todos.push({
+//                 label: newText,
+//                 completed: false
+//             });
+//             render();
+//         }));
+//         container.appendChild(List(todos));
+//         container.appendChild(TodoFooter(todos));    
+//     }
+
+//     render()
+  
+//     return container;
+// };
+
+// root.appendChild(App());
+
+// // / 38 : 45
+
+// const root = document.getElementById("root");
+
+// function TodoForm(add) {
+//     const container = document.createElement("form");
+
+//     container.innerHTML = `
+//     <input type="text">
+//     <button> Add </button>
+//     `
+
+//     container.addEventListener("submit", (e) => {
+//         e.preventDefault();
+        
+//         const value = container.querySelector("input").value;
+//         add(value);
+//     })
+
+//     return container
+// }
+
+// function ListItem(todos) {
+//     const container = document.createElement("div");
+
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox"/>
+//         ${todos.label}
+//     </label>
+//     `
+
+//     const input = container.querySelector("input");
+//     input.addEventListener("change", (e) => {
+//         alert(e.target.checked);
+//     })
+
+//     return container;
+// }
+
+// function List(todos) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo);
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+// function TodoFooter(todos) {
+//     const container = document.createElement("div");
+
+//     const completed = todos.filter(todo => todo.completed === true).length
+//     container.innerHTML = `
+//     <span> ${completed} / ${todos.length} Completed</span>
+//     <button> Clear Completed </button>
+//     `
+
+//     return container;
+// }
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     function render() {
+//         container.innerHTML = "";
+
+//         container.appendChild(TodoForm(function(newText) {
+//             todos.push({
+//                 label: newText,
+//                 completed: false
+//             });
+//             render();
+//         }));
+//         container.appendChild(List(todos));
+//         container.appendChild(TodoFooter(todos));    
+//     }
+
+//     render()
+  
+//     return container;
+// };
+
+// root.appendChild(App());
+
+// // 40 : 55
+
+// const root = document.getElementById("root");
+
+// function TodoForm(add) {
+//     const container = document.createElement("form");
+
+//     container.innerHTML = `
+//     <input type="text">
+//     <button> Add </button>
+//     `
+
+//     container.addEventListener("submit", (e) => {
+//         e.preventDefault();
+        
+//         const value = container.querySelector("input").value;
+//         add(value);
+//     })
+
+//     return container
+// }
+
+// function ListItem(todo, onChange) {
+//     const container = document.createElement("div");
+//     todo.completed;
+//     container.innerHTML = `
+//     <label>
+//         <input type="checkbox" ${todo.completed ? "checked" : ""} >
+//         ${todo.label}
+//     </label>
+//     `
+
+//     const input = container.querySelector("input");
+//     input.addEventListener("change", (e) => {
+//         onChange(e.target.checked);
+//     })
+
+//     return container;
+// }
+
+// function List(todos, onChange) {
+//     const container = document.createElement("div");
+
+//     todos.map(todo => {
+//         return ListItem(todo, (change) => {
+//             todo.completed = change;
+//             onChange();
+//         });
+//     }).forEach(el => {
+//         container.appendChild(el);
+//     });
+
+//     return container;
+// }
+
+// function TodoFooter(todos) {
+//     const container = document.createElement("div");
+
+//     const completed = todos.filter(todo => todo.completed === true).length
+//     container.innerHTML = `
+//     <span> ${completed} / ${todos.length} Completed</span>
+//     <button> Clear Completed </button>
+//     `
+
+//     return container;
+// }
+
+// function App() {
+//     let todos = [
+//         {label: "Learn JS", completed: false},
+//         {label: "Learn Node", completed: false},
+//         {label: "Learn Css", completed: false},
+//     ]
+
+//     const container = document.createElement("div");
+
+//     function render() {
+//         container.innerHTML = "";
+
+//         container.appendChild(TodoForm(function(newText) {
+//             todos.push({
+//                 label: newText,
+//                 completed: false
+//             });
+//             render();
+//         }));
+//         container.appendChild(List(todos, () => {
+//             render();
+//         }));
+//         container.appendChild(TodoFooter(todos));    
+//     }
+
+//     render()
+  
+//     return container;
+// };
+
+// root.appendChild(App());
+
+
+// // 45 : 20
+// // lriv
+
+const root = document.getElementById("root");
+
+function TodoForm(add) {
+    const container = document.createElement("form");
+
+    container.innerHTML = `
+    <input type="text">
+    <button> Add </button>
+    `
+
+    container.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        const value = container.querySelector("input").value;
+        add(value);
+    })
+
+    return container
+}
+
+function ListItem(todo, onChange) {
+    const container = document.createElement("div");
+    todo.completed;
+    container.innerHTML = `
+    <label>
+        <input type="checkbox" ${todo.completed ? "checked" : ""} >
+        ${todo.label}
+    </label>
+    `
+
+    const input = container.querySelector("input");
+    input.addEventListener("change", (e) => {
+        onChange(e.target.checked);
+    })
+
+    return container;
+}
+
+function List(todos, onChange) {
+    const container = document.createElement("div");
+
+    todos.map(todo => {
+        return ListItem(todo, (change) => {
+            todo.completed = change;
+            onChange();
+        });
+    }).forEach(el => {
+        container.appendChild(el);
+    });
+
+    return container;
+}
+
+function TodoFooter(todos, onChange) {
+    const container = document.createElement("div");
+
+    const completed = todos.filter(todo => todo.completed === true).length
+    container.innerHTML = `
+    <span> ${completed} / ${todos.length} Completed</span>
+    <button> Clear Completed </button>
+    `
+    const btn = container.querySelector("button");
+    btn.addEventListener("click", () => {
+        onChange(todos.filter((todo) => todo.completed === false));
+    })
+
+    return container;
+}
+
+function App() {
+    let todos = [
+        {label: "Learn JS", completed: false},
+        {label: "Learn Node", completed: false},
+        {label: "Learn Css", completed: false},
+    ]
+
+    const container = document.createElement("div");
+
+    function render() {
+        container.innerHTML = "";
+
+        container.appendChild(TodoForm(function(newText) {
+            todos.push({
+                label: newText,
+                completed: false
+            });
+            render();
+        }));
+        container.appendChild(List(todos, () => {
+            render();
+        }));
+        container.appendChild(TodoFooter(todos, (newTodos) => {
+            todos = newTodos;
+            render();
+        }));    
+    }
+
+    render()
+  
+    return container;
+};
+
+root.appendChild(App());
+

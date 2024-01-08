@@ -6515,13 +6515,13 @@
 
 
 
-function Logika(time, shhyb, pox) {
+// function Logika(time, shhyb, pox) {
     
 
 
-}
+// }
 
-const a = new Logika("clock", "eivueal", "dd");
+// const a = new Logika("clock", "eivueal", "dd");
 
 
 // // inds petqa darnal milyardater
@@ -6563,4 +6563,399 @@ const a = new Logika("clock", "eivueal", "dd");
 
 // // inds petqa ekamuti axbyur, et csragravorumna 
 // // inds petqa ekamuti axbyury dnem gorcsi mej vor pox beri , u aranc shamanak csaxselu bajc et gorcsi mej dnelu procsesy vorpesi chxangari ekamuti axbyurin
+
+
+
+
+
+// // //////////??????????????????????????
+// // եթե ես իմանայ ամեն ինչ ինչ կանեյ ( ամեն ինչ լյուբոյ մասնագիտությունից )
+
+// // կընտրեյ ամենա արագ բանը շատ փող ունենալու նույն ժամանակի մեջ ու էտ կանեյ 
+// // ( (ես կկորցնեմ ինչ որ ժամանակ ասենք 5 տարի բայց ինձ հնարաորություն կտա դալշեի բայց առանց դրա չիլնի (ինչ որ ժամանակում օրինակ 5 տարում առաջ ընգնելը ինչա ընդանրապես էս րոպեին ունեցածս գիտելիքներս ինչ որ փողային պլյուս կանգնել պետք չի բայց պետքա գիտելիք ընդանուր փող գաղափարից որ հետո չընեղվեմ բայց եթե գիտելիք ունենամ փող գաղափարից փող չունենամ էտել չիլինի ինչա նշանակում գիտելիք ունենալ փող գաղափարից նշանակումա են համակարգը որ պետքա լինի  լինի ռեալ կարճ ձևի վեկալվի տրվի բայց հաշվի առնելով ընթացքը ու կարողությունը իմ էտ պահի ավել պլյուսները ինձ շատ բան կտա (ու նաև ունեցածս գաղափարների կիրառությունը ինչ շատ բան կտա օրինակ մարդկանց հավերժ ծառայելը ) - որը ինձ կտար ժամանակ մտածելու    
+
+// // երբ որ փողը ունենամ ես կլնեմ լսելի որ մարդկանց կկարողանամ ասեմ փող ունենալու ձևը ու էտ ժամանակ կանցնեմ սաղ երկրների վրայով 
+
+
+
+
+
+
+
+
+
+
+
+// // react js ներածություն դաս 126
+
+
+/*
+npx create-react-app hello
+npm cache clean --force
+npm install -g npm@latest
+npm fund     = das
+
+npx create-react-app helloo
+npx create-react-app@5.0.1
+y    = ասում է մեզ պետք է cd անել helloo-ի մեջ և գրել npm start (video-ի մեջ yarn start)
+
+cd helloo
+npm start
+
+*/
+
+// // npx create-react-app helloo անելուց պոիսկ տվեցի how fix this error .... և բերեց սա npm cache clean --force որը անելուց հետո էլ չուղվեց
+// // և հետո բերեց սա 
+
+// // update npm
+// // npm install -g npm@latest
+// // it will solve the problme(դա կլուծի խնդիրը)
+// // դա անելուց հետո բերեց սա
+// // npm install -g npm@latest
+// // added 1 package in 3s
+// // 
+// // 28 packages are looking for funding
+// //   run `npm fund` for details
+// // 
+// // (Ֆինանսավորում է փնտրում 28 փաթեթ
+// //    գործարկել «npm fund» մանրամասների համար
+// // PS C:\Users\_\Desktop>)
+
+// // և դրանից հետո նորից արեցի npx create-react-app helloo
+// // դա անելուց հետո բերեց սա
+// // PS C:\Users\_\Desktop> npx create-react-app helloo
+// // Need to install the following packages:
+// // create-react-app@5.0.1
+// // Ok to proceed? (y)
+// //
+// // Պետք է տեղադրել հետևյալ փաթեթները.
+// // create-react-app@5.0.1
+// // Լավ, շարունակե՞լ: (y)
+
+// // որից հետո արեցի
+// // npx create-react-app@5.0.1
+
+// // դա անելուց հետո բերեց սա 
+// // նույնը
+// // npx create-react-app@5.0.1
+// // Need to install the following packages:
+// // create-react-app@5.0.1
+// // Ok to proceed? (y)
+
+
+// // դրանից հետո պոիսկ տվեցի how to install the following packages:
+// // և գտա սա
+// I'm trying to install react to create a project in vs code. When I try doing this using npx create-react-app frontend I get:
+
+// Need to install the following packages:
+//   create-react-app
+// Ok to proceed? (y)
+
+// Which then gives me an error saying that:
+
+// You are running `create-react-app` 4.0.3, which is behind the latest release (5.0.1).
+
+// We no longer support global installation of Create React App.
+
+// Please remove any global installs with one of the following commands:
+// - npm uninstall -g create-react-app
+// - yarn global remove create-react-app
+
+// The latest instructions for creating a new app can be found here:
+// https://create-react-app.dev/docs/getting-started/
+// I entered npm uninstall -g create-react-app and followed the latest instructions , but the the latest instructions say to use npx create-react-app, and when I try it again I keep getting the exact same issue. Does anyone know why this is happening or how to fix this?
+
+
+// // որից հետո արեցի ուղղակի y
+// // դա անելուց հետո բերեց սա
+// // այն ինչ որ բերում է վիդեոի մեջ
+
+// PS C:\Users\_\Desktop\das> npx create-react-app helloo      
+// Need to install the following packages:
+// create-react-app@5.0.1
+// Ok to proceed? (y) y
+// npm WARN deprecated tar@2.2.2: This version of tar is no longer supported, and will not receive security updates. Please upgrade asap.
+
+// Creating a new React app in C:\Users\_\Desktop\das\helloo.  
+
+// Installing packages. This might take a couple of minutes.Installing react, react-dom, and react-scripts with cra-template...
+
+
+// added 1463 packages in 1m
+
+// 242 packages are looking for funding
+//   run `npm fund` for details
+
+// Installing template dependencies using npm...
+
+// added 69 packages, and changed 1 package in 13s
+
+// 246 packages are looking for funding
+//   run `npm fund` for details
+// Removing template package using npm...
+
+
+// removed 1 package, and audited 1532 packages in 2s
+
+// 246 packages are looking for funding
+//   run `npm fund` for details
+
+// 8 vulnerabilities (2 moderate, 6 high)
+
+// To address all issues (including breaking changes), run:    
+//   npm audit fix --force
+
+// Run `npm audit` for details.
+
+// Success! Created helloo at C:\Users\_\Desktop\das\helloo    
+// Inside that directory, you can run several commands:        
+
+//   npm start
+//     Starts the development server.
+
+//   npm run build
+//   npm run eject
+//     Removes this tool and copies build dependencies, configuration files
+//     and scripts into the app directory. If you do this, you can’t go back!
+
+// We suggest that you begin by typing:
+
+//   cd helloo
+//   npm start
+
+// Happy hacking!
+// PS C:\Users\_\Desktop\das>
+
+
+
+
+// // // // // // // // terminal-ի կոդերը
+
+// PS C:\Users\_\Desktop> node -v
+// v20.10.0
+// PS C:\Users\_\Desktop> npm -v
+// 10.2.3
+// PS C:\Users\_\Desktop> npx -v
+// 10.2.3
+// PS C:\Users\_\Desktop> npx create-react-app helloo
+// npm ERR! code ENOENT
+// npm ERR! syscall lstat
+// npm ERR! path C:\Users\_\AppData\Roaming\npm
+// npm ERR! errno -4058
+// npm ERR! enoent ENOENT: no such file or directory, lstat 'C:\Users\_\AppData\Roaming\npm'
+// npm ERR! enoent This is related to npm not being able to find a file.
+// npm ERR! enoent
+
+// npm ERR! A complete log of this run can be found in: C:\Users\_\AppData\Local\npm-cache\_logs\2023-12-17T18_30_51_439Z-debug-0.log
+// PS C:\Users\_\Desktop> npm cache clean --force
+// npm WARN using --force Recommended protections disabled.
+// PS C:\Users\_\Desktop> npx create-react-app helloo
+// npm ERR! code ENOENT
+// npm ERR! syscall lstat
+// npm ERR! path C:\Users\_\AppData\Roaming\npm
+// npm ERR! errno -4058
+// npm ERR! enoent ENOENT: no such file or directory, lstat 'C:\Users\_\AppData\Roaming\npm'
+// npm ERR! enoent This is related to npm not being able to find a file.
+// npm ERR! enoent
+
+// npm ERR! A complete log of this run can be found in: C:\Users\_\AppData\Local\npm-cache\_logs\2023-12-17T19_11_26_249Z-debug-0.log
+// PS C:\Users\_\Desktop> npm install -g npm@latest
+
+// added 1 package in 3s
+
+// 28 packages are looking for funding
+//   run `npm fund` for details
+// PS C:\Users\_\Desktop> npx create-react-app helloo
+// Need to install the following packages:
+// create-react-app@5.0.1
+// Ok to proceed? (y)
+
+
+// // //
+// npx create-react-app@5.0.1
+// Need to install the following packages:
+// create-react-app@5.0.1
+// Ok to proceed? (y) y
+// npm WARN deprecated tar@2.2.2: This version of tar is no longer supported, and will not receive security updates. Please upgrade asap.
+
+// Creating a new React app in C:\Users\_\Desktop\das\helloo.  
+
+// Installing packages. This might take a couple of minutes.Installing react, react-dom, and react-scripts with cra-template...
+
+
+// added 1463 packages in 1m
+
+// 242 packages are looking for funding
+//   run `npm fund` for details
+
+// Installing template dependencies using npm...
+
+// added 69 packages, and changed 1 package in 13s
+
+// 246 packages are looking for funding
+//   run `npm fund` for details
+// Removing template package using npm...
+
+
+// removed 1 package, and audited 1532 packages in 2s
+
+// 246 packages are looking for funding
+//   run `npm fund` for details
+
+// 8 vulnerabilities (2 moderate, 6 high)
+
+// To address all issues (including breaking changes), run:    
+//   npm audit fix --force
+
+// Run `npm audit` for details.
+
+// Success! Created helloo at C:\Users\_\Desktop\das\helloo    
+// Inside that directory, you can run several commands:        
+
+//   npm start
+//     Starts the development server.
+
+//   npm run build
+//   npm run eject
+//     Removes this tool and copies build dependencies, configuration files
+//     and scripts into the app directory. If you do this, you can’t go back!
+
+// We suggest that you begin by typing:
+
+//   cd helloo
+//   npm start
+
+// Happy hacking!
+// PS C:\Users\_\Desktop\das>
+
+
+
+
+
+
+
+
+
+
+
+
+// // // պատկերացնենք ժամանակը ---0---1---2---3---  բացատրենք 60 60 60 ու ասենք 400 400 400 ստացողի տարբերությունը
+// // // պատկերացնենք արդեն կա եթե ուզում ենք անենք ամենան բայց լինենք ռեալ որովհետև պատկերացնելով կարող ժամանակ անցի իսկ էտ ընթացքում մեկը գա անցնի սա վերևի տողնա և հիշենք հակոբին որը էլի լրիվ նույնա այսինքն վերևի տողնա
+
+
+
+// ///////////////// {
+// // decտեմբեր 23   11:11
+// ԻՄ das 107-ի error-ները
+// // 
+// 1. daser0ic i mej esa berum 
+// CLI for webpack must be installed.        
+//   webpack-cli (https://github.com/webpack/webpack-cli)
+// We will use "npm" to install the CLI via "npm install -D webpack-cli".
+// Do you want to instalDo you want to install 'webpack-cli' (yes/no):
+
+// Պետք է տեղադրվի CLI վեբ փաթեթի համար:
+//    webpack-cli (https://github.com/webpack/webpack-cli)
+// Մենք կօգտագործենք «npm»՝ «npm install -D webpack-cli»-ի միջոցով CLI-ն տեղադրելու համար։
+// Ցանկանու՞մ եք տեղադրել Ցանկանու՞մ եք տեղադրել «webpack-cli» (այո/ոչ):
+
+// 2.
+// // ste sxal em gre voch te das i meja es berum ajl nuyn 1. -y
+// CLI for webpack must be installed.        
+//   webpack-cli (https://github.com/webpack/webpack-cli)
+// We will use "npm" to install the CLI via "npm install -D webpack-cli".
+// Do you want to instalDo you want to install 'webpack-cli' (yes/no):
+
+// Պետք է տեղադրվի CLI վեբ փաթեթի համար:
+//    webpack-cli (https://github.com/webpack/webpack-cli)
+// Մենք կօգտագործենք «npm»՝ «npm install -D webpack-cli»-ի միջոցով CLI-ն տեղադրելու համար։
+// Ցանկանու՞մ եք տեղադրել Ցանկանու՞մ եք տեղադրել «webpack-cli» (այո/ոչ):
+
+// vory qasheluc heto esa berum 
+
+// PS C:\Users\_\Desktop\das> 
+// npx webpack
+// assets by status 0 bytes [cached] 1 asset
+
+// WARNING in configuration
+// The 'mode' option has not been set, webpack will fallback to 'production' for this value.
+// Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+// You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/
+
+// ERROR in main
+// Module not found: Error: Can't resolve './src' in 'C:\Users\_\Desktop\das'       
+// resolve './src' in 'C:\Users\_\Desktop\das'
+//   using description file: C:\Users\_\Desktop\das\package.json (relative path: .) 
+//     Field 'browser' doesn't contain a valid alias configuration
+//     using description file: C:\Users\_\Desktop\das\package.json (relative path: ./src)
+//       no extension
+//         Field 'browser' doesn't contain a valid alias configuration
+//         C:\Users\_\Desktop\das\src doesn't exist      
+//       .js
+//         Field 'browser' doesn't contain a valid al      .json
+//         Field 'browser' doesn't contain a valid alias configuration
+//         C:\Users\_\Desktop\das\src.json doesn't exist
+//       .wasm
+//         Field 'browser' doesn't contain a valid alias configuration
+//         C:\Users\_\Desktop\das\src.wasm doesn't exist
+//       as directory
+//         C:\Users\_\Desktop\das\src doesn't exist  
+
+// webpack 5.89.0 compiled with 1 error and 1 warning in 157 ms
+
+// 3.  lsk video meji errory esa
+// No configuration file found and no output filename configured via CLI option 
+// A configuration file could be named 'webpack.config.js' in the current directory
+// use --help to display the CLI option 
+// Ոչ մի կազմաձևման ֆայլ չի գտնվել և ոչ մի ելքային ֆայլի անունը կազմաձևված չէ CLI տարբերակի միջոցով
+// Կազմաձևման ֆայլը կարող է անվանվել «webpack.config.js» ընթացիկ գրացուցակում
+// օգտագործել --help՝ CLI տարբերակը ցուցադրելու համար
+
+// mer gorcna vor chunenq CLi petqa texadrvi CLI web pateti hamar ajsinqn (Մենք կօգտագործենք «npm»՝ «npm install -D webpack-cli»-ի միջոցով CLI-ն տեղադրելու համար։
+// Ցանկանու՞մ եք տեղադրել Ցանկանու՞մ եք տեղադրել «webpack-cli» ) 
+//  isk videoi mej asuma CLI-n ka bajc kazmadsevman fajly(configuration fayl) chi gtnvel ev voch mi elqayin fajli anun kazmadsevacs chi CLI tarberaki mijocov
+// ?? nuyn banna   CLI(Command line interface) նշանակումա հրամանի տողի միջերես   u asuma cli-n texadrenq ajsinqn cli i mijocov texadrenq webpack-cli vory nuyna inchpes vor stexcsenq webpack.config.js erevi  isk videoi mej asuma voch mi kazmadsevvacs fajl chi gtnve ajsinqn kazmvacs che CLI tarberaki mijocov  areq --help cli tarberaky cucadrelu hamar vory inds tvuma kberi nuyn sa npm install -D webpack-cli
+
+
+
+// /// տարբերությունը էնա որ վիդեո-ի մեջ չի բերում 1. -ը 
+// CLI for webpack must be installed.        
+//   webpack-cli (https://github.com/webpack/webpack-cli)
+// We will use "npm" to install the CLI via "npm install -D webpack-cli".
+// Do you want to instalDo you want to install 'webpack-cli' (yes/no):
+
+// Պետք է տեղադրվի CLI վեբ փաթեթի համար:
+//    webpack-cli (https://github.com/webpack/webpack-cli)
+// Մենք կօգտագործենք «npm»՝ «npm install -D webpack-cli»-ի միջոցով CLI-ն տեղադրելու համար։
+// Ցանկանու՞մ եք տեղադրել Ցանկանու՞մ եք տեղադրել «webpack-cli» (այո/ոչ):
+// // և
+// վիդեո մեջի error որ webpack.config.js բացած չի ու մեր error-ը yes անելուց հետո տաբեր ձևա բերում բայց նույնա
+/* 
+
+// // // das 107-i error
+// // ete erory beruma senc apa ayd jamanak    sxaly ena vor fayly config.webpack.js anunov bacacs chi nuyn videoi meji error-na
+// ERROR in main
+// Module not found: Error: Can't resolve './src' in 'C:\Users\_\Desktop\daser0ic'
+// resolve './src' in 'C:\Users\_\Desktop\daser0ic'1
+// using description file: C:\Users\_\Desktop\daser0ic\package.json (relative path: .)
+
+// // isk ete error-y beruma senc apa ayd jamanak  uremn module.exports-i entry-in sxal enq gre
+// ERROR in main
+// Module not found: Error: Can't resolve './index.js' in 'C:\Users\_\Desktop\daser0ic'
+// resolve './index.js' in 'C:\Users\_\Desktop\daser0ic'
+//   using description file: C:\Users\_\Desktop\daser0ic\package.json (relative path: .)
+*/
+
+
+// 4. ete daser0ici meji lesson1.js fajly bacum enq live server open with live server apa et jamanak bacuma 
+
+// bajc ete das papkanela linwum visual studioi mej apa et jamanak chi bacuma beruma  < listing directory >  bajc das papki meji fajlery bacuma alt l alt o - ov
+
+// ev ete linuma das papkan heto jnjum enq beruma 
+// Server is already running from different workspace.
+// Սերվերն արդեն աշխատում է տարբեր աշխատանքային տարածքից:
+// et jamanak petq e jnjenq visual studion xach anenq ev noric bacenq
+// ////////////////////}
+
+
 
