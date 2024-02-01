@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 18</title>
+  <link rel="stylesheet" href="index18js.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    JAVASCRIPT - Զանգվածի forEach մեթոդը(Array forEach)
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="../index17js/js17html.html" target="_blank">JS 17</a>
+
+  <br><br>
+
+  <h2>
+
+    1.forEach ֆունկցիայի փակագիծների մեջ տալիսենք զանգված ու ֆունկցիա ու նա աշխատացնում է այդ ֆունկցիան այդ զանգվածի
+    ամեն անդամի համար <br>
+    <br>
+    2.forEach ֆունկցիան որ կանչում ենք և տալիս ենք զանգված ու ֆունկցիա նա <br>
+    1.forEach ֆունկցիան կատարում է իրեն տված ֆունկցիաի գործողությունը այնքան անգամ ինչքան որ իրեն տված զանգվածի մեջի
+    անդամների քանակն է քանի որ forEach-ին տված ֆունկցիան forEach-ի մեջ մենք կանչում ենք մի ցիկլի մեջ որը սկսվում և
+    ավարտվում է երբ որ առաջի անդամի index-ը մեկով ավելանալով ամեն պտույտին հասնում է զանգվածի երկարությանը <br>
+    2.forEach ֆունկցիան կատարելով իրեն տված ֆունկցիայի գործողությունը առաջի անգամ ստանում է forEach ֆունկցիաին տված
+    զանգվածի առաջին անդամը և ամեն անգամ կատարելուց այդ գործողությունը հաջորդ անդամը քանի որ forEach ֆունկցիաին տված
+    ֆունկցիան forEach-ի մեջ կանչելուց տալիս էինք զանգվածի i-րդ անդամը որը սկսվում է 0-ից և ամեն անգամ մեկով ավելանալով
+    ավարտվում է երբ որ այդ թիվը հասնում է վերջի անդամի index-ին <br>
+    <br>
+    let forEach = function(arr, fun) { <br>
+    let i = 0; <br>
+    while(i < arr.length) { <br>
+      fun(arr[i]); <br>
+      i = i + 1; <br>
+      }; <br>
+      }; <br>
+      <br>
+      forEach([5, 3, 1], function(val){alert("what is great number " + val);}); <br>
+      <br>
+
+      3.forEach ֆունկցիան արդեն կա զանգվածին կպած և պետք չի իրա լոգիկան գրենք այլ կարող ենք ուղղակի կանչել և նա կանի
+      իրեն տված ֆունկցիայի գործողությունը էն զանգվածի ամեն մի անդամի համար որին ինքը կպածա <br>
+      <br>
+      [5, 20, 44].forEach(function(val, i) {
+      alert("what a great number " + val + " which is at index " + i );
+      }); <br>
+      <br>
+      կտպի what a great number 5 which is at index 0 <br>
+      հետո what a great number 20 which is at index 1 <br>
+      հետո what a great number 44 which is at index 2 <br>
+      <br><br>
+      (forEach ֆունկցիաին տված ֆունկցիան տված երկրոդ փոփոխականը ամեն անգամ գործողությունը անելուց վերցնում է վերցրած ամդամի index-ը )
+
+  </h2>
+
+  <br><br><br><br>
+  
+  <hr>
+  <h1>
+    Վարժություն
+  </h1>
+  <hr>
+  <br><br>
+
+  <h2>
+    let a = [3, 7, 2, 4]; <br>
+    <br>
+    let f = function(a) { <br>
+    return a + 2; <br>
+    }; <br>
+    <br>
+    let z = 0; <br>
+    a.forEach(function(val) { <br>
+    z = z + f(val) + 2; <br>
+    }); <br>
+    <br>
+    let f2 = function(d) { <br>
+    return f(d) + f(d); <br>
+    }; <br>
+    <br>
+    let f3 = function(d) { <br>
+    return f2(d) + 1; <br>
+    }; <br>
+    <br>
+    alert(f(f3(f2(z)))); 
+  </h2>
+
+  <script src="index18js.js"></script>
+</body>
+
+</html>

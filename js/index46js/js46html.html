@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 46</title>
+    <link rel="stylesheet" href="index46js.css">
+</head>
+
+<body>
+
+    <hr>
+    <h1>
+      JAVASCRIPT - this վարժություններ
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="../index45js/js45html.html" target="_blank">JS 45</a>
+
+    <br><br>
+
+    <h2>
+        1. Վարժություն 1 <br>
+        <br>
+        Փոխեք այս կոդը այնպես, որ այն alert անի 45 <br>
+        <br>
+        const a = { <br>
+            age: 23, <br>
+            foo: function(arr) { <br>
+                arr.forEach(function(val) { <br>
+                    alert(this.age + val) <br>
+                }) <br>
+            } <br>
+        } <br>
+        a.foo([22]) <br>
+        կտպի NaN <br>
+        <br><br>
+
+        ճիշտը <br>
+        const a = { <br>
+            age: 23, <br>
+            foo: function(arr) { <br>
+                // alert(this.age);  // 23 <br>
+                arr.forEach(function(val) { <br>
+                    alert(this.age + val) <br>
+                }.bind(this)) <br>
+            } <br>
+        } <br>
+        <br>
+        a.foo([22]) <br>
+        կտպի 45 <br>
+        <br><br>
+
+        
+        2. Վարժություն 2 <br>
+        <br>
+        ինչ alert կարվի էկրանին և ինչու <br>
+        <br>
+        function zoo() { <br>
+            alert(this.age) <br>
+        } <br>
+        const b = { <br>
+            age: 44 <br>
+        } <br>
+        const a = { <br>
+            age: 23, <br>
+            foo: zoo.bind(b) <br>
+        } <br>
+        a.foo() <br>
+        կտպի 44 <br>
+        <br><br>
+
+        սա նույն է ինչպես սա <br>
+        function zoo() { <br>
+            alert(this.age) <br>
+        } <br>
+        const b = { <br>
+            age: 44 <br>
+        } <br>
+        const a = { <br>
+            age: 23, <br>
+            foo: function() { <br>
+                zoo.call(b) <br>
+            } <br>
+        } <br>
+        a.foo() <br>
+        կտպի 44 <br>
+        <br><br>
+
+        3. Վարժություն 3 <br>
+        <br>
+        Փոխեք այս կոդը այնպես, որ այն alert անի "Mike" <br>
+        <br>
+        const a = { <br>
+            name: "Joe", <br>
+            f: function() { <br>
+                alert(this.name) <br>
+            } <br>
+        } <br>
+        <br>
+        const b = { <br>
+            name: "Mike" <br>
+        } <br>
+         <br>
+        a.f() <br>
+        կտպի Joe <br>
+        <br><br>
+
+        սա նույն է ինչպես սա <br>
+        function z() { <br>
+            alert(this.name) <br>
+        } <br>
+        <br>
+        const a = { <br>
+            name: "Joe", <br>
+            f: z <br>
+        } <br>
+        <br>
+        const b = { <br>
+            name: "Mike" <br>
+        } <br>
+        <br>
+        a.f() <br>
+        <br><br>
+
+        ճիշտը <br>
+        const a = { <br>
+            name: "Joe", <br>
+            f: function() { <br>
+                alert(this.name) <br>
+            } <br>
+        } <br>
+        <br>
+        const b = { <br>
+            name: "Mike" <br>
+        } <br>
+        <br>
+        a.f.apply(b)  /// a.f.call(b)   /// a.f.bind(b)() <br>
+        կտպի Mike <br>
+        <br>
+        /// z.apply(b)  /// .bind(b)????  /// z.bind(b)() <br>
+        <br><br>
+
+        4. Վարժություն 4 <br>
+        <br>
+        փոխեք այս կոդը այնպես, որ այն ստեղծի նոր Person օբյեկտ <br>
+        <br>
+        function Person() { <br>
+           this.name = "Mike"; <br>
+           this.age = 33; <br>
+        } <br>
+        <br>
+        const a = Person() <br>
+        alert(a) <br>
+        կտպի undefined <br>
+        <br>
+        /// alert(window.age) <br>
+        /// կտպի 33 <br>
+        <br><br>
+
+        ճիշտը <br>
+        function Person() { <br>
+            // this = {} <br>
+            this.name = "Mike"; <br>
+            this.age = 33; <br>
+            // return this <br>
+        } <br>
+        <br>
+        const a = new Person() <br>
+        alert(JSON.stringify(a, undefined, 2)) <br>
+        կտպի {"name": "Mike", "age": 33} <br>
+        <br>
+        alert(new Person().name) <br>
+        կտպի Mike <br>
+        <br><br>
+
+        /* <br>
+        function Person(name, age) { <br>
+            this.name = name <br>
+            this.age = age <br>
+        } <br>
+        <br>
+        const a = new Person("Mike", 33) <br>
+        alert(JSON.stringify(a, undefined, 2)) <br>
+        կտպի {"name": "Mike", "age": 33} <br>
+        <br>
+        // պետք է հասկանալ որ մենք կարող ենք էս պահին ստեղծենք object-ը երկու ձևով կամ կարող ենք ստեղծենք ինքնուրույն այսպես {} կամ կարող ենք ստեղծենք ֆունկցիա որին եթե new ով կանչենք կստեղծի այդ նոր object-ը և կվերադարձնի <br>
+        */ <br>
+        <br><br>
+
+        5. Վարժություն 5 <br>
+        <br>
+        Փոխեք կոդը այնպես, որ ֆունկցիայի գործառույթում this-ը լինի undefined <br>
+        <br>
+        function func() { <br>
+            alert(this) <br>
+        } <br>
+        func() <br>
+        <br><br>
+
+        ճիշտը <br>
+        "use strict" <br>
+        <br>
+        function func() { <br>
+            alert(this) <br>
+        } <br>
+        func() <br>
+
+    </h2>
+
+
+    <script src="index46js.js"></script>
+</body>
+
+</html>
+

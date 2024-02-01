@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 35</title>
+  <link rel="stylesheet" href="index35js.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    JAVASCRIPT - Հասարակ տիպեր / հղումով տիպեր(primitive/reference types)
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="../index34js/js34html.html" target="_blank">JS 34</a>
+
+  <br><br>
+
+  <h2>
+    1. Primitive types(հասարակ տիպեր) <br>
+    number <br>
+    string <br>
+    boolean <br>
+    undefined <br>
+    null <br>
+    NaN <br>
+    <br>
+    let a = "hi"; <br>
+    let b = a; <br>
+    a = "joe"; <br>
+    alert(a); <br>
+    alert(b); <br>
+    կտպի joe հետո hi <br>
+    <br><br>
+    Variable Value <br>
+    ----------------- <br>
+    a "joe" <br>
+    b "hi" <br>
+    <br>
+    Address Value <br>
+    ----------------- <br>
+    <br>
+    բոլոր primitivy typy-երով արժեքները աշխատում են այսպես միշտ երբ որ մենք մի արժեքը վերագրում ենք ինչ որ մի փոփոխականի
+    այդ փոփոխականը ունենումա local copy-ին էտ արժեքի նենց որ եթե էտ արժեքը ինչ որ մի ուրիշ տեղ փոխվումա դա իրան չի
+    փոխում ինքը շարունակումա ունենալ էտ արժեքը <br>
+    <br><br>
+    2.Reference types(հղումով տիպեր) <br>
+      function <br>
+      array <br>
+      object <br>
+    <br>
+    let a = [5, 4, 2]; <br>
+    let b = a; <br>
+    a.push(10); <br>
+    alert(a); <br>
+    alert(b); <br>
+    կտպի 5, 4, 2, 10 հետո 5, 4, 2, 10 <br>
+    <br>
+    Variable Value <br>
+    ----------------- <br>
+    a       <0x01> <br>
+    b       <0x01> <br>
+    <br>
+    Address Value <br>
+    ----------------- <br>
+    <0x01>   [5, 4, 2, 10] <br>
+    <br><br>
+     ի տարբերություն primitivy արժեքներին որտեղ որ ամեն փոփոխականը ունենումա իր local copy-ին <br>
+     երբ որ մենք աշխատում ենք հղված արժեքների(reference type-երի) հետ այսինքն ֆունկցիաների, զանգվածների և object-ների էտ ժամանակ երբ որ մենք իրենց փոխում ենք մենք իրականում փոխում ենք մի ընդհանուր արժեք ինչու որովհետև փոփոխակաները ունենում են ոչ թե հենց արժեքը այլ հղում դեպի արժեք <br>
+    <br><br><br>
+    function bar(b) { <br>
+      b++ <br>
+    } <br>
+    let a = 1; <br>
+    bar(a); <br>
+    alert(a); <br>
+    կտպի 1 <br>
+    <br><br>
+    Variable    Value <br>
+    ----------------- <br>
+    a           1 <br>
+    b           2 <br>
+    <br>
+    Address     Value <br>
+    ----------------- <br>
+    
+  </h2>
+
+  <script src="index35js.js"></script>
+</body>
+
+</html>

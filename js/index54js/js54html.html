@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 54</title>
+    <link rel="stylesheet" href="index54js.css">
+
+
+    <style>
+        canvas {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <hr>
+    <h1>
+
+        Javascript OOP - object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում) -- Polymorphism(Պոլիմորֆիզմ)
+
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="../index53js/js53html.html" target="_blank">JS 53</a>
+
+    <br><br>
+
+    <h2>
+        1.Polymorphism(Պոլիմորֆիզմ)-ը object oriented programming(օբյեկտ կողմնորոշված ծրագրավորում)-ի չորս կարևոր կոնցեպտներից մեկն է <br>
+        նա նշանակում է որ ֆունկցիաները կարող են ունենան տարբեր ձևեր նայած իրավիճակ <br>
+        <br>
+        .1. <br>
+        function sayHi() { <br>
+            alert("hi"); <br>
+        } <br>
+        <br>
+        function sayHiName(name) { <br>
+            alert("Hello " + name); <br>
+        } <br>
+        <br>
+        function sayHiFullName(name, lastName) { <br>
+            alert("Greetings " + name + " " + lastName); <br>
+        } <br>
+        <br>
+        այսինքն այս ֆունկցիաները ամեն մեկը ունեն մեկ դեր, իրանք միշտ կաշխատեն նույն ձևով,իրանց ալգորիթմը կաշխատի նույն քայլերով որպեսզի տա մեզ պատասխանը <br>
+        <br>
+        մենք կարող ենք ստեղծենք մի հատ ուրիշ ֆունկցիա(որին ուղղակի կոչենք hi), որը իր մեջ կպարունակի այս երեք դերերը  <br>
+        դա անում ենք ինչպես <br>
+        մենք ընդունում ենք hi-ի մեջ ինչ որ արժեքներ և ընդամենը ստուգում ենք որևէ արժեք փոխանցվեց եթե ոչ մի արժեք չի փոխանցվել մենք alert ենք անում hi(դա եղավ sayHi-ի դերը), եթե փոխանցվեց մեկ արժեք ապա անում ենք "hello " + էտ անունը(դա եղավ sayHiName-ի դերը) իսկ են պարագայում երբ որ մենք ունենք երկու արժեք(անուն և ազգանուն) մենք էտ ժամանակ ասում ենք "Greetings " + անունը և ազգանունը(դա եղավ sayHiFullName-ի դերը) <br>
+        <br>
+        function hi(...args) { <br>
+            if(args.length === 0) { <br>
+                alert("hi"); <br>
+            } else if(args.length === 1) { <br>
+                alert("Hello " + args[0]); <br>
+            } else if(args.length === 2) { <br>
+                alert("Greetings " + args[0] + " " + args[1]); <br>
+            } <br>
+        } <br>
+        <br>
+        hi();    // hi <br>
+        hi("Michael");   // Hello Michael <br>
+        hi("Michael", "Jackson");    // Greetings Michael Jackson <br>
+        <br>
+
+        .2. <br>
+        այսինքն ինչ է ստացվում որ մենք ստեղծեցինք մի հատ ֆունկցիա որը չունի մեկ հատ դեր, իր դերը որոշվումա պարամետրներից, են արժեքների քանակից որ ինքը ստանումա, քանի արժեք է նա ստանում, նա մեկ հատ արժեք է ստանում երկու թե ընդհանրապես արժեք չի ստանում դա այս պարագայում ղեկավարում է իր դերը <br>
+        մենք նաև կարող էինք փոխեինք իր դերը նայած ինչ տիպի արժեքներ ենք մենք ստանում օրինակ ստանում ենք թիվ թե ստանում ենք տեքստ եթե թիվ ստանանք էս տիպի կոդ ենք աշխատացնում եթե տեքստ ստանանք ուրիշ տիպի կոդ ենք աշխատացնում  <br>
+        <br>
+        այս մոտեցումը նշանակումա overloading(գերբեռնվածություն), function overloading(ֆունկցիայի գերբեռնվածություն) <br>
+        ինչ նկատի ունենք overloading ասելով, overload նշանակումա երբ որ ինչ որ մի բան ունի մեկից ավել դեր, օրինակ էս պարագայում մեր hi ֆունկցիան ունի ոչ միայն մեկ հատ դեր այլ երեք դեր, երեք տարբեր դեր, այսինքն ինքը կարող է իր մեջ աշխատացնի երեք տարբեր ալգորիթմ նայած տրված արժեքներից սա կոչվում է function overloading, function overloading-ը դա մի օրինակ է կոնկրետ Static Polymorphism-ի բայց եկեք մոռանանք էտ տեխնիկական տերմինը(polymorphism-ի) <br>
+        այսինքն մեր ֆունկցիան կաշխատի տարբեր ձևերով նայած իրավիճակ  <br>
+        <br>
+        եկեք ավելի կոնկրետ օրինակ տեսնենք այս function overloading-ի <br>
+        և մենք հիմա եթե findByName-ը կանչենք օրինակ Susan-ով, ինքը կվերադարձնի մի զանգված որի մեջ կլինի այս {name: "Susan", age: 19} object-ը, եթե findByAge կանչենք ինչ որ տարիքով օրինակ 22 նա կվերադարձնի զանգված որի մեջ կլինի  {name: "Mike", age: 22} object-ը <br>
+        <br>
+        const data = [ <br>
+            {name: "Joe", age: 33}, <br>
+            {name: "Mike", age: 22}, <br>
+            {name: "Susan", age: 19} <br>
+        ]; <br>
+        <br>
+        function findByName(name) { <br>
+            return data.filter(obj => obj.name === name); <br>
+        } <br>
+        <br>
+        function findByAge(age) { <br>
+            return data.filter(obj => obj.age === age); <br>
+        } <br>
+        <br>
+
+        բայց մենք կարող ենք ստեղծենք մի հատ առանձին ֆունկցիա find ուղղակի որը իր մեջ կպարունակի և findByName-ը, և findByAge-ը <br>
+        այսինքն եթե մենք էս find-ին կանչենք տեքստով(անունով այսինքն) ինքը կգնա և կգտնի են object-ը որը ունի այդ անունը եթե մենք իրեն կանչենք թվով ինքը կգնա կգտնի այն object-ը որը ունի այդ տարիքը  <br>
+        այսինքն ինչ է ստացվում որ այս երկու առանձին ֆունկցիաների դերը մենք փաթեթաորում ենք մի ֆունկցիայի մեջ և ահա մենք ունենք հիմա մի հատ ֆունկցիա <br>
+        <br>
+        const data = [ <br>
+            {name: "Joe", age: 33}, <br>
+            {name: "Mike", age: 22}, <br>
+            {name: "Susan", age: 19} <br>
+        ]; <br>
+        <br>
+        function find(...args) { <br>
+            if(typeof(args[0]) === "number") { <br>
+                return data.filter(obj => obj.age === args[0]); <br>
+            } else { <br>
+                return data.filter(obj => obj.name === args[0]); <br>
+            } <br>
+        } <br>
+        <br>
+        alert(JSON.stringify(find("Joe")));  // [{"name":"Joe","age":33}] <br>
+        alert(JSON.stringify(find(19)));     // [{"name":"Susan","age":19}] <br>
+        <br>
+
+        .3. <br>
+        ինչի համար արժի ունենալ մի հատ ֆունկցիա և ոչ թե երկու հատ <br>
+        շատ պարզ պատկերացրեք այդ ֆունկցիաները կցած են ինչ որ object-ի և դուք այդ object-ը հանձնում եք ինչ որ ուրիշ ծրագրաորողի, ինչ կցանկանայք որ այդ object-ը ունենար իր մեջ երեք հարյուր հատ ֆունկցիա որ այդ ծրագրաորողը հիմա այդ երեք հարյուր հատ ֆունկցիաով պետք է անցնի ու փորձի հասկանալ թե ոնց է էտ ամեն ինչը օգտագործելու թե որպեսզի այդ object-ը ունենար ընդամենը 5 ֆունկցիա բայց այդ 5 ֆունկցիանները իրանց մեջ ունենայն տարբեր դերեր և այդ օգտագործողը եթե ուզումա ինչ որ բան գտնի ընդամենը տալիսա թիվ և աշխատումա, ստացվումա գտնումա են արժեքը որ ինքը ուզումա ուրիշ պարագայում փոխանցումա տեքստ էլի ստացվումա  <br>
+        այսինքն ֆունկցիան լինումա մի տեսակ ավելի խելացի, այսինքն երբ որ մենք ունենք ավելի քիչ քանակի ֆունկցիաներ մեր object-ների հետ աշխատելը լինում է շատ ավելի պարզ որովհետև քանակը այն ֆունկցիաների որի մասին մենք պետքա մտածենք հիշենք օգտագործենք և այլն, լինում է ավելի քիչ <br>
+        և ահա սա մի օրինակ է Պոլիմորֆիզմ(Polymorphism)-ի, poly նշանակումա շատ, morph նշանակումա ձև, այսինքն մեր ֆունկցիան հիմա ունի բազմաթիվ ձև և իր ձևը, այսինքն իր դերը փոխվում է ըստ իր տրված արժեքների(ըստ արժեքների տիպի և արժեքների քանակի) <br>
+        <br>
+
+        .4. <br>
+        երրորդ օրինակը polymorphism-ի <br>
+        <br>
+        class Animal { <br>
+            saySomething() { <br>
+                alert("err, i'm an animal"); <br>
+            } <br>
+        } <br>
+        <br>
+        class Dog extends Animal { <br>
+            saySomething() { <br>
+                alert("woof"); <br>
+            } <br>
+        } <br>
+        <br>
+        const animall = new Animal(); <br>
+        const dog1 = new Dog(); <br>
+        <br>
+        animall.saySomething(); // err, i'm an animal <br>
+        dog1.saySomething();    // woof <br>
+        <br>
+
+        alert(animall instanceof Animal);  // true <br>
+        alert(dog1 instanceof Animal);     // true <br>
+        alert(dog1 instanceof Dog);        // true   <br>
+        // այսինքն ինչ է ստացվում որ այս dog1 object-ը հերիք չի որ կարելիա ասել որ ինքը շուն է ինքը նաև կենդանի է, animall-ն էլ է կենդանի <br>
+        <br>
+        այսինքն ինչ է ստացվում որ մենք ունենք երկու հատ կենդանի <br>
+        եկեք փոփոխականների անունները ուղակի գրենք animall1 և animall2 <br>
+        <br>
+        class Animal { <br>
+            saySomething() { <br>
+                alert("err, i'm an animal"); <br>
+            } <br>
+        } <br>
+        <br>
+        class Dog extends Animal { <br>
+            saySomething() { <br>
+                alert("woof"); <br>
+            } <br>
+        } <br>
+        <br>
+        const animall1 = new Animal(); <br>
+        const animall2 = new Dog(); <br>
+        <br>
+        animall1.saySomething(); <br>
+        animall2.saySomething(); <br>
+        <br>
+        երկուսն էլ կենդանի են animall2-ը ավելի կոնկրետ տիպի կենդանի է շուն է բայց դե երկուսնել կենդանի են, երկուսնել ունեն ֆունկցիա նույն անունով, բայց երբ որ animal1-ի ֆունկցիան ենք կանչում մի ձևի է աշխատում, animal2-ի ֆունկցիան ենք կանչում ուրիշ ձևի է աշխատում <br>
+        ահա polymorphism-ը, այսինքն մի ֆունկցիա որը նույն անունը ունի կպած է object-ին որը նույն տիպի է, աշխատում է տարբեր ձևերով ինչու որովհետև հերիք չի որ այս animall2-ը Animal է(կենդանի է) ինքը նաև ավելի կոնկրետ տիպի է շուն է որը ունի իր տարբերակը saySomething-ի հետևաբար saySomething-ը չնայած էլի նույն անունովա ու երկուսն էլ կցած են կենդանուց animall1-ն էլա կենդանի, animall2-ն էլա կենդանի, animall2-ը լինելով ավելի կոնկրետ կենդանի(շուն) կաշխատի մի քիչ ուրիշ ձևի ահա Polymorphism <br>
+        <br><br>
+
+
+        2. <br>
+        ինչպես էս տիպի մոտեցում կարելի է օգտագործել <br>
+        <br>
+        եթե հիշում եք մենք ստեղծեցինք մի խաղ որը ստեղծվել է շաբլոններով մենք ստեղծեցինք GameObj շաբլոն որը նկարագրում էր object-ներին, այսինքն ինքը ուներ իր մեջ տեղը object-ի, չափը, render և update ֆունկցիաները, գնա աջ, գնա ձախ և այլն <br>
+        <br>
+        էտ շաբլոն-ից էտ class-ից մենք ժառանգում էինք հերոս class-ի մեջ այսինքն հերոսը հիմա extends էր անում GameObj-ին(class Hero extends GameObj {}) այսինքն ունենում էր բոլոր էտ կարողությունները և ավելացնում էր մի քանի դետալ օրինակ կրակելու հնարաորություն <br>
+        կար հակառակորդը որը էլի ժառանգում էր GameObj-ից բայց իր update-ը օրինակ փոխում էր ասում է ես չեմ ուզում ժառանգված update-ը օգտագործեմ այլ ներքից կկանչեմ ժառանգված update-ը բայց նաև կավելացնեմ իմ հավելյալ լոգիկան <br>
+        հետո կար փամփուշտը որը էլի նույնպես ժառանգում էր GameObj-ին և նա, նա էլ օրինակ ուներ update ֆունկցիա որը իր update ֆունկցիաներ չէր ժառանգում բայց կանչում էր ներքից ժառանգած update ֆունկցիան և հետո ավելացնում էր հավելյալ լոգիկա <br>
+        <br>
+        մեր data-ն ինֆորմացիան խաղի մենք դասաորում էինք այսպես, այսինքն ունեինք մի հատ object որը ուներ հերոսի հղում դեպի էտ հերոսը որ մենք ստեղծում էինք, զանգված որտեղ որ մենք գցում էինք բոլոր փամփուշտները և մի զանգված որտեղ որ մենք դնում էինք հակարակորդին <br>
+        հետևաբար ինչ էր ստացվում որ update-ի ժամանակ մենք պետք է մի հատ հերոսին ասեինք update արա, հետո ամեն նապաստակին ասեինք update արա, հետո ամեն փամփուշտին կանչեինք update, render-ի մեջ հերոսին ասում էինք render արա, բոլոր փամփուշտներին ասում էինք render արա, բոլոր հակարակորդներին ասում էինք render արա,  այսինքն այսպես անընդհատ կրկնում էինք  <br>
+        ինչ է ստացվում որ եթե մենք ուզենայնք ուրիշ object-ներ ավելացնեյնք օրինակ ծառեր, թռչուններ և այլն մենք կստեղծեյնք առանձին զանգվածներ և ամեն զանգվածով կպտտվեյնք և կկանչեյնք իր համապատասխան render-ը, update-ը և այլն <br>
+        <br>
+
+        պատկերացրեք մենք ունենք խաղ որը ունի շատ մեծ քանակությամբ object-ներ տարբեր տիպի object-ներ, ոչ միայն հերիք չի թռչուն տարբեր ձևերի թռչուններ, ունենք դրակոններ, հազար ու մի տարբեր փամփուշտներ, հերոսներ, հակարակորդներ և այլն <br>
+        այս տիպի մոտեցումը շատ հեշտ կհասնի խնդրին մենք պետքա անընդհատ copy փաստ անենք և մեր կոդը բավականին մեծ կստացվի <br>
+        ինչպես կարելիա անել ավելի պարզ <br>
+        <br>
+
+        էս պարագայում մեր data-ի մեջ պահում ենք ընդամենը մի հատ զանգված ու մենք ենթադրում ենք որ բոլոր object-ները էտ զանգվածի GameObj են, հերոսը քանի որ ժառանգում է GameObj-ից նշանակումա ինքը GameObj է նույն ձևի ոնց որ շունը նաև կենդանի է, հակարակորդը GameObj է, փամփուշտը GameObj է, հետևաբար մենք կարող ենք ենթադրենք որ քանի որ բոլորը GameObj են և GameObj-ը ունի render և update նշանակումա բոլոր էտ object-ները ունեն render և update <br>
+        այսինքն ինչ է ստացվում որ մեր update-ը մենք ընդամենը կարող ենք աշխատացնենք այսպես <br>
+        բոլոր object-ներով պտտվում ենք և կանչում ենք իրենց համապատասխան update-ը, հիմա update-ի դերը, վիճակը, տեսքը կփոխվի նայած են object-ի որ իր մեջ կա այսինքն եթե obj-ը լինի փամփուշտ իր update-ը կաշխատի մի քիչ ուրիշ քան թե եթե obj-ը լինի հերոս կամ հակարակորդ(այսիինքն forEach-ով objects-ի բոլոր անդամների վրայով կպտտվի և մի անգամ կկանչի հերոսի update()-ը, մի անգամ փամփուշտի update()-ը, և հակարակորդի update()-ը) <br>
+        ահա Պոլիմորֆիզմ(Polymorphism) այսինքն update-ի դերը փոխվում է, ինքը ունի տարբեր դերեր նայած ինչ ավելի կոնկրետ տիպի object-ին է նա կցած(այո բոլորը GameObj են բայց կան ավելի կոնկրետ տիպի GameObj-ներ օրինակ հակարակորդ և փամփուշտ որոնց update ֆունկցիաները տարբերվում են հերոսի udpate ֆունկցիայից)  <br>
+        function update() { <br>
+            data.objects.forEach((obj) => obj.update()); <br>
+            // .. <br>
+        } <br>
+        // նույն մենք կարող ենք անենք render-ի ժամանակ <br>
+        function render() { <br>
+            context.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height) <br>
+            data.objects.forEach(obj => obj.render()); <br>
+        } <br>
+        <br>
+        ահա Պոլիմորֆիզմ(Polymorphism) այսինքն ֆունկցիան ունի տարբեր դերեր նայած որ object-ին է նա կցած <br>
+        <br>
+        .1. <br>
+        canvas-ը Դասական ժառանգություն(Classical Inheritance)-ով <br>
+        extends անելով <br>
+        <br>
+        const canvas = document.querySelector("canvas"); <br>
+        const context = canvas.getContext("2d"); <br>
+        <br>
+        const backgroundImg = document.createElement("img"); <br>
+        backgroundImg.src = ""; <br>
+        <br>
+        class GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                this._x = x; <br>
+                this._y = y; <br>
+                this._width = width; <br>
+                this._height = height; <br>
+                <br>
+                this._speed = 1; <br>
+                this._xDelta = 0; <br>
+                this._yDelta = 0; <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = ""; <br>
+            } <br>
+            <br>
+            getBoundingBox() { <br>
+                return { <br>
+                    x: this._x, <br>
+                    y: this._y, <br>
+                    width: this._width, <br>
+                    height: this._height <br>
+                }; <br>
+            } <br>
+            <br>
+            update() { <br>
+                this._x += this._xDelta; <br>
+                this._y += this._yDelta; <br>
+            } <br>
+            render() { <br>
+                context.drawImage(this._img, this._x, this._y, this._width, this._height) <br>
+            } <br>
+            <br>
+            goRight() { <br>
+                this._xDelta = this._speed; <br>
+            } <br>
+            goLeft() { <br>
+                this._xDelta = this._speed * -1; <br>
+            } <br>
+            stop() { <br>
+                this._xDelta = 0; <br>
+            } <br>
+        } <br>
+        <br>
+
+        class Hero extends GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                super(x, y, width, height); <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwx3cRyk0JKQEKJAHw9OglG6QpBa0Hqps4qQ&usqp=CAU" <br>
+                <br>
+                this._audio = document.createElement("audio"); <br>
+                this._audio.src = "http://novastar-main.co.hays.tx.us/NovaStar5/sounds/laser.wav"; <br>
+            } <br>
+            <br>
+            fire() { <br>
+                const x = this._x + this._width, <br>
+                y = this._y + this._height / 2, <br>
+                width = 20, <br>
+                height = 20; <br>
+                <br>
+                const bullet = new Bullet(x, y, width, height); <br>
+                bullet.goRight(); <br>
+                data.bullets.push(bullet); <br>
+                <br>
+                this._audio.currentTime = 0; <br>
+                this._audio.play(); <br>
+            } <br>
+        } <br>
+        <br>
+        class Rabbit extends GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                super(x, y, width, height); <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = ""; <br>
+            } <br>
+            <br>
+            update() { <br>
+                super.update(); <br>
+                <br>
+                if((this._xDelta < 0 && this._x + this,this._width < 0) || (this._xDelta > 0 && this._x > canvas.width)) { <br>
+                    this.deleteMe = true; <br>
+                } <br>
+            } <br>
+            <br>
+            die() { <br>
+                this.deleteMe = true; <br>
+            } <br>
+        } <br>
+        <br>
+
+        class Bullet extends GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                super(x, y, width, height); <br>
+                <br>
+                this._speed = 5; <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = "" <br>
+                <br>
+                this._stabAudio = document.createElement("audio"); <br>
+                this._stabAudio.src = "http://sistemas7.sead.ufscar.br:8080/jspui/bitstream/123456789/2261/2/duck.wav" <br>
+            } <br>
+            <br>
+            update() { <br>
+                super.update(); <br>
+                <br>
+                if((this._xDelta < 0 && this._x + this._width < 0) || (this._xDelta > 0 && this._x > canvas.width)) { <br>
+                    this.deleteMe = true; <br>
+                } <br>
+                <br>
+                data.rabbits.forEach((rabbit) => { <br>
+                    if(intersect(this.getBoundingBox(), rabbit.getBoundingBox())) { <br>
+                        rabbit.die(); <br>
+                        this._stabAudio.currentTime = 0; <br>
+                        this._stabAudio.play(); <br>
+                        this.deleteMe = true <br>
+                    } <br>
+                }); <br>
+            } <br>
+        } <br>
+        <br>
+
+        let data = { <br>
+            hero: new Hero(10, 140, 100, 100), <br>
+            bullets: [], <br>
+            rabbits: [] <br>
+        } <br>
+        <br>
+        function intersect(rect1, rect2) { <br>
+            const x = Math.max(rect1.x, rect2.x), <br>
+            num1 = Math.min(rect1.x + rect1.width, rect2.x + rect2.width), <br>
+            y = Math.max(rect1.y, rect2.y), <br>
+            num2 = Math.min(rect1.y + rect1.height, rect2.y + rect2.height); <br>
+            <br>
+            return (num1 >= x && num2 >= y) <br>
+        } <br>
+        <br>
+        function update() { <br>
+            data.hero.update() <br>
+            data.bullets.forEach( (bullet) => bullet.update() ) <br>
+            data.rabbits.forEach( (rabbit) => rabbit.update() ) <br>
+            <br>
+            data.bullets = data.bullets.filter((bullet) => bullet.deleteMe !== true) <br>
+            data.rabbits = data.rabbits.filter((rabbit) => rabbit.deleteMe !== true) <br>
+            <br>
+            if(data.rabbits.length === 0) { <br>
+                const rabbit = new Rabbit(canvas.width, 140, 100, 100); <br>
+                rabbit.goLeft(); <br>
+                data.rabbits.push(rabbit); <br>
+            } <br>
+        } <br>
+        <br>
+        function render() { <br>
+            context.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height) <br>
+            <br>
+            data.hero.render(); <br>
+            data.bullets.forEach((bullet) => bullet.render()) <br>
+            data.rabbits.forEach((rabbit) => rabbit.render()) <br>
+        } <br>
+        <br> 
+        function loop() { <br>
+            requestAnimationFrame(loop) <br>
+            <br>
+            update() <br>
+            render() <br>
+        } <br>
+        loop() <br>
+        <br>
+
+        document.addEventListener("keydown", function(evt) { <br>
+            if(evt.code === "ArrowRight") { <br>
+                data.hero.goRight() <br>
+            } else if(evt.code === "ArrowLeft") { <br>
+                data.hero.goLeft() <br>
+            } else { <br>
+                data.hero.fire() <br>
+            } <br>
+        }) <br>
+        <br>
+        document.addEventListener("keyup", (evt) => { <br>
+            data.hero.stop(); <br>
+        }); 
+        <br><br>
+
+        .2. <br>
+        Պոլիմորֆիզմ(Polymorphism) <br>
+        <br>
+        const canvas = document.querySelector("canvas"); <br>
+        const context = canvas.getContext("2d"); <br>
+        <br>
+        const backgroundImg = document.createElement("img"); <br>
+        backgroundImg.src = ""; <br>
+        <br>
+        class GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                this._x = x; <br>
+                this._y = y; <br>
+                this._width = width; <br>
+                this._height = height; <br>
+                <br>
+                this._speed = 1; <br>
+                this._xDelta = 0; <br>
+                this._yDelta = 0; <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = ""; <br>
+            } <br>
+            <br>
+            getBoundingBox() { <br>
+                return { <br>
+                    x: this._x, <br>
+                    y: this._y, <br>
+                    width: this._width, <br>
+                    height: this._height <br>
+                }; <br>
+            } <br>
+            <br>
+            update() { <br>
+                this._x += this._xDelta; <br>
+                this._y += this._yDelta; <br>
+            } <br>
+            render() { <br>
+                context.drawImage(this._img, this._x, this._y, this._width, this._height) <br>
+            } <br>
+            <br>
+            goRight() { <br>
+                this._xDelta = this._speed; <br>
+            } <br>
+            goLeft() { <br>
+                this._xDelta = this._speed * -1; <br>
+            } <br>
+            stop() { <br>
+                this._xDelta = 0; <br>
+            } <br>
+        } <br>
+        <br>
+
+        class Hero extends GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                super(x, y, width, height); <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwx3cRyk0JKQEKJAHw9OglG6QpBa0Hqps4qQ&usqp=CAU" <br>
+                <br>
+                this._audio = document.createElement("audio"); <br>
+                this._audio.src = "http://novastar-main.co.hays.tx.us/NovaStar5/sounds/laser.wav"; <br>
+            } <br>
+            <br>
+            fire() { <br>
+                const x = this._x + this._width, <br>
+                y = this._y + this._height / 2, <br>
+                width = 20, <br>
+                height = 20; <br>
+                <br>
+                const bullet = new Bullet(x, y, width, height); <br>
+                bullet.goRight(); <br>
+                data.objects.push(bullet); <br>
+                <br>
+                this._audio.currentTime = 0; <br>
+                this._audio.play(); <br>
+            } <br>
+        } <br>
+        <br>
+        class Rabbit extends GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                super(x, y, width, height); <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = ""; <br>
+            } <br>
+            <br>
+            update() { <br>
+                super.update(); <br>
+                <br>
+                if((this._xDelta < 0 && this._x + this,this._width < 0) || (this._xDelta > 0 && this._x > canvas.width)) { <br>
+                    this.deleteMe = true; <br>
+                } <br>
+            } <br>
+            <br>
+            die() { <br>
+                this.deleteMe = true; <br>
+            } <br>
+        } <br>
+        <br>
+        class Bullet extends GameObj { <br>
+            constructor(x, y, width, height) { <br>
+                super(x, y, width, height); <br>
+                <br>
+                this._speed = 5; <br>
+                <br>
+                this._img = document.createElement("img"); <br>
+                this._img.src = "" <br>
+                <br>
+                this._stabAudio = document.createElement("audio"); <br>
+                this._stabAudio.src = "http://sistemas7.sead.ufscar.br:8080/jspui/bitstream/123456789/2261/2/duck.wav" <br>
+            } <br>
+            <br>
+            update() { <br>
+                super.update(); <br>
+                <br>
+                if((this._xDelta < 0 && this._x + this._width < 0) || (this._xDelta > 0 && this._x > canvas.width)) { <br>
+                    this.deleteMe = true; <br>
+                } <br>
+                <br>
+                data.objects.forEach((obj) => { <br>
+                    if(obj instanceof Rabbit) { <br>
+                            if(intersect(this.getBoundingBox(), obj.getBoundingBox())) { <br>
+                            obj.die(); <br>
+                            this._stabAudio.currentTime = 0; <br>
+                            this._stabAudio.play(); <br>
+                            this.deleteMe = true <br>
+                        } <br>
+                    } <br>
+                }) <br>
+                data.rabbits.forEach((rabbit) => { <br>
+                    if(intersect(this.getBoundingBox(), rabbit.getBoundingBox())) { <br>
+                        rabbit.die(); <br>
+                        this._stabAudio.currentTime = 0; <br>
+                        this._stabAudio.play(); <br>
+                        this.deleteMe = true <br>
+                    } <br>
+                }); <br>
+            } <br>
+        } <br>
+        <br>
+
+        let data = { <br>
+            // hero: new Hero(10, 140, 100, 100), <br>
+            // bullets: [], <br>
+            // rabbits: [] <br>
+            <br>
+            // Պոլիմորֆիզմ(Polymorphism) <br>
+            objects: [new Hero(10, 140, 100, 100)] <br>
+        } <br>
+        <br>
+        function intersect(rect1, rect2) { <br>
+            const x = Math.max(rect1.x, rect2.x), <br>
+            num1 = Math.min(rect1.x + rect1.width, rect2.x + rect2.width), <br>
+            y = Math.max(rect1.y, rect2.y), <br>
+            num2 = Math.min(rect1.y + rect1.height, rect2.y + rect2.height); <br>
+            <br>
+            return (num1 >= x && num2 >= y) <br>
+        } <br>
+        <br>
+        function update() { <br>
+            // data.hero.update() <br>
+            // data.bullets.forEach( (bullet) => bullet.update() ) <br>
+            // data.rabbits.forEach( (rabbit) => rabbit.update() ) <br>
+            <br>
+            // data.bullets = data.bullets.filter((bullet) => bullet.deleteMe !== true) <br>
+            // data.rabbits = data.rabbits.filter((rabbit) => rabbit.deleteMe !== true) <br>
+
+            // Պոլիմորֆիզմ(Polymorphism) <br>
+            data.objects.forEach((obj) => obj.update()); <br>
+            data.objects = data.objects.filter((obj) => obj.deleteMe !== true) <br>
+            <br><br>
+
+
+            //  if(data.rabbits.length === 0) { <br>
+            //      const rabbit = new Rabbit(canvas.width, 140, 100, 100); <br>
+            //      rabbit.goLeft(); <br>
+            //      data.rabbits.push(rabbit); <br>
+            //  } <br>
+            <br>
+            // Պոլիմորֆիզմ(Polymorphism) <br>
+            const rabbits = data.objects.filter(obj => obj instanceof Rabbit); <br>
+            if(rabbits.length === 0) { <br>
+                const rabbit = new Rabbit(canvas.width, 140, 100, 100) <br>
+                rabbit.goLeft(); <br>
+                data.objects.push(rabbit); <br>
+            } <br>
+        } <br>
+        <br>
+        function render() { <br>
+            context.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height) <br>
+            <br>
+            // data.hero.render(); <br>
+            // data.bullets.forEach((bullet) => bullet.render()) <br>
+            // data.rabbits.forEach((rabbit) => rabbit.render()) <br>
+            <br>
+            // Պոլիմորֆիզմ(Polymorphism) <br>
+            data.objects.forEach(obj => obj.render()); <br>
+        } <br>
+        <br> 
+        function loop() { <br>
+            requestAnimationFrame(loop) <br>
+        <br>
+            update() <br>
+            render() <br>
+        } <br>
+        loop() <br>
+        <br>
+
+        document.addEventListener("keydown", function(evt) { <br>
+            // if(evt.code === "ArrowRight") { <br>
+            //     data.hero.goRight() <br>
+            // } else if(evt.code === "ArrowLeft") { <br>
+            //     data.hero.goLeft() <br>
+            // } else { <br>
+            //     data.hero.fire() <br>
+            // } <br>
+            <br>
+            if(evt.code === "ArrowRight") { <br>
+                data.objects.forEach((obj, i) => { <br>
+                    if(obj instanceof Hero) { <br>
+                        obj.goRight() <br>
+                    } <br>
+                }) <br>
+            } else if(evt.code === "ArrowLeft") { <br>
+                data.objects.forEach((obj, i) => { <br>
+                    if(obj instanceof Hero) { <br>
+                        obj.goLeft() <br>
+                    } <br>
+                }) <br>
+            } else { <br>
+                data.objects.forEach((obj, i) => { <br>
+                    if(obj instanceof Hero) { <br>
+                        obj.fire() <br>
+                    } <br>
+                }) <br>
+            } <br>
+        }) <br>
+        <br> 
+        document.addEventListener("keyup", (evt) => { <br>
+            // data.hero.stop(); <br>
+            data.objects.forEach((obj, i) => { <br>
+                if(obj instanceof Hero) { <br>
+                    obj.stop() <br>
+                } <br>
+            }) <br>
+        }); <br>
+        <br><br>
+
+
+        3. <br>
+        Պոլիմորֆիզմ(Polymorphism) կոնցեպտի դերը նրանում է որ ֆունկցիան կարող է ունենալ տարբեր դերեր  <br>
+        .1. կախված են արժեքների քանակից որ ինքը ստանումա է <br>
+        .2. կախված են արժեքների տիպից որ ինքը ստանումա է <br>
+        .3. կախված որ object-ին է նա կցած 
+
+
+
+    </h2>
+
+    <canvas width="500" height="300"></canvas>
+
+    <script src="index54js.js"></script>
+</body>
+
+</html>

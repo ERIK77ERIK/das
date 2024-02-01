@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 19</title>
+  <link rel="stylesheet" href="index19js.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    JAVASCRIPT - Զանգվածի map մեթոդը(Array map)
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="../index18js/js18html.html" target="_blank">JS 18</a>
+
+  <br><br>
+
+  <h2>
+    1.map ֆունկցիայի (նույն ձև ոնց forEach ֆունկցիային) տալիս ենք զանգված ու ֆունկցիա և մեր տված ֆունկցիան <br>
+    աշխատելով այնքան անգամ որքան մեր տված զանգվածի մեջ եղած անդամների քանակն է և ամեն անգամ ստանալով մեր տված զանգվածի անդամները հերթականությամբ <br>
+    ամեն անգամ ինչ արժեք որ վերադարձնում է, map ֆունկցիայի մեջ վերագրվում է նոր զանգվածի նույն index-ի
+    մեջ, հին զանգվածը չի փոխվում, և map ֆունկցիան վերադարձնում է մեզ այդ նոր զանգվածը <br>
+    <br>
+    let zoo = [5, 2, 3]; <br>
+    let map = function(arr, fun) { <br>
+      let r = []; <br>
+      let i = 0; <br>
+      while(i < arr.length) { <br>
+        r[i]=fun(arr[i]); <br>
+        i +=1; <br>
+      }; <br>
+      return r <br>
+    }; <br>
+    <br>
+    alert(zoo.map(function(val) { <br>
+      return val * 3; <br>
+    })); <br>
+    alert(zoo); <br>
+    կտպի 15,6,9 հետո 5,2,3
+    
+  </h2>
+
+    
+      <script src="index19js.js"></script>
+</body>
+
+</html>

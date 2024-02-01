@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 58</title>
+    <link rel="stylesheet" href="index58js.css">
+</head>
+
+<body>
+
+    <hr>
+    <h1>
+
+        Javascript - Template literals(կաղապար բառացի)
+      
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="../index57js/js57html.html" target="_blank">JS 57</a>
+
+    <br><br>
+
+    <h2>
+        1. <br>
+        մենք գիտենք որ մենք կարող ենք տեքստ կամ string արժեք ստեղծել չակերտներով "" կամ '' <br>
+        սխալ <br>
+        const a = "hello "yay" world"; <br>
+        alert(a);  // error <br>
+        <br>
+        սխալ <br>
+        const b = 'hello 'yay' world'; <br>
+        alert(b);  // error <br>
+        <br>
+
+        տարբերակ 1 <br>
+        const c = "hello \"yay\" world"; <br>
+        alert(c);  // hello "yay" world <br>
+        <br>
+        const c = 'hello \'yay\' world'; <br>
+        alert(c);  // hello 'yay' world <br>
+        <br>
+        const c = 'hello \"yay\" world'; <br>
+        alert(c);  // hello "yay" world <br>
+        <br>
+        const c = "hello \'yay\' world"; <br>
+        alert(c);  // hello 'yay' world <br>
+        <br>
+
+        տարբերակ 2 <br>
+        const d = 'hello "yay" world'; <br>
+        alert(d);  // hello "yay" world <br>
+        <br>
+        const d = "hello 'yay' world"; <br>
+        alert(d);  // hello 'yay' world <br>
+        <br>
+
+        հետաքրքրության համար <br>
+        <br>
+        const f = "hello \'yay\'' world"; <br>
+        alert(f);  // hello 'yay'' world <br>
+        <br>
+        const f = "hello \"yay\"" world"; <br>
+        alert(f);  // error <br>
+        <br><br>
+
+
+        2. <br>
+        այս չակերտը ՝՝ տաբերվումա մյուս երկու("", '') չակերտներից մի քանի բանով <br>
+        <br>
+        2.1 <br>
+        առաջի տարբերությունը նա է որ <br>
+        ինքը հնարաորություն է տալիս շատ հեշտ ստեղծել իր մեջ մի քանի տող(մի քանի տողանի տեքստ) <br>
+        <br>
+        const a = `hello <br>
+        world`; <br>
+        alert(a); <br>
+        <br>
+        կտպի  hello <br>
+              world <br>
+        <br>
+        այսինքն ինքը պահպանում է իր ստրուկտուրան ինչպես տեսնում եք <br>
+        <br>
+
+        իսկ եթե մենք սա նույնը ուզենայնք ստանայնք սովորական չակերտներով դա չի աշխատի <br>
+        const b = "hello <br>
+        world"; <br>
+        alert(b);  // error <br>
+        <br>
+        ճիշտը <br>
+        const b = "hello\n" + <br>
+        "world"; <br>
+        alert(b);   <br>
+        կտպի  hello <br>
+              world <br>
+              <br>
+
+        2.2 <br>
+        երկրորդը նա հնարաորություն ունի templating(կաղապարում)-ի <br>
+        ՝ ${} ՝ կարող ենք մեջը գրենք javascript <br>
+        կարող ենք հղենք դեպի փոփոխական ` ${name1} ` <br>
+        <br>
+        function getHtml(name1, name2) { <br>
+            return "<div>hello " + name1 + " a href=\"https://jsfiddle.net/\">" + name2 + "</a></div>"; <br>
+        } <br>
+         <br>
+        const html = getHtml("Kachatur", "Zarine"); <br>
+        document.body.innerHTML = document.body.innerHTML + html; <br>
+        կտպի hello KachaturZarine <br>
+        <br>
+
+        function getHtml(name1, name2) { <br>
+            return `<div> <br>
+            a href="https://jsfiddle.net/"> click me ${name1}</a> <br>
+            h1> ${name2.toUpperCase()} /h1> <br>
+            </div>`; <br>
+        }; <br>
+        <br>
+        const html = getHtml("Kachatur", "Zarine"); <br>
+        document.body.innerHTML = document.body.innerHTML + html; <br>
+        կտպի  click me Kachatur <br>
+              ZARINE <br>
+        <br>
+
+        որպես օրինակ պատկերացնելու սա ՝ ${} ՝ <br>
+        const b = "hi"; <br>
+        const a = `hello ${b} word`; <br>
+        alert(a) <br>
+        կտպի hello hi word <br>
+        <br>
+
+
+        3. <br>
+        այսինքն ինչ է ստացվում որ <br>
+        templating-ը մեզ օգնումա որպեսզի մենք անընդհատ տեքստերը իրար կպցնելով կպցնելով չզբաղվենք այլ ստեղծենք մի հատ ընդհանուր տեքստ մեջը գրենք ինչ որ մեզ պետքա և են մասը որտեղ որ պետք է javascript-ով ինչ որ մի բան ավելացնել մենք ուղղակի ասում ենք ${} և մեջը գրում ենք էտ javascript-ը և ինչ որ դա վերադարձնում է դա անմիջապես կպնում է այդ մասնիկի մեջ ընդհանուր տեքստի մեջ և էտ ընդհանուր տեքստը ստեղծվում է և մեզ վերադառնում է հետո ինչ ուզում ենք էտ տեքստով անում ենք 
+   
+    </h2>
+
+
+    <script src="index58js.js"></script>
+</body>
+
+</html>

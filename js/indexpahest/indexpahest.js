@@ -6918,7 +6918,7 @@ npm start
 
 
 
-// /// տարբերությունը էնա որ վիդեո-ի մեջ չի բերում 1. -ը 
+// /// տարբերությունը էնա որ վիդեոի մեջ չի բերում 1. -ը 
 // CLI for webpack must be installed.        
 //   webpack-cli (https://github.com/webpack/webpack-cli)
 // We will use "npm" to install the CLI via "npm install -D webpack-cli".
@@ -6928,8 +6928,10 @@ npm start
 //    webpack-cli (https://github.com/webpack/webpack-cli)
 // Մենք կօգտագործենք «npm»՝ «npm install -D webpack-cli»-ի միջոցով CLI-ն տեղադրելու համար։
 // Ցանկանու՞մ եք տեղադրել Ցանկանու՞մ եք տեղադրել «webpack-cli» (այո/ոչ):
+
+// վիդեոի մեջ ավտոմատ քաշածա էտ cli-ին, իսկ իմ մոտ քաշած չի պտի քաշվի պարտադիր որը քաշելուց հետո քաշումա node-mudules պապկեն և package-lock.json, package.json ֆայլերը
 // // և
-// վիդեո մեջի error որ webpack.config.js բացած չի ու մեր error-ը yes անելուց հետո տաբեր ձևա բերում բայց նույնա
+// վիդեո մեջի error որ webpack.config.js բացած չի ու մեր error-ը yes անելուց հետո տարբեր ձևա բերում բայց նույնա
 /* 
 
 // // // das 107-i error
@@ -6959,3 +6961,19 @@ npm start
 
 
 
+
+// // եթե ուզում ենք պապկի մեջի պապկի terminal բացենք վրեն աջ քլիք ենք անում ու անում ու open in integrated terminal
+
+// // main.js-ը որ ստեղծեց մեջը ավտոմատ երկու սխալ կար
+// // main.js:1 Uncaught TypeError: o.n(...)(...) is not a function 
+// // սա o.n(r)()() պետք է դարձնենք o.n(r)
+// // և
+// // Uncaught TypeError: (0 , r.sayHi) is not a function
+// // սա (0,r.sayHi)() պետք է դարձնենք (0,r.sayHi)
+///
+// // էս մի անգամ սենց բերեց
+// // (()=>{"use strict";console.log("fooooo"),console.log("hello World"),console.log("hello Armenia")})();
+
+
+// // եթե script ենք ունենում (src='index61js.js') էտ ժամանակ network-ի մեջ քաշումա html-ը, css-ը, index61js.js-ը, hello.js-ը
+// // եթե script ենք ունենում (src='․/dist/main.js') էտ ժամանակ network-ի մեջ քաշումա html-ը, css-ը և main.js-ը որը մեջ կա էտ ամեն ինչը կպցրած իրար

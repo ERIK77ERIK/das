@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 39</title>
+  <link rel="stylesheet" href="index39js.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    JAVASCRIPT - Canvas(կտավ)
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="../index38js/js38html.html" target="_blank">JS 38</a>
+
+  <br><br>
+
+  <h2>
+    1. <br>
+    canvas-ը դա մի html էլեմենտ է որը հնարաորություննա մեզ տալիս նկարել էկրանի վրա <br>
+    canvas նշանակումա կտավ և կարելիա պատկերացնել իրան ինչպես հենց կտավ որի վրա մենք կարող ենք նկարենք <br>
+    <br>
+    ինչպես կարելի է նրան ստեղծել ինչպես որ ցանկացած ուրիշ html-ի էլեմենտ <br>
+    <br>
+    (<)canvas width="500" height="300"> (<)canvas> <br>
+    <br>
+    <canvas width="500" height="300" id="a1"></canvas>
+    <br><br>
+
+    2. <br>
+    const canvas = document.querySelector("#a2"); <br>
+    alert(canvas.width) <br>
+    կտպի 500 <br>
+    canvas.width = 200 <br>
+    <br>
+    <canvas width="600" height="300" id="a2"></canvas>
+    <br><br>
+
+    3. <br>
+    հիմա մենք ուզում ենք նկարենք այս կտավի վրա դրա համար մեզ պետք են գործիքներ <br>
+    ինչպես կարելիա ստանալ <br>
+    դե մենք նկարում ենք երկու ծավալային մակերեսի վրա այսինքն մեզ պետք են 2d այսպես ասած գործիքներ <br>
+    ինչպես կարելիա նրանց ստանալ <br>
+    <br>
+    const canvas = document.querySelector("canvas"); <br>
+    const context = canvas.getContext("2d") <br>
+    <br>
+    էս context-ը մի object է որին կցած են ֆունկցիաներ որոնք որ մեզ հնարաորություն կտան նկարել canvas-ի վրա <br>
+    <br><br>
+
+    4. <br>
+    // 1 // <br>
+    եկեք նկարենք ուղղանկյուն <br>
+    նկարելու համար պետք է x, y որպեսզի իմանանք որտեղ և լայնություն, բարձրություն (x, y, width, heigth)<br>
+    <br>
+    const canvas = document.querySelector("#a3"); <br>
+    const context = canvas.getContext("2d") <br>
+    context.fillRect(10, 10, 50, 50) <br>
+    <br>
+    <canvas width="600" height="300" id="a3"></canvas> <br>
+    <br>
+    x-ը աշխատում է ընենց ոնց որ դուք սովորեք այսինքն եթե սա 0-ն է մենք 10 գնացիք աջ և ահա ստեղծվեց այս մեր տուփը շեղված դեպի աջ <br>
+    y-ը աճում է դեպի ներքև <br>
+    այսինքն աջ գնաց 10 և ներքև եկավ 10 <br>
+    <br>
+
+    ինչա նշանակում fillRect <br>
+    rect-ը կարճ է rectangle նշանակում է ուղղանկյուն <br>
+    fill նշանակումա լցնել <br>
+    fillRect լցրու ուղղանկյուն <br>
+    <br>
+
+    // 2 //<br>
+    լցրեց բայց մենք չասեցինք ինչ գույնի հետևաբար ինքը default գույն ընտրեց սև ու սև ներկեց <br>
+    մենք կարող ենք էտ գույնը փոխենք, բայց պետք է փոխենք մինչև նկարելը դա շատ կարեոր է հերթականությունը կարեվոր է <br>
+    <br>
+    const canvas = document.querySelector("#a4"); <br>
+    const context = canvas.getContext("2d") <br>
+    <br>
+    context.fillStyle = "red" <br>
+    context.fillRect(10, 10, 50, 50) <br>
+    <br>
+    <canvas width="600" height="300" id="a4"></canvas> <br>
+    <br><br>
+
+    5. <br>
+    // 1 // <br>
+    մենք նաև կարողենք նկարենք ուղղանկյունը բայց միայն սահմանը(եզրագիծը) սահմանը կոչվում է stroke(նրբագիծ) <br>
+    <br>
+    const canvas = document.querySelector("#a5"); <br>
+    const context = canvas.getContext("2d") <br>
+    <br>
+    context.fillStyle = "red" <br>
+    context.fillRect(10, 10, 50, 50) <br>
+    <br>
+    context.strokeRect(100, 50, 50, 50) <br>
+    <br>
+    <canvas width="600" height="300" id="a5"></canvas> <br>
+    <br>
+    արգումենտները նույնն են x, y, լայնություն, բարձրություն <br>
+    <br>
+
+    // 2 // <br>
+    այդ սահմանի գույնը մենք կարող ենք փոխենք <br>
+    const canvas = document.querySelector("#a6"); <br>
+    const context = canvas.getContext("2d") <br>
+    <br>
+    context.fillStyle = "red" <br>
+    context.fillRect(10, 50, 50, 50) <br>
+    <br>
+    context.strokeStyle = "blue" <br>
+    context.strokeRect(100, 50, 50, 50) <br>
+    <br>
+    <canvas width="600" height="300" id="a6"></canvas> <br>
+    <br><br>
+
+    6. <br>
+    եզրագծերի լայնությունը մենք նաև կարող ենք փոխենք <br>
+    <br>
+    const canvas = document.querySelector("#a7"); <br>
+    const context = canvas.getContext("2d") <br>
+    <br>
+    context.fillStyle = "red" <br>
+    context.fillRect(10, 50, 50, 50) <br>
+    <br>
+    context.lineWidth = 10 <br>
+    context.strokeStyle = "blue" <br>
+    context.strokeRect(100, 50, 50, 50) <br>
+    <br>
+    <canvas width="600" height="300" id="a7"></canvas> <br>
+    <br><br>
+
+    7. <br>
+    // 1 // <br>
+    հիմնականում երբ որ մենք ծրագրաորում ենք ու ինչ որ բան ենք ուզում նկարենք էկրանի վրա մենք ունենում ենք ինչ որ դիտա ինֆորմացիա և ունենք են կոդը որը փորձումա էտ ինֆորմացիան նկարի էկրանի վրա <br>
+    այսինքն ինչպես կարող ենք դա անենք <br>
+    <br>
+    let data = { <br>
+    x: 10, <br>
+    y: 10, <br>
+    width: 50, <br>
+    height: 50 <br>
+    }; <br>
+    <br>
+    const canvas = document.querySelector("#a8"); <br>
+    const context = canvas.getContext("2d") <br>
+    <br>
+    function draw() { <br>
+        context.fillRect(data.x, data.y, data.width, data.height); <br>
+    } <br>
+    draw() <br>
+    <br>
+    <canvas width="600" height="300" id="a8"></canvas> <br>
+    <br>
+
+    // 2 // <br>
+    նաև կարող ենք գույն ավելացնենք հիմա գույնը կարող էինք ստեղ ավելացնենք բսյց եկեք դա ավելացնենք որպես dita ինֆորմացիա նենց որ եկեք անենք <br>
+    <br>
+    let data = { <br>
+    x: 10, <br>
+    y: 10, <br>
+    width: 50, <br>
+    height: 50, <br>
+    fillStyle: "orange" <br>
+    }; <br>
+    <br>
+    const canvas = document.querySelector("#a9"); <br>
+    const context = canvas.getContext("2d") <br>
+    <br>
+    function draw() { <br>
+        context.fillStyle = data.fillStyle <br>
+        context.fillRect(data.x, data.y, data.width, data.height); <br>
+    } <br>
+    <br>
+    draw() <br>
+    <br>
+    <canvas width="600" height="300" id="a9"></canvas> <br>
+    <br>
+    այսինքն միտքը ինչումա որ մենք ունենք ինֆորմացիա dita որը նկարագրում է իրավիճակը խաղի և մենք ունենք ինչ որ կոդ էս պարագայում draw կոդը որը ուղակի էտ ինֆորմացիան կարդալով նկարումա էկրանի վրա  երբ որ մենք ուզում ենք փոխենք ինչ որ բան խաղի հետ կապված մենք փոխում ենք ինֆորմացիան dita-ն և հետո նորից կանչելով draw ինքը էկրանը ոնցոր փոխումա, նոր էտ դետալները նկարումա էկրանի վրա և հետևաբար այսպես մենք ստանում ենք ապագայում անիմեյշններ խաղեր և այլն որի մասին մենք կխոսանք հետո 
+
+
+
+
+  </h2>
+
+
+  <script src="index39js.js"></script>
+</body>
+
+</html>

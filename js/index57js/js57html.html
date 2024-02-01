@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 57</title>
+    <link rel="stylesheet" href="index57js.css">
+</head>
+
+<body>
+
+    <hr>
+    <h1>
+        Javascript - Ternary operator(եռակի օպերատօր)(?:)
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="../index56js/js56html.html" target="_blank">JS 56</a>
+
+    <br><br>
+
+    <h2>
+        1. <br>
+        եթե համեմատությունը վերադարձնում է true ապա առաջի տրված արժեքն է վերադարձնում իսկ եթե համեմատությունը վերադարձնում է false երկրորդ արժեքնա վերադարձնում այսինքն եթե առաջի արժեքը չի վերադարձնում հակառակ դեպքում երկրորդ արժեքնա վերդարձնում ինչպես որ if else-ի դեպքում է եթե առաջի if բլոկը չի աշխատում հակառակ դեպքում երկրորդ else բլոկնա աշխատում <br>
+        const age = 54; <br>
+        <br>
+        // let message; <br>
+        // if(age >= 10) { <br>
+        //     message = "yes"; <br>
+        // } else { <br>
+        //     message = "no"; <br>
+        // } <br>
+        <br>
+
+        let message = age >= 10 ? "yes" : "no"; <br>
+        <br>
+        alert(message); // yes <br>
+        <br><br>
+
+        2. <br>
+        երբ արժի ternary operator օգտագործել <br>
+        ուշադրություն դարձրեք այս դեպքում եթե ընդամենը կա մի հատ if և else և եթե մի տող կա ամեն մեկի մեջ ինչպես տեսնում եք և հիմնականում երբ որ մենք վերագրում ենք հաճախ էտ ժամանակ է օգտագործվում <br>
+        այսինքն ստեղ վերգրում ենք "yes"-ը message-ին ստեղ վերագրում ենք "no"-ն message-ին <br>
+        <br><br>
+
+
+        3. <br>
+        եվս մեկ օրինակ <br>
+        <br>
+        const a = [5, 22, 99, 44, 55].map((val) => { <br>
+            if(val % 2 === 0) { <br>
+                return "even"; <br>
+            } <br>
+            return "odd"; <br>
+        }); <br>
+        alert(a);  // odd, even, odd, even, odd <br>
+        <br><br>
+
+        const b = [5, 22, 99, 44, 55].map((val) => { <br>
+            return val % 2 ? "even" : "odd"; <br>
+        }); <br>
+        alert(b);  // odd, even, odd, even, odd <br>
+        <br><br>
+
+        const c = [5, 22, 99, 44, 55].map((val) => val % 2 ? "even" : "odd"); <br>
+        alert(c);  // odd, even, odd, even, odd <br>
+        <br><br>
+
+        4. <br>
+        հնարաոր է ternary operator-ի մեջ օգտագործել ternary operator ասենք ասել եթե դա true է վերադարձրա էս արժեքը եթե դա false է հիմա էս երկրորդ համեմատությունը ստուգի եթե սա էլ է true վերադարձրա էս հակառակ դեպքում էս, else if-ի պես հակառակ դեպքում եթե <br>
+        <br>
+        բայց չարժի նման բան անել քանի որ մեր ամբողջ նպատակը նա է որ մենք այնպիսի կոդ գրենք որպեսզի հեշտ կարդացվի հեևաբար եթե ternary operator-ը ձեզ օգնումա որ ձեր կոդը լինի կոկիկ և պարզ օգտագործեք իսկ եթե հասկանում եք որ ternary operator օգտագործելուց ձեր կոդը ավելի դժվար է հասկանալ և ավելի դժվար է կարդալ ավելի լավ է սովորական if else-երով գրել <br>
+        <br>
+        const age = 10; <br>
+        <br>
+        // let message; <br>
+        // if(age > 10) { <br>
+        //     message = "yes"; <br>
+        // } else if(age === 10) { <br>
+        //     message = "hello" <br>
+        // } else { <br>
+        //     message = "no"; <br>
+        // } <br>
+        <br>
+
+        let message = age < 10 ? "yes":  age === 10 ? "hello" : "no"; <br>
+        <br>
+        alert(message); // hello 
+        
+   
+    </h2>
+
+
+    <script src="index57js.js"></script>
+</body>
+
+</html>

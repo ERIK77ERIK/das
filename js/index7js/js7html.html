@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 7</title>
+    <link rel="stylesheet" href="index7js.css">
+</head>
+
+<body>
+
+    <hr>
+    <h1>
+      JAVASCRIPT - Բուլյան օպերատորներ - Boolean operators( &&(և (and)), ||(կամ(or)), !(ոչ(not)) )
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="../index6js/js6html.html" target="_blank">JS 6</a>
+
+    <br><br>
+
+    <h2>
+       1. Բուլյան օպերատորները երբ տեսնում են երկու կողմից բուլյան արժեք կա(true(ճիշտ) կամ false(սխալ)) նրանք ինչ-որ գործողություն են անում, որոշում են կայացնում և նորից  վերադարձնում են բուլյան արժեք <br>
+       <br>
+       2. &&(և) օպերատորը կվերադարձնի true միայն այն դեպքում երբ որ  և ձախ կողմի համեմատության արժեքը լինի true(ճիշտ) և աջ կողմի համեմատության արժեքը լինի true(ճիշտ) մնացած դեպքերում կվերադարձնի false(սխալ); <br>
+       <br>
+       let userResponse = +prompt("How old are you?"); <br>
+       if(userResponse > 18 && userResponse < 40){ <br>
+             alert("ձեր տարիքը համապատասխանում է"); <br>
+       } <br>
+       user-ի տարիքը և պետք է 18-ից մեծ լինի և պետք է 40-ից փոքր լինի որպեսզի աշխատի alert ֆունկցիան <br>
+       <br>
+       3.||(կամ) օպերատորը եթե գոնե մի կողմի համեմատության արժեքը true(ճիշտ) է կվերադարձնի true այսինքն   կամ ձախ կողմի համեմատության արժեքը պետք է true(ճիշտ) լինի կամ աջ կողմի համեմատության արժեքը պետք է true(ճիշտ) լինի կամ երկուսնել որպեսզի վերադարձնի true արժեքը <br>
+       <br>
+       let userResponse = +prompt("How old are you?"); <br>
+       if(userResponse > 18 || userResponse < 12){ <br>
+             alert("ձեր տարիքը համապատասխանում է"); <br>
+       } <br>
+       user-ի տարիքը կամ պետք է 18-ից մեծ լինի կամ պետք է 12-ից փոքր լինի որպեսզի աշխատի alert ֆունկցիան  <br>
+       <br>
+       4.!(ոչ) օպերատորը կարող է ցանկացած բուլյան արժեք շուռ տալ եթե true(ճիշտ) է դարձնել false(սխալ) եթե false(սխալ) է դարձնել true(ճիշտ) <br>
+       !(ոչ) օպերատորը օգտագործելիս համեմատության հետ որպեսզի նա աշխատի պետք է համեմատությունը վերցնենք փակագծերի մեջ <br> !(... > ...) <br>
+       <br>
+       let userResponse = +prompt("How old are you?"); <br>
+       if(!!!(userResponse > 18)){ <br>
+             alert("ձեր տարիքը համապատասխանում է"); <br>
+       } <br>
+       եթե user-ի տարիքը  փոքր եղավ 18-ից  !(ոչ) օպերատորը երեք անգամ շուռ կտա false արժեքը, false-ը կդարձնի true, true-ն կդարձնի false, false-ը կդարձնի true և կաշխատի alert ֆունկցիան
+    </h2>
+
+
+    <br><br><br><br>
+
+    <hr>
+    <h1>
+      Վարժություններ
+    </h1>
+    <hr>
+    <br><br>
+
+    <h2>
+      1. <br>
+      let x = 20 <br>
+      let y = x >= 20 && (x + 11 === 30 || !!!(x - 3 > 10)); <br>
+      alert(y);<br>
+      <br>
+      2. <br>
+      let a = 10; <br>
+         let b = !!!(a < 5 && a > 100) || ( a + 20 > 20 || !(a !== 3) ) <br>
+         alert(b); <br>
+      <br>
+      3. <br>
+      let x = 20; <br>
+      let y = !!!!!true; <br>
+      let z = x > 4; <br>
+      let b = x <= 21; <br>
+      let a = x > 300; <br>
+      let r = y || (z && !(a || b)); <br>
+      alert(r);
+    </h2>
+
+
+    
+    <script src="index7js.js"></script>
+</body>
+
+</html>

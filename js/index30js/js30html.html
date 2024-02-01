@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 30</title>
+  <link rel="stylesheet" href="index30js.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    JAVASCRIPT - Վարժություններ
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="../index29js/js29html.html" target="_blank">JS 29</a>
+
+  <br><br>
+
+  <h2>
+    1.Գրել ֆունկցիա transform անունով, որը կստանա օբյեկտներից կազմված զանգված այլ տեսքի <br>
+    <br>
+    [ <br>
+    {fn: "Joe", In: "Mikayelyan", ph: "039 323 233", gender: "male"}, <br>
+    {fn: "Mike", In: "Hovsepyan", ph: "039 323 233", gender: "male"}, <br>
+    {fn: "Jane", In: "Karapetyan", ph: "039 323 233", gender: "female"}, <br>
+    {fn: "Jill", In: "Isahaknyan", ph: "039 323 233", gender: "female"} <br>
+    ] <br>
+    ֆունկցիան պետք է զանգվածից ստանա միայն այն արժեքները, որոնց gender-ի արժեքը "female" է, <br>
+    և վերադարձնի այդ օբյեկտներից կազմված զանգված հետևյալ տեսքի <br>
+    [ <br>
+    {firstName: "Jane", lastName: "Karapetyan", phone: "039 323 233", gender: "female" }, <br>
+    {firstName: "Jill", lastName: "Ishakyan", phone: "039 323 233", gender: "female" } <br>
+    ] <br>
+    // Օրինակ' <br>
+    Transform([ <br>
+    {fn: "Joe", In: "Mikayelyan", ph: "039 323 233", gender: "male"}, <br>
+    {fn: "Mike", In: "Hovsepyan", ph: "039 323 233", gender: "male"}, <br>
+    {fn: "Jane", In: "Karapetyan", ph: "039 323 233", gender: "female"}, <br>
+    {fn: "Jill", In: "Isahaknyan", ph: "039 323 233", gender: "female"} <br>
+    ]) <br>
+    վերադարձնում է' <br>
+    [ <br>
+    {firstName: "kate", lastName: "Karapetyan", phone: "039 323 233", gender: "female" }, <br>
+    {firstName: "Jill", lastName: "Isahakyan", phone: "039 323 233", gender: "female" } <br>
+    ] 
+    <br><br>
+
+    2.Ստեղծել ֆունկցիա, getAvgAgeByColor անունով, որը որպես արգումենտ ստանում է զանգված, որի ամեն անդամը օբյեկտ է որտեղ
+    գրված է մարդու մասին ինֆորմացիա (անուն, տարիք, մազերի գույն) և ստանում է երկրորդ արգումենտ մազերի գույն։ Ֆունկցիան
+    պետք է վերադարձնի միջին տարիքը այն մարդկանց ում մազերի գույնը համապատասխանում է երկրորդ արգումենտով փոխանցված
+    գույնին։ <br>
+    <br>
+    օրինակ։ <br>
+    getAvgAgeByColor([ <br>
+    {name: "Joe", age: 13, hairColor: "red"}, <br>
+    {name: "Mike", age: 10, hairColor: "brown"}, <br>
+    {name: "Jane", age: 4, hairColor: "red"}, <br>
+    {name: "Susan", age: 30, hairColor: "brown"} <br>
+    ], "brown"); <br>
+    պետք է վերադարձնի 20, միջին տարիքը այն մարդկանց ում մազերի գույնը շականակագույն է։ <br>
+    <br><br>
+
+    3.Ստեղծել ֆունկցիա getPersonWithMostFriendsByName անունով, որը որպես արգումենտ ստանում է զանգված, որի ամեն անդամը
+    օբյեկտը է որտեղ գրված է մարդու մասին ինֆորմացիա (անուն, ընկերների ցուցակ) և ստանում է երկրորդ արգումենտ անուն։
+    Ֆունկցիան պետք է վերադարձնի այն մարդու անունը ով ունի ամենաշատ քանակությամբ ընկերներ տրված անունով (երկրորդ
+    արգումենտով փոխանցած անունը): <br>
+    <br>
+    getPersonWithMostFriendsByName([ <br>
+    { <br>
+    name: "Joe", <br>
+    friends: [ <br>
+    {name: "Susan", age: 12}, <br>
+    {name: "Jane", age: 43}, <br>
+    {name: "Susan", age: 33} <br>
+    ] <br>
+    }, <br>
+    { <br>
+    name: "Liz", <br>
+    friends: [ <br>
+    {name: "Mila", age: 12}, <br>
+    {name: "Susan", age: 43}, <br>
+    {name: "Jane", age: 33} <br>
+    ] <br>
+    }, <br>
+    { <br>
+    name: "Mike", <br>
+    friends: [ <br>
+    {name: "Susan", age: 12}, <br>
+    {name: "Susan", age: 43}, <br>
+    {name: "Susan", age: 33} <br>
+    ] <br>
+    } <br>
+    ], "Susan"); <br>
+    պետք է վերադարձնի "Mike", քանի որ նա ունի ամենաշատ քանակությամբ ընկերներ Susan անունով։ <br>
+    <br><br>
+
+    4.Գրել ֆունկցիա removeAtIndex անունով, որը կստանա զանգված ու թիվ և կվերադարձնի նոր զանգված։ Նոր զանգվածը կպարունակի
+    առաջինի բոլոր արժեքները, բացի մեր տված ինդեքսի արժեքը։ <br>
+    <br>
+    Օրինակ <br>
+    <br>
+    removeAtIndex([5, 10, 15, 20], 2); <br>
+    վերադարձնում է [5, 10, 20] <br>
+    <br><br>
+
+    5.Գրեք ֆունկցիա toNumber անունով, որն ընդունում է բինարյան string, այսինքն բինարյան թվանշաները որպես տեքստային արժեք, որն համարժեք է հաշվարկման երկուական համակարգի թվերին: <br>
+    Կարդացեք բինարյան թվերն աջից դեպի ձախ, բինարյան թվերի մասին կարող եք կարդալ գուգլից: <br>
+    <br>
+    Օրինակ <br>
+    <br>
+    toNumber("101") պետք է վերադարձնի 5 <br>
+    toNumber("111") պետք է վերադարձնի 7 <br>
+    <br>
+
+
+
+
+
+
+    <br><br>
+
+    6.Հավելյալ ինֆորմացիա։ <br>
+    Տրված նախադասության վրա կարող ենք օգտագործել search ֆունկցիան գտնելու մեզ հետաքրքրող տեքստի ինդեքսը: Օրինակ․ <br>
+    "Hello world".search("world"); // կվերադարձնի 6 <br>
+    եթե փնտրվող տեքստը առկա չէ նախադասության մեջ կվերադարձնի -1. Օրինակ: <br>
+    "Hello world".search("pizza"); // կվերադարձնի -1 <br>
+    <br>
+    Օգտագործեք search ֆունկցիան ստեղծելու համար find ֆունկցիա, որը որպես արգումենտ ստանում է զանգված բաղկացած օբյեկտներից, և փնտրվող տեքստը որպես երկրորդ արգումենտ: Ֆունկցիան պետք է վերադարձնի զանգված, որը կպարունակի բոլոր այն օբեկտները որոնց մեջ առկա է փնտրվող տեքստը որպես արժեք: Ենթադրեք որ արգումենտում ստացած զանգվածի օբյեկտները չունեն ներկառուցված(nested) օբյեկտներ կամ զանգվածներ: <br>
+    <br>
+    Հուշում: Օգտագործեք Object.keys, օբյեկտի բանալիները զանգվածի մեջ ունենալու համար, որոնց վրայով կարող եք ցիկլ պտտվել և գտնել համապատասխանողները <br>
+    <br>
+    Օրինակ: <br>
+    <br>
+    find([ <br>
+        {name: "Apple", color: "red"}, <br>
+        {name: "Banana", color: "yellow"}, <br>
+        {name: "Orange", color: "orange"}, <br>
+        {name: "Apple", color: "yellow"}, <br>
+    ], "yellow"); <br>
+    this should return [{ name: "Banana", color: "yellow"}, {name: "Apple", color: "yellow"}] <br>
+    <br>
+    find([ <br>
+        {title: "White Fang", author: "Jack London"}, <br>
+        {title: "The Adventures of Tom Sawyer", author: "Mark Twain"}, <br>
+    ], "Twain"); <br>
+    this should return [{title: "The Adventures of Tom Sawyer", author: "Mark Twain"}] <br>
+    <br><br>
+
+    7.Ստեղծել ֆունկցիա magic անունով, որն ընդունում է օբյեկտ որը վերադարձնում նոր օբյեկտ, որտեղ բանալիները(keys) կդառնան արժեքներ(values) իսկ արժեքները(values) բանալիներ(keys): <br>
+    <br>
+    Օրինակ: <br>
+    <br>
+    magic({ <br>
+        firstName: "Michael", <br>
+        lastName: "Jackson" <br>
+    }); <br>
+    <br>
+    պիտի վերադարձնի: <br>
+    <br>
+    { <br>
+        Michael: "firstName", <br>
+        Jackson: "lastName" <br>
+    } <br>
+    <br><br>
+
+    8.Ստեղծեք ֆունկցիա անվանեք diamond, որը կստեղծի տեքստ որը նման կլինի ադամանդի, որտեղ ադամանդի բարձրությունը ֆունկցիային տրված կենտ թիվն է: <br>
+    Տրված թիվը միշտ պետք է լինի դրական, կենտ և ամբողջ թիվ: <br>
+    <br>
+    Հուշում: Երբ նախադասության մեջ առկա է "\n" ապա այն տեղափոխելու է նոր տող <br>
+    <br>
+    Օրինակ: <br>
+    alert(diamond(5)); <br>
+    Կվերադարձնի հետևյալը <br>
+    <br>
+    . .  * <br>
+    .   *** <br>
+       ***** <br>
+    .   *** <br>
+    . .  * <br>
+    <br><br>
+
+    9.Գրել ֆունկցիա pow անունով, որը կստանա երկու թիվ, և առաջին թիվը կբազմապատկի ինքն իրենով այնքան անգամ, որքան երկրորդ թիվն է: Չօգտագործել Math.pow() ֆունկցիան այլ գրել այն ինքնուրույն: <br>
+    <br>
+    Օրինակ: <br>
+    <br>
+    pow(5, 3); // վերադարձնում է 125 (5 * 5 * 5) <br>
+    pow(3, 2); // վերադարձնում է 9 (3 * 3) <br>
+    <br><br>
+
+    10. Գրել ֆունկցիա reverse անունով, որը կստանա թիվ և կվերադարձնի նոր թիվ այդ թվի թվանշանները հակառակ շրջած: <br>
+    <br>
+    Օրինակ: <br>
+    <br>
+    reverse(123); // վերադարձնում է 321 <br>
+    reverse(5829); // վերադարձնում է 9285 <br>
+    <br>
+
+    11. Վարժություն - նիշերի հաճախականություն <br>
+    <br>
+    Գտեք տրված սթրինգում տառերի/նիշերի ընդհանուր քանակը: Ալերթ պատուհանի դիալոգի մեջ տպեք, թե տպեք թե ինձ հաճախականությամբ է հանդիպում տվյալ տառը/նիշը: <br>
+    <br>
+    function alertFreq(str) { <br>
+       ... code ... <br>
+    } <br>
+    <br>
+    alert("h : 1"); <br>
+    alert("e : 1"); <br>
+    alert("l : 3"); <br>
+    alert("o : 2"); <br>
+    alert("- : 1"); <br>
+    alert("w : 1"); <br>
+    alert("d : 1"); <br>
+    <br>
+    alertFreq("hello-world"); <br>
+  </h2>
+
+  <script src="index30js.js"></script>
+</body>
+
+</html>

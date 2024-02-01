@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 21</title>
+  <link rel="stylesheet" href="index21js.css">
+</head>
+
+<body>
+
+  <hr>
+  <h1>
+    JAVASCRIPT - Object, JSON, localStorage
+  </h1>
+  <hr>
+  <br><br>
+
+  <a href="../index20js/js20html.html" target="_blank">JS 20</a>
+
+  <br><br>
+
+  <h2>
+    1.Object.keys(); <br>
+    keys ֆունկցիան կցած է մի հատ object-ի որի անունը Object է, որը վերցնում է մի object և վերադարձնում է մի զանգված որի
+    մեջ կա մեր տված object-ի բոլոր բանալիները <br>
+    <br>
+    let a = { <br>
+    name: "joe", <br>
+    age: 39, <br>
+    phone: "82348234" <br>
+    };<br>
+    <br>
+    alert(Object.keys(a)); <br>
+    կտպի name,age,phone <br>
+    <br><br>
+    2.Object.values(); <br>
+    values ֆունկցիան կցած է մի հատ object-ի որի անունը Object է, որը վերցնում է մի object և վերադարձնում է մի զանգված
+    որի մեջ կա մեր տված object-ի բոլոր արժեքները <br>
+    <br>
+    let a = { <br>
+    name: "joe", <br>
+    age: 39, <br>
+    phone: "82348234" <br>
+    };<br>
+    <br>
+    alert(Object.values(a)); <br>
+    կտպի joe,39,82348234 <br>
+    <br><br>
+    3.JSON.stringify(); <br>
+    stringify ֆունկցիան կցած է մի հատ object-ի որի անունը JSON է, որը վերցնում է մի object և վերադարձնում է մեր տված
+    object-ի տեքստային տարբերակը <br>
+    <br>
+    let a = { <br>
+    name: "joe", <br>
+    age: 39, <br>
+    phone: "82348234" <br>
+    };<br>
+    <br>
+    alert(JSON.stringify(a)); <br>
+    կտպի {"name":"Joe","age":39,"phone":"82348234"} <br>
+    <br><br>
+    4.JSON.parse(); <br>
+    parse ֆունկցիան կցած է մի հատ object-ի որի անունը JSON է, որը վերցնում է object-ի տեքստային տարբերակը և վերադարձնում
+    է իրենից ստեղծած object <br>
+    <br>
+    let a = { <br>
+    name: "joe", <br>
+    age: 39, <br>
+    phone: "82348234" <br>
+    };<br>
+    <br>
+    let str = JSON.stringify(a); <br>
+    <br>
+    let b = JSON.parse(str); <br>
+    <br>
+    alert(b); <br>
+    կտպի [object, Object]<br>
+    <br><br>
+    5.localStorage.setItem(.., ..); <br>
+    setItem ֆունկցիան կցած է մի հատ object-ի որի անունը localStorage է, որը վերցնում է ինչ որ մի բանալի
+    և ինչ որ մի արժեք և բրաուզերի մեջ ասում է մեր տված բանալին թող լինի մեր տված արժեքի բանալին <br>
+    <br>
+    let a = { <br>
+    name: "joe", <br>
+    age: 39, <br>
+    phone: "82348234" <br>
+    }; <br>
+    <br>
+    let str = JSON.stringify(a); <br>
+    <br>
+    localStorage.setItem("test1", str); <br>
+    <br>
+    6.localStorage.getItem(..); <br>
+    getItem ֆունկցիան կցած է մի հատ object-ի որի անունը localStorage է, որը վերցնում է ինչ որ մի բանալի
+    և վերադարձնում է այն արժեքը որը համապատասխանում է մեր տված բանալուն <br>
+    <br>
+    let a = { <br>
+    name: "joe", <br>
+    age: 39, <br>
+    phone: "82348234" <br>
+    }; <br>
+    <br>
+    let str = JSON.stringify(a); <br>
+    <br>
+    localStorage.setItem("test1", str); <br>
+    <br>
+    let d = localStorage.getItem("test1"); <br>
+    <br>
+    let obj = JSON.parse(d); <br>
+    <br>
+    alert(obj.name); <br> 
+    <br>
+    կտպի joe
+  </h2>
+
+
+  <script src="index21js.js"></script>
+</body>
+
+</html>

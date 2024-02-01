@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 37</title>
+    <link rel="stylesheet" href="index37js.css">
+</head>
+
+<body>
+
+    <hr>
+    <h1>
+        JAVASCRIPT - Վարժություններ (ռեկուրսիա(recursion))
+    </h1>
+    <hr>
+    <br><br>
+
+    <a href="../index36js/js36html.html" target="_blank">JS 36</a>
+
+    <br><br>
+
+    <h2>
+        1. Վարժություն(recursive forEach) <br>
+        <br>
+        Ստեղծել forEach անունով ֆունկցիա, որը կգործի ճիշտ այնպես, ինչպես Aray.forEach. խնդրում ենք օգտագործել
+        ռեկուրսիա!!!
+        <br>
+        Օրինակ <br>
+        forEach([5, 4, 3], function(val, index) { <br>
+        alert(val); <br>
+        }); <br>
+        <br><br>
+
+        function forEach(arr, fun) { <br>
+        function loop(i) { <br>
+        if (i >= arr.length) { <br>
+        return; <br>
+        } <br>
+        fun(arr[i], i); <br>
+        loop(i + 1); <br>
+        } <br>
+        loop(0); <br>
+        } <br>
+        forEach([5, 4, 3], function (val, i) { <br>
+        alert(val + " at index " + i); <br>
+        }); <br>
+        <br><br><br>
+
+
+        2. Վարժություն(recursive pow) <br>
+        <br>
+        Ստեղծել pow անունով ֆունկցիա, որը կգործի ճիշտ այնպես, ինչպես Math.pow. խնդրում ենք օգտագործել ռեկուրսիա!!! <br>
+        Օրինակ <br>
+        pow(5, 3); // 125 <br>
+        <br><br>
+
+        function pow(x, y) { <br>
+        if(y === 0) { <br>
+        return 1; <br>
+        } <br>
+        return x * pow(x, y-1); <br>
+        }; <br>
+        alert(pow(5, 3)); <br>
+        <br>
+        pow(5, 3) <br>
+        __5 * pow(5, 2) <br>
+        _____ 5 * pow(5, 1) <br>
+        _________ 5 <br>
+        <br><br><br>
+
+
+        3. Վարժություն(recursive array sum) <br>
+        <br>
+        Ստեղծել sum անունով ֆունկցիա, որը գումարում է զանգվածի բոլոր արժեքները: <br>
+        Նշենք, որ զանգվածը որպես արժեք կարող է ունենալ զանգված: <br>
+        Մի օգտագործեք Array.flat <br>
+        Օրինակ <br>
+        sum([4, 3, [8, 2], [3, 6, [9, 12, 33], 6], 7, 8, 9]) // 110 <br>
+        <br><br>
+
+        function sum(arr) { <br>
+        return arr.reduce(function(aggr, val) { <br>
+        if(Array.isArray(val)) { <br>
+        return aggr + sum(val) <br>
+        } <br>
+        return aggr + val <br>
+        }, 0) <br>
+        } <br>
+        alert(sum([1, 2, 3, 4])) <br>
+        <br><br><br>
+
+
+        4. Վարժություն(json stringify, recursion) <br>
+        <br>
+        Ստեղծել stringifyJSON անունով ֆունկցիա, որն ընդունում է օբյեկտ, որը կարող է ունենալ կամայական խորությամբ
+        ենթաօբյեկտներ և զանգվածներ, և վերադարձնում է JSON տեքստ։ <br>
+        Ձեր ֆունկցիան պետք է վերադարձնի այն, ինչ վերադարձնում է JSON.stringify ֆունկցիան, բայց բնականաբար
+        JSON.stirngify-ը ձեր ֆունկցիայի ներսում օգտագործելու իրավունք չունեք :) <br>
+        <br>
+        Հուշում՝ օգտագործել ռեկուրսիա և յուրաքանչյուր արժեքի համար ստուգել դրա տիպը՝ Համապատասխան որոշում կայացնելու
+        համար: <br>
+        <br>
+        --- <br>
+        <br>
+        Implement a function called stringifyJSON which takes an object that can have an arbitrarily deep nesting of
+        objects and arrays and converts it into a valid JSON string. The output of calling your stringifyJSON should be
+        the same as calling JSON.stringify with the same input. Do not use JSON.stringify, write the logic yourself.
+        <br>
+        <br>
+        Hint: Use recursion and check the types of each value to serialize it correctly <br>
+        <br>
+        --- <br>
+        <br>
+        Օրինակ Ձեր ֆունկցիան ստուգելու համար՝ <br>
+        Sample data you can use to test your code: <br>
+        <br>
+        const data = { <br>
+        "destination_addresses": [ <br>
+        "Washington, DC, USA", <br>
+        "Philadelphia, PA, USA", <br>
+        "Santa Barbara, CA, USA", <br>
+        "Miami, FL, USA", <br>
+        "Austin, TX, USA", <br>
+        "Napa County, CA, USA" <br>
+        ], <br>
+        "origin_addresses": [ <br>
+        "New York, NY, USA" <br>
+        ], <br>
+        "rows": [{ <br>
+        "elements": [{ <br>
+        "distance": { <br>
+        "text": "227 mi", <br>
+        "value": 365468, <br>
+        "isFar": true <br>
+        }, <br>
+        "duration": { <br>
+        "text": "3 hours 54 mins", <br>
+        "value": 14064 <br>
+        }, <br>
+        "status": "OK" <br>
+        }, <br>
+        { <br>
+        "distance": { <br>
+        "text": "94.6 mi", <br>
+        "value": 152193 <br>
+        }, <br>
+        "duration": { <br>
+        "text": "1 hours 44 mins", <br>
+        "value": 6227 <br>
+        }, <br>
+        "status": "OK" <br>
+        }, <br>
+        { <br>
+        "distance": { <br>
+        "text": "2.878 mi", <br>
+        "value": 4632197 <br>
+        }, <br>
+        "duration": { <br>
+        "text": "1 day 18 hours", <br>
+        "value": 151772 <br>
+        }, <br>
+        "status": "OK" <br>
+        }, <br>
+        { <br>
+        "distance": { <br>
+        "text": "1,286 mi", <br>
+        "value": 2069031 <br>
+        }, <br>
+        "duration": { <br>
+        "text": "18 hours 43 mins", <br>
+        "value": 67405 <br>
+        }, <br>
+        "status": "OK" <br>
+        }, <br>
+        { <br>
+        "distance": { <br>
+        "text": "1,742 mi", <br>
+        "value": 2802972 <br>
+        }, <br>
+        "duration": { <br>
+        "text": "1 day 2 hours", <br>
+        "value": 93070 <br>
+        }, <br>
+        "status": "OK" <br>
+        } <br>
+        ] <br>
+        }], <br>
+        "status": "OK" <br>
+        } <br>
+        <br><br>
+        1. <br>
+        եկեք տեսնենք իրանց վիճակը երբ որ մենք կանչում ենք JSON.stringify() ոնց է վերադարձնում որ սովորենք և էս նույն
+        օրենքները մենք դնենք մեր ֆունկցիայի մեջ <br>
+        const a = JSON.stringify(undefined) // undefined <br>
+        const s = JSON.stringify(null) // "null" <br>
+        const d = JSON.stringify(NaN) // "null" <br>
+        const f = JSON.stringify(124) // "124" <br>
+        const g = JSON.stringify(true) // "true" <br>
+        const h = JSON.stringify("fdfs") // "\"fdfs\"" <br>
+        const j = JSON.stringify([1, 2, 3]) // "[1, 2, 3]" <br>
+        const k = alert(JSON.stringify({ // "{\"name\":\"Joe\", \"age\": 12}" <br>
+        name: "Joe", <br>
+        age: 12, <br>
+        }) ) <br>
+        const l = alert(JSON.stringify(function() {})) // undefined <br>
+        debugger; <br>
+        <br>
+        let f = function() {alert("barev")}; <br>
+        alert(JSON.stringify({"ds": 1, "se": undefined, "fs": NaN, "kl": null, "nd": f,"sd": 23, "aa":[1, undefined, NaN, null, f, 2]})) <br>
+        JSON.stringify() ֆունկցիան զանգվածի մեջի undefiend, NaN, null, function արժեքները դարձնումա null <br>
+        իսկ object-ի մեջի undefiend, function արժեքներին ցույց չի տալիս համարումա չկա իսկ NaN և null արժեքները դարձնումա null <br>
+        <br><br>
+
+        2. <br>
+        եթե մենք ուզում ենք ներսի տեքստի մեջ հենց որպես արժեք ունենանք չակերտ մենք պետքա է անենք այսպես ասած
+        accept(ըսքեփտ) \ որը նշանակումա հաջորդ չակերտը կամ հաջորդ են ինչ որ մենք անում ենք դա հատուկ է ինքը ոնցոր
+        կոդային չակերտ չի ինքը չի փակում մյուս չակերտը այլ ինքը տենց ուղղակի ընդունի որպես արժեք "\"" այսա նույն է
+        ինչպես որ տեքստային սա " այսինքն տեքստի մեջ կա մի հատ չակերտ <br>
+        alert("\"") <br>
+        կտպի " <br>
+        այսինքն չակերտը նույն էտ ներքին ինֆորմացիաննա <br>
+        <br>
+        օրինակ եթե abc անեմ ստեղ <br>
+        alert("abc") <br>
+        կտպի abc <br>
+        հիմա եթե ես ուզենամ էտ abc-ն չակերտներով փակեմ ես կանեմ սենց <br>
+        alert("\"abc\"") <br>
+        կտպի "abc" <br>
+        այսինքն էս ամեն ինչը ներքին այսքանը \"abc\" ներքին արժեքնա տեքստի դրսի չակերտները ընդամենը ասումա որ էն
+        ինֆորմացիան որը իր մեջա տեքստա <br>
+        <br><br>
+        3. <br>
+        function stringifyJSON(input) { <br>
+            // undefined <br>
+            if (input === undefined) { <br>
+                return input;    // undefined <br>
+            } <br>
+            <br>
+            // null <br>
+            if (input === null) { <br>
+                return "" + input  // "" + null // "null" <br>
+            } <br>
+            <br>
+            // NaN <br>
+            // number <br>
+            if (typeof (input) === "number") { <br>
+                if (isNaN(input)) { <br>
+                    return "" + null;  // "null" <br>
+                } <br>
+                return "" + input;  // "input"<br>
+            } <br>
+            <br>
+            // boolean <br>
+            if (typeof (input) === "boolean") { <br>
+                return "" + input;  // "input" <br>
+            } <br>
+            <br>
+            // string <br>
+            if (typeof (input) === "string") { <br>
+                return "\"" + input + "\""   // "\"input\"" //  ասենք input-ը abc-ա մեզ պետք է վերադարձնել " \"abc\" "  այսինքն "abc" որպես ինֆորմացիա որպես տեքստի ներքին ինֆորմացիա <br>
+            } <br>
+            <br>
+            // function <br>
+            if (typeof (input) === "function") { <br>
+                return undefined <br>
+            } <br>
+            <br>
+            // array <br>
+            if (Array.isArray(input)) { <br>
+                return "[" + input.map(function (val) { <br>
+                    if (val === undefined) { <br>
+                        return null <br>
+                    } <br>
+                    return val <br>
+                }).map(function (val) { <br>
+                    if (typeof (val) === "function") { <br>
+                        return null <br>
+                    } <br>
+                    return val <br>
+                }).map(stringifyJSON).join(",") + "]"; //? առանց join-ի էլա լինում // // սա input.map(stringifyJSON) նույն է ինչպես որ սա input.map(function(val) return stringifyJSON(val))<br>
+             } <br>
+             <br>
+             // object <br>
+             return "{" + Object.keys(input).filter(function (key) { <br>
+                 return typeof (input[key]) !== "function" && input[key] !== undefined <br>
+             }).map(function (key) { <br>
+                 const value = input[key] <br>
+                 return "\"" + key + "\":" + stringifyJSON(value);  // եթե անենք "\"" + key + "\":" + input[key]  ամեն անգամ նույն արժեքը կգումարի այսինքն եթե input[key] լինի NaN ինքը հենց NaN էլ կգումարի իսկ stringifyJSON(input[key])-ի դեպքում կգումարի "null" <br>
+             }) + "}"; <br>
+         } <br>
+         <br>
+        
+         alert(JSON.stringify(data)) <br>
+         alert(stringifyJSON(data)) <br>
+         <br>
+         alert(JSON.stringify(data) === stringifyJSON(data)) <br>
+         կտպի true <br>
+         <br><br>
+
+        5. Վարժություն(json stringify, recursion) 2 (4-ի շարունակությունը)<br>
+        <br>
+        let f = function () { alert("barev") }; <br>
+        let dataa = { "ds": 1, "se": undefined, "fs": NaN, "kl": null, "nd": f, "sd": 23, "aa": [1, undefined, NaN, null, f, 2] } <br>
+        <br>
+        alert(JSON.stringify(dataa)) <br>
+        alert(stringifyJSON(dataa)) <br>
+        <br>
+        alert(JSON.stringify(dataa) === stringifyJSON(dataa)) <br>
+        <br><br>
+        էս object-ը որով մենք տեստաորում էինք ինքը բոլոր արժեքները չէր տեստաորում ինքը տեստաորում էր դե տեքստային արժեքներ, զանգված, թիվ կար, բուլյան արժեք կար չէ բայց իրականում մենք գիտենք որ կան լիքը ուրիշ արժեքներ օրինակ undefined null և NaN որի տեստաորումը էստեղ չկար հետևաբար քանի որ այդ օրինակները բացակայում էին մեր տեստաորման կոդի մեջ մեր data-ի մեջ մենք բաց թողեցինք մի օրինակը և հետևաբար ստեղծեցինք կոդ որը հարյուր տոկոս ճիշտ չէր աշխատում <br>
+        <br>
+        պետք է սա ընդունել որպես դաս և ապագայում մի շատ խորը և ուշադիր մտածել թե հերիք չի որ մենք ոնց ենք գրելու կոդը որպեսզի աշխատի նաև պետք է հասկանալ ինչպես պետքա տեստաորել այդ կոդը որպեսզի հստակ իմանանք որ մեր կոդը աշխատում է ճիշտ և առանց թերությունների <br>
+
+    </h2>
+
+
+    <script src="index37js.js"></script>
+</body>
+
+</html>
